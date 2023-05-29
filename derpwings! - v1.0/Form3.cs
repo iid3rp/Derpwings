@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,16 +16,16 @@ namespace derpwings____v1._0
     {
         private PictureBox pbCtrl;
         private int cWidth, cHeight;
-        public Form3(int cWidth, int cHeight)
+        public Form3()
         {
             InitializeComponent();
             pbCtrl = new PictureBox();
             CreatePictureBox(pbCtrl);
             pbCtrl.Location = new Point((this.ClientSize.Width - pbCtrl.Width) / 2, 35);
-            
             this.Controls.Add(pbCtrl); 
         }
 
+        
         private void Form3_Load(object sender, EventArgs e)
         {
             panel1.SendToBack();
@@ -42,8 +43,7 @@ namespace derpwings____v1._0
             pbCtrl.MaximumSize = pbCtrl.MinimumSize;
             pbCtrl.SizeModeChanged += PbCtrl_SizeModeChanged;
             pbCtrl.BackColor = Color.White;
-            int ccWidth = cWidth, ccHeight = cHeight;
-            Bitmap bmpImage = new Bitmap(ccWidth, ccHeight);
+            Bitmap bmpImage = new Bitmap(cWidth, cHeight);
             using (Graphics g = Graphics.FromImage(bmpImage))
             {
                 g.Clear(Color.White);

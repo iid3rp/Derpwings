@@ -17,6 +17,7 @@ namespace derpwings____v1._0
 {
     public partial class Form2 : Form
     {
+
         public Form2()
         {
             InitializeComponent();
@@ -75,7 +76,7 @@ namespace derpwings____v1._0
         private void pictureBox1_Click(object sender, EventArgs e)
         { 
             
-            Form Form3 = new Form3(hScrollBar1.Value, hScrollBar2.Value); // create an instance of Form3
+            Form Form3 = new Form3(); // create an instance of Form3
             Form3.ShowDialog(); // show Form3;
             this.Close();
             

@@ -5,6 +5,11 @@ VisualStudioVersion = 17.5.33502.453
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "derpwings! - v1.0", "derpwings! - v1.0\derpwings! - v1.0.csproj", "{58EC9B14-E1D4-4346-B13B-44729BAB815F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{14BBB46D-9FA3-49A5-981A-B2D61297063C}"
+	ProjectSection(SolutionItems) = preProject
+		drawing.cs = drawing.cs
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
