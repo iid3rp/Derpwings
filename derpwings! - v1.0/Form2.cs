@@ -49,6 +49,7 @@ namespace derpwings____v1._0
             {
                 tWidth.Text = hScrollBar1.Value.ToString();
             }
+            
         }
 
         private void tHeight_TextChanged(object sender, EventArgs e)
@@ -68,12 +69,14 @@ namespace derpwings____v1._0
             {
                 tHeight.Text = hScrollBar2.Value.ToString();
             }
+            
         }
-
+        
         private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            Form Form3 = new Form3(); // create an instance of Form3
-            Form3.Show(); // show Form3;
+        { 
+            
+            Form Form3 = new Form3(hScrollBar1.Value, hScrollBar2.Value); // create an instance of Form3
+            Form3.ShowDialog(); // show Form3;
             this.Close();
             
             

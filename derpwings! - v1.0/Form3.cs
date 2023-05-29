@@ -7,28 +7,43 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace derpwings____v1._0
 {
     public partial class Form3 : Form
     {
         private PictureBox pbCtrl;
-        public Form3()
+        private int cWidth, cHeight;
+        public Form3(int cWidth, int cHeight)
         {
             InitializeComponent();
             pbCtrl = new PictureBox();
             CreatePictureBox(pbCtrl);
-            pbCtrl.Location = new Point((this.ClientSize.Width - pbCtrl.Width) / 2, 50);
-            this.Controls.Add(pbCtrl);
+            pbCtrl.Location = new Point((this.ClientSize.Width - pbCtrl.Width) / 2, 35);
+            
+            this.Controls.Add(pbCtrl); 
+        }
 
+        private void Form3_Load(object sender, EventArgs e)
+        {
+            panel1.SendToBack();
+            pbCtrl.BringToFront();
+        }
+        private void Form3_Resize(object sender, EventArgs e)
+        {
+            panel1.SendToBack();
+            pbCtrl.BringToFront();
         }
         private void CreatePictureBox(PictureBox pbCtrl)
-        {
+        {   
+            
             pbCtrl.MinimumSize = new Size(1000, 600);
             pbCtrl.MaximumSize = pbCtrl.MinimumSize;
             pbCtrl.SizeModeChanged += PbCtrl_SizeModeChanged;
             pbCtrl.BackColor = Color.White;
-            Bitmap bmpImage = new Bitmap(1920, 1080);
+            int ccWidth = cWidth, ccHeight = cHeight;
+            Bitmap bmpImage = new Bitmap(ccWidth, ccHeight);
             using (Graphics g = Graphics.FromImage(bmpImage))
             {
                 g.Clear(Color.White);
@@ -59,6 +74,15 @@ namespace derpwings____v1._0
 
             // Set the size of the PictureBox control
             ((PictureBox)sender).Size = new Size(newWidth, newHeight);
+        }
+        private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+            tSize.Text = hScrollBar1.Value.ToString() + " px.";
+        }
+
+        private void hScrollBar2_Scroll(object sender, ScrollEventArgs e)
+        {
+            tOpacity.Text = hScrollBar2.Value.ToString() + "%";
         }
     }
 
