@@ -146,5 +146,8 @@
   <ItemGroup>
     <None Include="Resources\pain.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Derpwings!Images\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

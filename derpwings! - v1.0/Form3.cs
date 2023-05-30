@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -171,6 +172,16 @@ namespace derpwings____v1._0
             // ...
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
+            string fileName = "painted_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".png";
+            using (Bitmap bmp = new Bitmap(pbCtrl.Width, pbCtrl.Height))
+            {
+                pbCtrl.DrawToBitmap(bmp, pbCtrl.ClientRectangle);
+                bmp.Save(fileName, ImageFormat.Png);
+            }
+            MessageBox.Show("Image saved as " + fileName);
+        }
     }
 
 }
