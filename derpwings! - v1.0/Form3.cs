@@ -15,17 +15,20 @@ namespace derpwings____v1._0
     public partial class Form3 : Form
     {
         private PictureBox pbCtrl;
-        private int cWidth, cHeight;
-        public Form3()
+
+        public Form3(int hs1, int hs2)
         {
             InitializeComponent();
+            int cWidth = hs1, cHeight = hs2;
             pbCtrl = new PictureBox();
             CreatePictureBox(pbCtrl);
-            pbCtrl.Location = new Point((this.ClientSize.Width - pbCtrl.Width) / 2, 35);
-            this.Controls.Add(pbCtrl); 
+            pbCtrl.Location = new Point((this.ClientSize.Width - pbCtrl.Width) / 5, 35);
+            this.Controls.Add(pbCtrl);
+            PictureBox pictureBox4 = new PictureBox();
+
         }
 
-        
+
         private void Form3_Load(object sender, EventArgs e)
         {
             panel1.SendToBack();
@@ -37,21 +40,18 @@ namespace derpwings____v1._0
             pbCtrl.BringToFront();
         }
         private void CreatePictureBox(PictureBox pbCtrl)
-        {   
-            
+        {
+            Bitmap bmpImage = new Bitmap(1920, 1080);
             pbCtrl.MinimumSize = new Size(1000, 600);
             pbCtrl.MaximumSize = pbCtrl.MinimumSize;
             pbCtrl.SizeModeChanged += PbCtrl_SizeModeChanged;
             pbCtrl.BackColor = Color.White;
-            Bitmap bmpImage = new Bitmap(cWidth, cHeight);
             using (Graphics g = Graphics.FromImage(bmpImage))
             {
                 g.Clear(Color.White);
             }
             pbCtrl.Image = bmpImage;
         }
-
-        // Event handler for the SizeModeChanged event of the PictureBox control
         private void PbCtrl_SizeModeChanged(object sender, EventArgs e)
         {
             // Get the original size of the image
@@ -59,8 +59,7 @@ namespace derpwings____v1._0
             int originalHeight = ((PictureBox)sender).Image.Height;
 
             // Calculate the new size based on the aspect ratio of the image
-            int newWidth;
-            int newHeight;
+            int newWidth, newHeight;
             if (originalWidth > originalHeight)
             {
                 newWidth = 1000;
@@ -80,11 +79,45 @@ namespace derpwings____v1._0
             tSize.Text = hScrollBar1.Value.ToString() + " px.";
         }
 
-        private void hScrollBar2_Scroll(object sender, ScrollEventArgs e)
+        private void pictureBox3_Click(object sender, EventArgs e)
         {
-            tOpacity.Text = hScrollBar2.Value.ToString() + "%";
+            Panel colorSection = new Panel();
+            colorSection.Show();
         }
-    }
+
+        private void hScrollBar3_Scroll(object sender, ScrollEventArgs e)
+        {
+            cUpdate();
+            tRed.Text = hScrollBar3.Value.ToString();
+
+        }
+        private void hScrollBar4_Scroll(object sender, ScrollEventArgs e)
+        {
+            cUpdate();
+            tGreen.Text = hScrollBar4.Value.ToString();
+        }
+        private void hScrollBar5_Scroll(object sender, ScrollEventArgs e)
+        {
+            cUpdate();
+            tBlue.Text = hScrollBar5.Value.ToString();
+        }
+        private void hScrollBar6_Scroll(object sender, ScrollEventArgs e)
+        {
+            cUpdate();
+            tAlpha.Text = hScrollBar6.Value.ToString() + '%';
+        }
+
+        private void cUpdate()
+        {
+            int cRed = hScrollBar3.Value;
+            int cGreen = hScrollBar4.Value;
+            int cBlue = hScrollBar5.Value;
+            int cAlpha = hScrollBar6.Value;
+            Color colores = (Color.FromArgb(cRed, cGreen, cBlue));
+            colorbase.BackColor = colores;
+        }
+
+}
 
 }
 

@@ -139,5 +139,8 @@
   <ItemGroup>
     <None Include="Resources\bgdarkmode.jpeg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled73_20230516141419 - Copy.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

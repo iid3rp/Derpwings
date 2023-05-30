@@ -73,14 +73,18 @@ namespace derpwings____v1._0
             
         }
         
+
         private void pictureBox1_Click(object sender, EventArgs e)
-        { 
-            
-            Form Form3 = new Form3(); // create an instance of Form3
-            Form3.ShowDialog(); // show Form3;
+        {
+            int hs1 = hScrollBar1.Value, hs2 = hScrollBar2.Value;
+            Form form3 = new Form3(hs1, hs2); // create an instance of Form3
+            form3.ShowDialog(); // show Form3;
             this.Close();
             
             
         }
+        
     }
+
+    
 }
