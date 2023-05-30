@@ -17,6 +17,7 @@ namespace derpwings____v1._0
         private PictureBox pbCtrl;
         static Bitmap brushImage = Properties.Resources.pain;
         private TextureBrush textureBrush = new TextureBrush(brushImage);
+        private Point _previousPoint;
 
 
 
@@ -98,23 +99,23 @@ namespace derpwings____v1._0
 
         private void hScrollBar3_Scroll(object sender, ScrollEventArgs e)
         {
-            cUpdate();
+            cUpdate(); bUpdate();
             tRed.Text = hScrollBar3.Value.ToString();
 
         }
         private void hScrollBar4_Scroll(object sender, ScrollEventArgs e)
         {
-            cUpdate();
+            cUpdate(); bUpdate();
             tGreen.Text = hScrollBar4.Value.ToString();
         }
         private void hScrollBar5_Scroll(object sender, ScrollEventArgs e)
         {
-            cUpdate();
+            cUpdate(); bUpdate();
             tBlue.Text = hScrollBar5.Value.ToString();
         }
         private void hScrollBar6_Scroll(object sender, ScrollEventArgs e)
         {
-            cUpdate();
+            cUpdate(); bUpdate();
             tAlpha.Text = hScrollBar6.Value.ToString() + '%';
         }
 
@@ -127,20 +128,42 @@ namespace derpwings____v1._0
             Color colores = (Color.FromArgb(cRed, cGreen, cBlue));
             colorbase.BackColor = colores;
         }
+        private void bUpdate()
+        {
+            int bRed = hScrollBar3.Value;
+            int bGreen = hScrollBar4.Value;
+            int bBlue = hScrollBar5.Value;
+            int bAlpha = hScrollBar6.Value;
+            Color bColores = (Color.FromArgb(bRed, bGreen, bBlue));
+            Graphics g = Graphics.FromImage(brushImage);
+        }
 
         private void PictureBoxPaint(object sender, PaintEventArgs e)
         {
-            e.Graphics.FillRectangle(textureBrush, this.ClientRectangle);
+            
         }
 
         private void PictureBoxMouseDown(object sender, MouseEventArgs e)
         {
-            // ...
+            if (e.Button == MouseButtons.Left)
+            {
+                using (Graphics g = pbCtrl.CreateGraphics())
+                {
+                    _previousPoint = e.Location;
+                } 
+            }// ...
         }
 
         private void PictureBoxMouseMove(object sender, MouseEventArgs e)
         {
-            // ...
+            if (e.Button == MouseButtons.Left)
+            {
+                using (Graphics g = pbCtrl.CreateGraphics())
+                {
+                    g.DrawLine(new Pen(textureBrush, hScrollBar1.Value), _previousPoint, e.Location);
+                }
+                _previousPoint = e.Location;
+            }// ...
         }
 
         private void PictureBoxMouseUp(object sender, MouseEventArgs e)
