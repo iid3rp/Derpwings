@@ -37,6 +37,10 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.colorSection = new System.Windows.Forms.Panel();
+            this.tAlpha = new System.Windows.Forms.Label();
+            this.tBlue = new System.Windows.Forms.Label();
+            this.tGreen = new System.Windows.Forms.Label();
+            this.tRed = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.hScrollBar6 = new System.Windows.Forms.HScrollBar();
@@ -49,10 +53,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.colorbase = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.tRed = new System.Windows.Forms.Label();
-            this.tGreen = new System.Windows.Forms.Label();
-            this.tBlue = new System.Windows.Forms.Label();
-            this.tAlpha = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -137,9 +137,9 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.DimGray;
-            this.panel3.Location = new System.Drawing.Point(1138, 476);
+            this.panel3.Location = new System.Drawing.Point(1128, 476);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 241);
+            this.panel3.Size = new System.Drawing.Size(210, 241);
             this.panel3.TabIndex = 8;
             // 
             // panel2
@@ -177,11 +177,59 @@
             this.colorSection.Size = new System.Drawing.Size(182, 412);
             this.colorSection.TabIndex = 12;
             // 
+            // tAlpha
+            // 
+            this.tAlpha.AutoSize = true;
+            this.tAlpha.BackColor = System.Drawing.Color.Transparent;
+            this.tAlpha.Font = new System.Drawing.Font("Comic Sans MS", 9F);
+            this.tAlpha.ForeColor = System.Drawing.Color.White;
+            this.tAlpha.Location = new System.Drawing.Point(58, 187);
+            this.tAlpha.Name = "tAlpha";
+            this.tAlpha.Size = new System.Drawing.Size(37, 17);
+            this.tAlpha.TabIndex = 26;
+            this.tAlpha.Text = "100%";
+            // 
+            // tBlue
+            // 
+            this.tBlue.AutoSize = true;
+            this.tBlue.BackColor = System.Drawing.Color.Transparent;
+            this.tBlue.Font = new System.Drawing.Font("Comic Sans MS", 9F);
+            this.tBlue.ForeColor = System.Drawing.Color.White;
+            this.tBlue.Location = new System.Drawing.Point(58, 348);
+            this.tBlue.Name = "tBlue";
+            this.tBlue.Size = new System.Drawing.Size(29, 17);
+            this.tBlue.TabIndex = 25;
+            this.tBlue.Text = "255";
+            // 
+            // tGreen
+            // 
+            this.tGreen.AutoSize = true;
+            this.tGreen.BackColor = System.Drawing.Color.Transparent;
+            this.tGreen.Font = new System.Drawing.Font("Comic Sans MS", 9F);
+            this.tGreen.ForeColor = System.Drawing.Color.White;
+            this.tGreen.Location = new System.Drawing.Point(58, 314);
+            this.tGreen.Name = "tGreen";
+            this.tGreen.Size = new System.Drawing.Size(29, 17);
+            this.tGreen.TabIndex = 24;
+            this.tGreen.Text = "255";
+            // 
+            // tRed
+            // 
+            this.tRed.AutoSize = true;
+            this.tRed.BackColor = System.Drawing.Color.Transparent;
+            this.tRed.Font = new System.Drawing.Font("Comic Sans MS", 9F);
+            this.tRed.ForeColor = System.Drawing.Color.White;
+            this.tRed.Location = new System.Drawing.Point(58, 280);
+            this.tRed.Name = "tRed";
+            this.tRed.Size = new System.Drawing.Size(29, 17);
+            this.tRed.TabIndex = 23;
+            this.tRed.Text = "255";
+            // 
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.White;
-            this.pictureBox5.Image = global::derpwings____v1._0.Properties.Resources.Untitled73_20230516141419___Copy;
-            this.pictureBox5.Location = new System.Drawing.Point(21, 56);
+            this.pictureBox5.Image = global::derpwings____v1._0.Properties.Resources.pain1;
+            this.pictureBox5.Location = new System.Drawing.Point(37, 56);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(50, 50);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -288,7 +336,7 @@
             // colorbase
             // 
             this.colorbase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.colorbase.Location = new System.Drawing.Point(119, 56);
+            this.colorbase.Location = new System.Drawing.Point(107, 56);
             this.colorbase.Name = "colorbase";
             this.colorbase.Size = new System.Drawing.Size(50, 50);
             this.colorbase.TabIndex = 13;
@@ -304,54 +352,6 @@
             this.label3.Size = new System.Drawing.Size(178, 18);
             this.label3.TabIndex = 12;
             this.label3.Text = " Brush and Color Properties:";
-            // 
-            // tRed
-            // 
-            this.tRed.AutoSize = true;
-            this.tRed.BackColor = System.Drawing.Color.Transparent;
-            this.tRed.Font = new System.Drawing.Font("Comic Sans MS", 9F);
-            this.tRed.ForeColor = System.Drawing.Color.White;
-            this.tRed.Location = new System.Drawing.Point(58, 280);
-            this.tRed.Name = "tRed";
-            this.tRed.Size = new System.Drawing.Size(29, 17);
-            this.tRed.TabIndex = 23;
-            this.tRed.Text = "255";
-            // 
-            // tGreen
-            // 
-            this.tGreen.AutoSize = true;
-            this.tGreen.BackColor = System.Drawing.Color.Transparent;
-            this.tGreen.Font = new System.Drawing.Font("Comic Sans MS", 9F);
-            this.tGreen.ForeColor = System.Drawing.Color.White;
-            this.tGreen.Location = new System.Drawing.Point(58, 314);
-            this.tGreen.Name = "tGreen";
-            this.tGreen.Size = new System.Drawing.Size(29, 17);
-            this.tGreen.TabIndex = 24;
-            this.tGreen.Text = "255";
-            // 
-            // tBlue
-            // 
-            this.tBlue.AutoSize = true;
-            this.tBlue.BackColor = System.Drawing.Color.Transparent;
-            this.tBlue.Font = new System.Drawing.Font("Comic Sans MS", 9F);
-            this.tBlue.ForeColor = System.Drawing.Color.White;
-            this.tBlue.Location = new System.Drawing.Point(58, 348);
-            this.tBlue.Name = "tBlue";
-            this.tBlue.Size = new System.Drawing.Size(29, 17);
-            this.tBlue.TabIndex = 25;
-            this.tBlue.Text = "255";
-            // 
-            // tAlpha
-            // 
-            this.tAlpha.AutoSize = true;
-            this.tAlpha.BackColor = System.Drawing.Color.Transparent;
-            this.tAlpha.Font = new System.Drawing.Font("Comic Sans MS", 9F);
-            this.tAlpha.ForeColor = System.Drawing.Color.White;
-            this.tAlpha.Location = new System.Drawing.Point(58, 187);
-            this.tAlpha.Name = "tAlpha";
-            this.tAlpha.Size = new System.Drawing.Size(37, 17);
-            this.tAlpha.TabIndex = 26;
-            this.tAlpha.Text = "100%";
             // 
             // Form3
             // 

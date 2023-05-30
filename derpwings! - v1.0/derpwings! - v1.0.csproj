@@ -107,6 +107,7 @@
     <None Include="Resources\erasersetting" />
     <None Include="Resources\erasertoggle" />
     <None Include="Resources\okaAYYY" />
+    <None Include="Resources\pain" />
     <None Include="Resources\paintt" />
     <None Include="Resources\pencil" />
     <None Include="Resources\pencil1" />
@@ -141,6 +142,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Untitled73_20230516141419 - Copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pain.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

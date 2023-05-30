@@ -15,6 +15,10 @@ namespace derpwings____v1._0
     public partial class Form3 : Form
     {
         private PictureBox pbCtrl;
+        static Bitmap brushImage = Properties.Resources.pain;
+        private TextureBrush textureBrush = new TextureBrush(brushImage);
+
+
 
         public Form3(int hs1, int hs2)
         {
@@ -51,7 +55,14 @@ namespace derpwings____v1._0
                 g.Clear(Color.White);
             }
             pbCtrl.Image = bmpImage;
+            pbCtrl.Paint += new PaintEventHandler(PictureBoxPaint);
+            pbCtrl.MouseDown += new MouseEventHandler(PictureBoxMouseDown);
+            pbCtrl.MouseMove += new MouseEventHandler(PictureBoxMouseMove);
+            pbCtrl.MouseUp += new MouseEventHandler(PictureBoxMouseUp);
+
+            
         }
+        
         private void PbCtrl_SizeModeChanged(object sender, EventArgs e)
         {
             // Get the original size of the image
@@ -117,7 +128,27 @@ namespace derpwings____v1._0
             colorbase.BackColor = colores;
         }
 
-}
+        private void PictureBoxPaint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.FillRectangle(textureBrush, this.ClientRectangle);
+        }
+
+        private void PictureBoxMouseDown(object sender, MouseEventArgs e)
+        {
+            // ...
+        }
+
+        private void PictureBoxMouseMove(object sender, MouseEventArgs e)
+        {
+            // ...
+        }
+
+        private void PictureBoxMouseUp(object sender, MouseEventArgs e)
+        {
+            // ...
+        }
+
+    }
 
 }
 
