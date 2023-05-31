@@ -19,15 +19,11 @@ namespace derpwings____v1._0
         static Bitmap brushImage = Properties.Resources.pain;
         private TextureBrush textureBrush = new TextureBrush(brushImage);
         private Point _previousPoint;
-
-
-
         public Form3(int hs1, int hs2)
         {
             InitializeComponent();
-            int cWidth = hs1, cHeight = hs2;
             pbCtrl = new PictureBox();
-            CreatePictureBox(pbCtrl);
+            pbCtrl = CreatePictureBox(hs1, hs2);
             pbCtrl.Location = new Point((this.ClientSize.Width - pbCtrl.Width) / 5, 35);
             this.Controls.Add(pbCtrl);
             PictureBox pictureBox4 = new PictureBox();
@@ -45,10 +41,21 @@ namespace derpwings____v1._0
             panel1.SendToBack();
             pbCtrl.BringToFront();
         }
-        private void CreatePictureBox(PictureBox pbCtrl)
+        private PictureBox CreatePictureBox(int hs1, int hs2)
         {
-            Bitmap bmpImage = new Bitmap(1920, 1080);
-            pbCtrl.MinimumSize = new Size(1000, 600);
+            Bitmap bmpImage = new Bitmap(hs1, hs2);
+            int newWidth = hs1, newHeight = hs2;
+            if (newWidth > newHeight)
+            {
+                newHeight = 1000 * (newHeight / newWidth);
+                newWidth = 1000;
+            }
+            else if (newWidth < newHeight)
+            {
+                newWidth = 563 * (newWidth / newHeight);
+                newHeight = 563;
+            }
+            pbCtrl.MinimumSize = new Size(newWidth, newHeight);
             pbCtrl.MaximumSize = pbCtrl.MinimumSize;
             pbCtrl.SizeModeChanged += PbCtrl_SizeModeChanged;
             pbCtrl.BackColor = Color.White;
@@ -62,7 +69,7 @@ namespace derpwings____v1._0
             pbCtrl.MouseMove += new MouseEventHandler(PictureBoxMouseMove);
             pbCtrl.MouseUp += new MouseEventHandler(PictureBoxMouseUp);
 
-            
+            return pbCtrl;
         }
         
         private void PbCtrl_SizeModeChanged(object sender, EventArgs e)
@@ -181,6 +188,12 @@ namespace derpwings____v1._0
                 bmp.Save(fileName, ImageFormat.Png);
             }
             MessageBox.Show("Image saved as " + fileName);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            panel3.Show();
+            panel3.BringToFront();
         }
     }
 
