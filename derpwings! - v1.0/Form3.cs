@@ -44,20 +44,22 @@ namespace derpwings____v1._0
         private PictureBox CreatePictureBox(int hs1, int hs2)
         {
             Bitmap bmpImage = new Bitmap(hs1, hs2);
-            int newWidth = hs1, newHeight = hs2;
-            if (newWidth > newHeight)
+            int Width = hs1, Height = hs2;
+            int newWidth = 0, newHeight = 0;
+            if (Width > Height)
             {
-                newHeight = 1000 * (newHeight / newWidth);
                 newWidth = 1000;
+                newHeight = newWidth * (Height / newWidth);
+                
             }
-            else if (newWidth < newHeight)
+            else if (Width < Height)
             {
-                newWidth = 563 * (newWidth / newHeight);
                 newHeight = 563;
+                newWidth = 563 * (Width / newHeight);
+                
             }
-            pbCtrl.MinimumSize = new Size(newWidth, newHeight);
+            pbCtrl.MinimumSize = new Size(1000, 563);
             pbCtrl.MaximumSize = pbCtrl.MinimumSize;
-            pbCtrl.SizeModeChanged += PbCtrl_SizeModeChanged;
             pbCtrl.BackColor = Color.White;
             using (Graphics g = Graphics.FromImage(bmpImage))
             {
@@ -72,28 +74,6 @@ namespace derpwings____v1._0
             return pbCtrl;
         }
         
-        private void PbCtrl_SizeModeChanged(object sender, EventArgs e)
-        {
-            // Get the original size of the image
-            int originalWidth = ((PictureBox)sender).Image.Width;
-            int originalHeight = ((PictureBox)sender).Image.Height;
-
-            // Calculate the new size based on the aspect ratio of the image
-            int newWidth, newHeight;
-            if (originalWidth > originalHeight)
-            {
-                newWidth = 1000;
-                newHeight = (int)((double)originalHeight / originalWidth * 1000);
-            }
-            else
-            {
-                newWidth = (int)((double)originalWidth / originalHeight * 600);
-                newHeight = 600;
-            }
-
-            // Set the size of the PictureBox control
-            ((PictureBox)sender).Size = new Size(newWidth, newHeight);
-        }
         private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
             tSize.Text = hScrollBar1.Value.ToString() + " px.";
@@ -189,11 +169,15 @@ namespace derpwings____v1._0
             }
             MessageBox.Show("Image saved as " + fileName);
         }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             panel3.Show();
             panel3.BringToFront();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
