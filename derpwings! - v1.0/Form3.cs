@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,10 +17,12 @@ namespace derpwings____v1._0
 {
     public partial class Form3 : Form
     {
-        private PictureBox pbCtrl;
-        static Bitmap brushImage = Properties.Resources.pain;
-        private TextureBrush textureBrush = new TextureBrush(brushImage);
-        private Point _previousPoint;
+        private static PictureBox pbCtrl, dpPen = new PictureBox();//canvas
+        private Point prevPos;
+        private Point curPos; // the positions of your mouse to paint
+        private Bitmap bitmap; //bitmap of the pen
+        private TextureBrush brush; //texture brush of the pen
+        private Pen pen; //pen used to paint on the canvas
         public Form3(int hs1, int hs2)
         {
             InitializeComponent();
@@ -27,14 +31,32 @@ namespace derpwings____v1._0
             pbCtrl.Location = new Point((this.ClientSize.Width - pbCtrl.Width) / 5, 35);
             this.Controls.Add(pbCtrl);
             PictureBox pictureBox4 = new PictureBox();
-
+            
         }
-
+        
 
         private void Form3_Load(object sender, EventArgs e)
         {
             panel1.SendToBack();
             pbCtrl.BringToFront();
+            //create a picturebox to resemble the pen itself
+            PictureBox dpPen = new PictureBox();
+            // Create a new Bitmap with the same size as the PictureBox
+            bitmap = new Bitmap(dpPen.Width, dpPen.Height, PixelFormat.Format32bppArgb);
+            // Set the background of the Bitmap to the same color as the PictureBox
+            using (Graphics g = Graphics.FromImage(bitmap))
+            {
+                g.Clear(pbCtrl.BackColor);
+            }
+            // Create a new TextureBrush with the Bitmap
+            brush = new TextureBrush(bitmap);
+            // Create a new Pen with the TextureBrush
+            pen = new Pen(brush, 10f);
+
+            // Modify the Pen properties to make the brush smooth with rounded corners and ends
+            pen.LineJoin = LineJoin.Round;
+            pen.StartCap = LineCap.Round;
+            pen.EndCap = LineCap.Round;
         }
         private void Form3_Resize(object sender, EventArgs e)
         {
@@ -123,40 +145,37 @@ namespace derpwings____v1._0
             int bBlue = hScrollBar5.Value;
             int bAlpha = hScrollBar6.Value;
             Color bColores = (Color.FromArgb(bRed, bGreen, bBlue));
-            Graphics g = Graphics.FromImage(brushImage);
-        }
-
-        private void PictureBoxPaint(object sender, PaintEventArgs e)
-        {
-            
         }
 
         private void PictureBoxMouseDown(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
-            {
-                using (Graphics g = pbCtrl.CreateGraphics())
-                {
-                    _previousPoint = e.Location;
-                } 
-            }// ...
+            prevPos = e.Location;
         }
 
         private void PictureBoxMouseMove(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
+            // Set the current mouse position
+            curPos = e.Location;
+
+            // Draw a line from the previous mouse position to the current position
+            using (Graphics g = Graphics.FromImage(bitmap))
             {
-                using (Graphics g = pbCtrl.CreateGraphics())
-                {
-                    g.DrawLine(new Pen(textureBrush, hScrollBar1.Value), _previousPoint, e.Location);
-                }
-                _previousPoint = e.Location;
-            }// ...
+                g.DrawLine(pen, prevPos, curPos);
+            }
+
+            // Update the previous mouse position to the current position
+            prevPos = curPos;
+
         }
 
         private void PictureBoxMouseUp(object sender, MouseEventArgs e)
         {
-            // ...
+            prevPos = e.Location;
+        }
+
+        private void PictureBoxPaint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.DrawImage(bitmap, Point.Empty);
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -179,6 +198,7 @@ namespace derpwings____v1._0
         {
 
         }
+       
     }
 
 }
