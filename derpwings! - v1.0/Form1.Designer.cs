@@ -43,6 +43,7 @@
             // dpMain
             // 
             this.dpMain.BackColor = System.Drawing.Color.Transparent;
+            this.dpMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.dpMain.Controls.Add(this.label2);
             this.dpMain.Controls.Add(this.label1);
             this.dpMain.Controls.Add(this.pictureBox3);
@@ -115,7 +116,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::derpwings____v1._0.Properties.Resources.bg;
+            this.BackgroundImage = global::derpwings____v1._0.Properties.Resources.dpBG2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1350, 729);
             this.Controls.Add(this.dpMain);
             this.Name = "Form1";

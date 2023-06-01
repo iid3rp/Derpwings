@@ -15,7 +15,8 @@ namespace derpwings____v1._0
     {
         public Form1()
         {
-            InitializeComponent();  
+            InitializeComponent(); 
+            
         }
         
         public bool formCreated = false;
@@ -41,6 +42,11 @@ namespace derpwings____v1._0
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             Process.Start("https://github.com/iid3rp/derpwings-v2.0/");
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
