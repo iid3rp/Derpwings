@@ -123,6 +123,16 @@ namespace derpwings____v1._0.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap blackbox1 {
+            get {
+                object obj = ResourceManager.GetObject("blackbox1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap delere {
             get {
                 object obj = ResourceManager.GetObject("delere", resourceCulture);
@@ -326,6 +336,26 @@ namespace derpwings____v1._0.Properties {
         internal static System.Drawing.Bitmap textie {
             get {
                 object obj = ResourceManager.GetObject("textie", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap transparent {
+            get {
+                object obj = ResourceManager.GetObject("transparent", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap transparent1 {
+            get {
+                object obj = ResourceManager.GetObject("transparent1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

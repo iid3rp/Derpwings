@@ -121,11 +121,14 @@
   <data name="blackbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\blackbox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Untitled73_20230516141419 - Copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Untitled73_20230516141419 - Copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="blackbox1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\blackbox1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bgdarkmode" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bgdarkmode.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add something" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add something;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="erasersetting" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\erasersetting;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -133,8 +136,8 @@
   <data name="save" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\save;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bg1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bg1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="dpBG1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dpBG1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Untitled73_20230516141609" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Untitled73_20230516141609.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -150,6 +153,9 @@
   </data>
   <data name="delere1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delere1;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add something1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add something1;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pentoggle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pentoggle;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,14 +184,11 @@
   <data name="Untitled73_20230524140131" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Untitled73_20230524140131.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="dpBG1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dpBG1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="okaAYYY" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\okaAYYY;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="add something1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add something1;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="transparent" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\transparent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="dpBG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dpBG.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,11 +196,14 @@
   <data name="textie" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\textie;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="dpBG2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dpBG2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="eraser" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eraser;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pencilsettings" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pencilsettings;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bg1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bg1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="paintt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\paintt;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,13 +211,16 @@
   <data name="Untitled73_20230516144547" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Untitled73_20230516144547.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="add something" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add something;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Untitled73_20230516141419 - Copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Untitled73_20230516141419 - Copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="dpBG2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dpBG2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pencilsettings" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pencilsettings;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="transparent1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\transparent1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

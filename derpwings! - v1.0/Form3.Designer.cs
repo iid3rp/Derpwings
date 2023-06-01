@@ -42,7 +42,7 @@
             this.tBlue = new System.Windows.Forms.Label();
             this.tGreen = new System.Windows.Forms.Label();
             this.tRed = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.brushBox = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.hScrollBar6 = new System.Windows.Forms.HScrollBar();
             this.hScrollBar5 = new System.Windows.Forms.HScrollBar();
@@ -61,7 +61,7 @@
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.colorSection.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.brushBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.colorbase)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,6 +98,7 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.ForeColor = System.Drawing.Color.Transparent;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1350, 729);
@@ -173,7 +174,7 @@
             this.colorSection.Controls.Add(this.tBlue);
             this.colorSection.Controls.Add(this.tGreen);
             this.colorSection.Controls.Add(this.tRed);
-            this.colorSection.Controls.Add(this.pictureBox5);
+            this.colorSection.Controls.Add(this.brushBox);
             this.colorSection.Controls.Add(this.label7);
             this.colorSection.Controls.Add(this.hScrollBar6);
             this.colorSection.Controls.Add(this.hScrollBar5);
@@ -212,9 +213,9 @@
             this.tBlue.ForeColor = System.Drawing.Color.White;
             this.tBlue.Location = new System.Drawing.Point(58, 348);
             this.tBlue.Name = "tBlue";
-            this.tBlue.Size = new System.Drawing.Size(29, 17);
+            this.tBlue.Size = new System.Drawing.Size(15, 17);
             this.tBlue.TabIndex = 25;
-            this.tBlue.Text = "255";
+            this.tBlue.Text = "0";
             // 
             // tGreen
             // 
@@ -224,9 +225,9 @@
             this.tGreen.ForeColor = System.Drawing.Color.White;
             this.tGreen.Location = new System.Drawing.Point(58, 314);
             this.tGreen.Name = "tGreen";
-            this.tGreen.Size = new System.Drawing.Size(29, 17);
+            this.tGreen.Size = new System.Drawing.Size(15, 17);
             this.tGreen.TabIndex = 24;
-            this.tGreen.Text = "255";
+            this.tGreen.Text = "0";
             // 
             // tRed
             // 
@@ -240,16 +241,17 @@
             this.tRed.TabIndex = 23;
             this.tRed.Text = "255";
             // 
-            // pictureBox5
+            // brushBox
             // 
-            this.pictureBox5.BackColor = System.Drawing.Color.White;
-            this.pictureBox5.Image = global::derpwings____v1._0.Properties.Resources.blackbox;
-            this.pictureBox5.Location = new System.Drawing.Point(37, 56);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 22;
-            this.pictureBox5.TabStop = false;
+            this.brushBox.BackColor = System.Drawing.Color.Black;
+            this.brushBox.Image = global::derpwings____v1._0.Properties.Resources.blackbox1;
+            this.brushBox.Location = new System.Drawing.Point(37, 56);
+            this.brushBox.Name = "brushBox";
+            this.brushBox.Size = new System.Drawing.Size(50, 50);
+            this.brushBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.brushBox.TabIndex = 22;
+            this.brushBox.TabStop = false;
+            this.brushBox.Paint += new System.Windows.Forms.PaintEventHandler(this.brushBoxPaint);
             // 
             // label7
             // 
@@ -278,7 +280,6 @@
             this.hScrollBar5.Name = "hScrollBar5";
             this.hScrollBar5.Size = new System.Drawing.Size(150, 17);
             this.hScrollBar5.TabIndex = 19;
-            this.hScrollBar5.Value = 255;
             this.hScrollBar5.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hScrollBar5_Scroll);
             // 
             // hScrollBar4
@@ -289,7 +290,6 @@
             this.hScrollBar4.Name = "hScrollBar4";
             this.hScrollBar4.Size = new System.Drawing.Size(150, 17);
             this.hScrollBar4.TabIndex = 18;
-            this.hScrollBar4.Value = 255;
             this.hScrollBar4.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hScrollBar4_Scroll);
             // 
             // tSize
@@ -350,7 +350,8 @@
             // 
             // colorbase
             // 
-            this.colorbase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.colorbase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.colorbase.Image = global::derpwings____v1._0.Properties.Resources.transparent1;
             this.colorbase.Location = new System.Drawing.Point(107, 56);
             this.colorbase.Name = "colorbase";
             this.colorbase.Size = new System.Drawing.Size(50, 50);
@@ -391,7 +392,7 @@
             this.panel2.ResumeLayout(false);
             this.colorSection.ResumeLayout(false);
             this.colorSection.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.brushBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.colorbase)).EndInit();
             this.ResumeLayout(false);
 
@@ -418,7 +419,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox colorbase;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox brushBox;
         private System.Windows.Forms.Label tAlpha;
         private System.Windows.Forms.Label tBlue;
         private System.Windows.Forms.Label tGreen;

@@ -17,13 +17,10 @@ namespace derpwings____v1._0
 {
     public partial class Form3 : Form
     {
-        private PictureBox pbCtrl;//canvas
-        private Point prevPos;
-        private Point curPos; // the positions of your mouse to paint
-        private static Bitmap brushImage = Properties.Resources.blackbox; //bitmap of the pen
-        private TextureBrush tBrush = new TextureBrush(brushImage); //texture brush of the pen
+        private PictureBox pbCtrl;//canvas and the brushp
         private Point prevPoint; //pen used to paint on the canvas
-        private Color brushColor;
+        private Color colores = (Color.FromArgb(255,0,0));
+        private SolidBrush sBrush;
         public Form3(int hs1, int hs2)
         {
             InitializeComponent();
@@ -31,7 +28,10 @@ namespace derpwings____v1._0
             pbCtrl = CreatePictureBox(hs1, hs2);
             pbCtrl.Location = new Point((this.ClientSize.Width - pbCtrl.Width) / 5, 35);
             this.Controls.Add(pbCtrl);
-            PictureBox pictureBox4 = new PictureBox();
+            sBrush = new SolidBrush(color: colores);
+        }
+        private void brushBoxPaint(object sender, PaintEventArgs e)
+        {
         }
         private PictureBox CreatePictureBox(int hs1, int hs2)
         {
@@ -115,6 +115,7 @@ namespace derpwings____v1._0
             int bBlue = hScrollBar5.Value;
             int bAlpha = hScrollBar6.Value;
             Color bColores = (Color.FromArgb(bRed, bGreen, bBlue));
+           
         }
 
         private void PictureBoxMouseDown(object sender, MouseEventArgs e)
@@ -134,7 +135,7 @@ namespace derpwings____v1._0
             {
                 using (Graphics g = pbCtrl.CreateGraphics())
                 {
-                    g.DrawLine(new Pen(tBrush), prevPoint, e.Location);
+                    g.DrawLine(new Pen(sBrush), prevPoint, e.Location);
                 }
                 prevPoint = e.Location;
             }

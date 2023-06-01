@@ -161,5 +161,14 @@
   <ItemGroup>
     <None Include="Resources\dpBG2.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blackbox1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transparent1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
