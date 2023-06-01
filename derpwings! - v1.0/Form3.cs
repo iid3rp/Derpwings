@@ -33,8 +33,6 @@ namespace derpwings____v1._0
             PictureBox pictureBox4 = new PictureBox();
             
         }
-        
-
         private void Form3_Load(object sender, EventArgs e)
         {
             panel1.SendToBack();
