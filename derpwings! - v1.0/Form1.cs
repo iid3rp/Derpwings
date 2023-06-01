@@ -43,10 +43,5 @@ namespace derpwings____v1._0
         {
             Process.Start("https://github.com/iid3rp/derpwings-v2.0/");
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

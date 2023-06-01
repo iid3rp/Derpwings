@@ -20,7 +20,12 @@ namespace derpwings____v1._0
         private PictureBox pbCtrl;//canvas and the brushp
         private Point prevPoint; //pen used to paint on the canvas
         private Color bColores = (Color.FromArgb(255, 0, 0));
-        private SolidBrush sBrush;
+        private float brushSize = 10f;
+        
+        private SolidBrush sBrush; //the solid brush used to draw
+        private PointF[] points = new PointF[0]; //matrix used to make the brush smoother
+        private GraphicsPath path = new GraphicsPath(); //the path
+
         public Form3(int hs1, int hs2)
         {
             InitializeComponent();
@@ -65,10 +70,16 @@ namespace derpwings____v1._0
 
             return pbCtrl;
         }
-        
+        private void PictureBoxPaint(object sender, PaintEventArgs e)
+        {
+            
+
+        }
         private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
             tSize.Text = hScrollBar1.Value.ToString() + " px.";
+            brushSize = hScrollBar1.Value;
+            bUpdate();
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -120,11 +131,29 @@ namespace derpwings____v1._0
 
         private void PictureBoxMouseDown(object sender, MouseEventArgs e)
         {
+            // Clear the previous points and path
+            points = new PointF[0];
+            path.Reset();
             if (e.Button == MouseButtons.Left)
             {
-                using (Graphics g = pbCtrl.CreateGraphics())
+                // Add the current point to the array
+                PointF[] newPoints = new PointF[points.Length + 1];
+                Array.Copy(points, newPoints, points.Length);
+                newPoints[points.Length] = new PointF(e.X, e.Y);
+                points = newPoints;
+
+                // Clear the previous path and add the new curve
+                path.Reset();
+                if (points.Length > 1)
                 {
-                    prevPoint = e.Location;
+                    path.AddCurve(points, 0.5f);
+                }
+
+                // Fill the path with the brush
+                using (Graphics g = pictureBox1.CreateGraphics())
+                {
+                    g.SmoothingMode = SmoothingMode.AntiAlias;
+                    g.FillPath(sBrush, path);
                 }
             }// ...
         }
@@ -135,7 +164,7 @@ namespace derpwings____v1._0
             {
                 using (Graphics g = pbCtrl.CreateGraphics())
                 {
-                    g.DrawLine(new Pen(sBrush), prevPoint, e.Location);
+                    g.FillEllipse(sBrush, e.X - brushSize / 10, e.Y - brushSize / 10, brushSize / 5, brushSize / 5);
                 }
                 prevPoint = e.Location;
             }
@@ -144,10 +173,6 @@ namespace derpwings____v1._0
         private void PictureBoxMouseUp(object sender, MouseEventArgs e)
         {
             prevPoint = e.Location;
-        }
-
-        private void PictureBoxPaint(object sender, PaintEventArgs e)
-        {
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -169,7 +194,6 @@ namespace derpwings____v1._0
         {
             panel1.SendToBack();
             pbCtrl.BringToFront(); //already set
-
         }
         private void Form3_Resize(object sender, EventArgs e)
         {

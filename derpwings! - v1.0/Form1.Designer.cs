@@ -34,21 +34,24 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.dpMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // dpMain
             // 
             this.dpMain.BackColor = System.Drawing.Color.Transparent;
-            this.dpMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.dpMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.dpMain.Controls.Add(this.label2);
             this.dpMain.Controls.Add(this.label1);
             this.dpMain.Controls.Add(this.pictureBox3);
             this.dpMain.Controls.Add(this.pictureBox2);
             this.dpMain.Controls.Add(this.pictureBox1);
+            this.dpMain.Controls.Add(this.pictureBox4);
             this.dpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dpMain.Location = new System.Drawing.Point(0, 0);
             this.dpMain.Name = "dpMain";
@@ -104,19 +107,31 @@
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox1.Image = global::derpwings____v1._0.Properties.Resources.dpText;
             this.pictureBox1.Location = new System.Drawing.Point(177, 38);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1033, 328);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox4.Image = global::derpwings____v1._0.Properties.Resources.dpBG2;
+            this.pictureBox4.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(1350, 729);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 5;
+            this.pictureBox4.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::derpwings____v1._0.Properties.Resources.dpBG2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1350, 729);
             this.Controls.Add(this.dpMain);
@@ -127,6 +142,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -139,6 +155,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }
 
