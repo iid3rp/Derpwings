@@ -149,5 +149,8 @@
   <ItemGroup>
     <Folder Include="Derpwings!Images\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blackbox.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
