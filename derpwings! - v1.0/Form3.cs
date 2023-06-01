@@ -19,7 +19,7 @@ namespace derpwings____v1._0
     {
         private PictureBox pbCtrl;//canvas and the brushp
         private Point prevPoint; //pen used to paint on the canvas
-        private Color colores = (Color.FromArgb(255,0,0));
+        private Color bColores = (Color.FromArgb(255, 0, 0));
         private SolidBrush sBrush;
         public Form3(int hs1, int hs2)
         {
@@ -28,7 +28,7 @@ namespace derpwings____v1._0
             pbCtrl = CreatePictureBox(hs1, hs2);
             pbCtrl.Location = new Point((this.ClientSize.Width - pbCtrl.Width) / 5, 35);
             this.Controls.Add(pbCtrl);
-            sBrush = new SolidBrush(color: colores);
+            bUpdate();
         }
         private void brushBoxPaint(object sender, PaintEventArgs e)
         {
@@ -115,7 +115,7 @@ namespace derpwings____v1._0
             int bBlue = hScrollBar5.Value;
             int bAlpha = hScrollBar6.Value;
             Color bColores = (Color.FromArgb(bRed, bGreen, bBlue));
-           
+            sBrush = new SolidBrush(color: bColores);
         }
 
         private void PictureBoxMouseDown(object sender, MouseEventArgs e)
