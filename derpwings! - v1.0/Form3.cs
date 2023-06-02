@@ -21,11 +21,10 @@ namespace derpwings____v1._0
         private Point prevPoint; //pen used to paint on the canvas
         private Color bColores = (Color.FromArgb(255, 0, 0));
         private float brushSize = 10f;
-        
         private SolidBrush sBrush; //the solid brush used to draw
-        private PointF[] points = new PointF[0]; //matrix used to make the brush smoother
+        private List<PointF> points = new List<PointF>();//point list
         private GraphicsPath path = new GraphicsPath(); //the path
-
+        private Bitmap bmpImage;
         public Form3(int hs1, int hs2)
         {
             InitializeComponent();
@@ -40,7 +39,7 @@ namespace derpwings____v1._0
         }
         private PictureBox CreatePictureBox(int hs1, int hs2)
         {
-            Bitmap bmpImage = new Bitmap(hs1, hs2);
+            bmpImage = new Bitmap(hs1, hs2);
             int Width = hs1, Height = hs2;
             int newWidth = hs1, newHeight = hs2;
             if (Width > Height)
@@ -131,59 +130,71 @@ namespace derpwings____v1._0
 
         private void PictureBoxMouseDown(object sender, MouseEventArgs e)
         {
-            // Clear the previous points and path
-            points = new PointF[0];
-            path.Reset();
-            if (e.Button == MouseButtons.Left)
+            if (bmpImage == null)
             {
-                // Add the current point to the array
-                PointF[] newPoints = new PointF[points.Length + 1];
-                Array.Copy(points, newPoints, points.Length);
-                newPoints[points.Length] = new PointF(e.X, e.Y);
-                points = newPoints;
+                bmpImage = new Bitmap(Width, Height);
+            }
 
-                // Clear the previous path and add the new curve
-                path.Reset();
-                if (points.Length > 1)
-                {
-                    path.AddCurve(points, 0.5f);
-                }
-
-                // Fill the path with the brush
-                using (Graphics g = pictureBox1.CreateGraphics())
-                {
-                    g.SmoothingMode = SmoothingMode.AntiAlias;
-                    g.FillPath(sBrush, path);
-                }
-            }// ...
+            points.Clear();
+            points.Add(e.Location);
         }
 
         private void PictureBoxMouseMove(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
+            if (e.Button != MouseButtons.Left) return;
+
+            points.Add(e.Location);
+
+            using (Graphics g = Graphics.FromImage(bmpImage))
             {
-                using (Graphics g = pbCtrl.CreateGraphics())
+                using (Brush brush = new SolidBrush(bColores))
                 {
-                    g.FillEllipse(sBrush, e.X - brushSize / 10, e.Y - brushSize / 10, brushSize / 5, brushSize / 5);
+                    float halfBrushSize = brushSize / 2f;
+                    g.SmoothingMode = SmoothingMode.AntiAlias;
+                    for (int i = 0; i < points.Count - 1; i++)
+                    {
+                        g.FillEllipse(brush, points[i].X - halfBrushSize, points[i].Y - halfBrushSize, brushSize, brushSize);
+                        g.DrawLine(new Pen(brush, brushSize), points[i], points[i + 1]);
+                    }
                 }
-                prevPoint = e.Location;
             }
+            pbCtrl.Invalidate(new Rectangle((int)points[points.Count - 2].X, (int)points[points.Count - 2].Y, (int)brushSize + 1, (int)brushSize + 1));
         }
 
         private void PictureBoxMouseUp(object sender, MouseEventArgs e)
         {
-            prevPoint = e.Location;
+            if (bmpImage != null)
+            {
+                using (Graphics g = Graphics.FromImage(bmpImage))
+                {
+                    using (Brush brush = new SolidBrush(bColores))
+                    {
+                        float halfBrushSize = brushSize / 2f;
+                        g.SmoothingMode = SmoothingMode.AntiAlias;
+                        for (int i = 0; i < points.Count - 1; i++)
+                        {
+                            g.FillEllipse(brush, points[i].X - halfBrushSize, points[i].Y - halfBrushSize, brushSize, brushSize);
+                            g.DrawLine(new Pen(brush, brushSize), points[i], points[i + 1]);
+                        }
+                    }
+                }
+
+                pbCtrl.Image = bmpImage;
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
-            string fileName = "painted_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".png";
-            using (Bitmap bmp = new Bitmap(pbCtrl.Width, pbCtrl.Height))
+            SaveFileDialog saveDialog = new SaveFileDialog();
+            saveDialog.Filter = "PNG image files (*.png)|*.png";
+            saveDialog.FileName = "painted_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".png";
+            saveDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+
+            if (saveDialog.ShowDialog() == DialogResult.OK)
             {
-                pbCtrl.DrawToBitmap(bmp, pbCtrl.ClientRectangle);
-                bmp.Save(fileName, ImageFormat.Png);
+                bmpImage.Save(saveDialog.FileName, ImageFormat.Png);
+                MessageBox.Show("Image saved as " + saveDialog.FileName);
             }
-            MessageBox.Show("Image saved as " + fileName);
         }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
