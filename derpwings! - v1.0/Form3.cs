@@ -18,20 +18,21 @@ namespace derpwings____v1._0
     public partial class Form3 : Form
     {
         private PictureBox pbCtrl;//canvas and the brushp
-        private Point prevPoint; //pen used to paint on the canvas
+        private Point lastPoint; //pen used to paint on the canvas
         private Color bColores = (Color.FromArgb(255, 0, 0));
         private float brushSize = 10f;
         private SolidBrush sBrush; //the solid brush used to draw
         private List<PointF> points = new List<PointF>();//point list
         private GraphicsPath path = new GraphicsPath(); //the path
-        private Bitmap bmpImage;
+        private Bitmap bmpImage; // the bitmap used to paint
         public Form3(int hs1, int hs2)
         {
             InitializeComponent();
             pbCtrl = new PictureBox();
             pbCtrl = CreatePictureBox(hs1, hs2);
-            pbCtrl.Location = new Point((this.ClientSize.Width - pbCtrl.Width) / 5, 35);
-            this.Controls.Add(pbCtrl);
+            pbCtrl.Location = new Point((this.ClientSize.Width - pbCtrl.Width) / 5, 0);
+            canvasPanel.Controls.Add(pbCtrl);
+            this.Controls.Add(canvasPanel);
             bUpdate();
         }
         private void brushBoxPaint(object sender, PaintEventArgs e)
@@ -40,21 +41,7 @@ namespace derpwings____v1._0
         private PictureBox CreatePictureBox(int hs1, int hs2)
         {
             bmpImage = new Bitmap(hs1, hs2);
-            int Width = hs1, Height = hs2;
-            int newWidth = hs1, newHeight = hs2;
-            if (Width > Height)
-            {
-                newWidth = 1000;
-                newHeight = newWidth * (Height / newWidth);
-                
-            }
-            else if (Width < Height)
-            {
-                newHeight = 563;
-                newWidth = 563 * (Width / newHeight);
-                
-            }
-            pbCtrl.MinimumSize = new Size(1000, 563);
+            pbCtrl.MinimumSize = new Size(hs1, hs2);
             pbCtrl.MaximumSize = pbCtrl.MinimumSize;
             pbCtrl.BackColor = Color.White;
             using (Graphics g = Graphics.FromImage(bmpImage))
@@ -62,17 +49,11 @@ namespace derpwings____v1._0
                 g.Clear(Color.White);
             }
             pbCtrl.Image = bmpImage;
-            pbCtrl.Paint += new PaintEventHandler(PictureBoxPaint);
             pbCtrl.MouseDown += new MouseEventHandler(PictureBoxMouseDown);
             pbCtrl.MouseMove += new MouseEventHandler(PictureBoxMouseMove);
             pbCtrl.MouseUp += new MouseEventHandler(PictureBoxMouseUp);
 
             return pbCtrl;
-        }
-        private void PictureBoxPaint(object sender, PaintEventArgs e)
-        {
-            
-
         }
         private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
@@ -130,57 +111,28 @@ namespace derpwings____v1._0
 
         private void PictureBoxMouseDown(object sender, MouseEventArgs e)
         {
-            if (bmpImage == null)
-            {
-                bmpImage = new Bitmap(Width, Height);
-            }
-
-            points.Clear();
-            points.Add(e.Location);
+            lastPoint = e.Location;
         }
 
         private void PictureBoxMouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button != MouseButtons.Left) return;
 
-            points.Add(e.Location);
-
             using (Graphics g = Graphics.FromImage(bmpImage))
             {
-                using (Brush brush = new SolidBrush(bColores))
-                {
                     float halfBrushSize = brushSize / 2f;
                     g.SmoothingMode = SmoothingMode.AntiAlias;
-                    for (int i = 0; i < points.Count - 1; i++)
-                    {
-                        g.FillEllipse(brush, points[i].X - halfBrushSize, points[i].Y - halfBrushSize, brushSize, brushSize);
-                        g.DrawLine(new Pen(brush, brushSize), points[i], points[i + 1]);
-                    }
-                }
+                    g.FillEllipse(sBrush, e.X - halfBrushSize, e.Y - halfBrushSize, brushSize, brushSize);
+                    g.DrawLine(new Pen(sBrush, brushSize), lastPoint, e.Location);
+                    lastPoint = e.Location;
+
+                pbCtrl.Invalidate(new Rectangle(e.X - (int)(brushSize * 2), e.Y - (int)(brushSize * 2), (int)(brushSize * 4), (int)(brushSize * 4)));
             }
-            pbCtrl.Invalidate(new Rectangle((int)points[points.Count - 2].X, (int)points[points.Count - 2].Y, (int)brushSize + 1, (int)brushSize + 1));
         }
 
         private void PictureBoxMouseUp(object sender, MouseEventArgs e)
         {
-            if (bmpImage != null)
-            {
-                using (Graphics g = Graphics.FromImage(bmpImage))
-                {
-                    using (Brush brush = new SolidBrush(bColores))
-                    {
-                        float halfBrushSize = brushSize / 2f;
-                        g.SmoothingMode = SmoothingMode.AntiAlias;
-                        for (int i = 0; i < points.Count - 1; i++)
-                        {
-                            g.FillEllipse(brush, points[i].X - halfBrushSize, points[i].Y - halfBrushSize, brushSize, brushSize);
-                            g.DrawLine(new Pen(brush, brushSize), points[i], points[i + 1]);
-                        }
-                    }
-                }
-
-                pbCtrl.Image = bmpImage;
-            }
+            pbCtrl.Invalidate(new Rectangle(e.X - (int)(brushSize * 2), e.Y - (int)(brushSize * 2), (int)(brushSize * 4), (int)(brushSize * 4)));
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -198,17 +150,15 @@ namespace derpwings____v1._0
         }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            panel3.Show();
-            panel3.BringToFront();
         }
         private void Form3_Load(object sender, EventArgs e)
         {
-            panel1.SendToBack();
+            canvasPanel.SendToBack();
             pbCtrl.BringToFront(); //already set
         }
         private void Form3_Resize(object sender, EventArgs e)
         {
-            panel1.SendToBack();
+            canvasPanel.SendToBack();
             pbCtrl.BringToFront(); //already set
         }
     }
