@@ -84,6 +84,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackgroundImage = global::derpwings____v1._0.Properties.Resources.bg1;
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.hScrollBar2);

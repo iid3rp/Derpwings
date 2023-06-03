@@ -83,7 +83,6 @@
             // pictureBox3
             // 
             this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox3.Image = global::derpwings____v1._0.Properties.Resources.Untitled73_20230516141609;
             this.pictureBox3.Location = new System.Drawing.Point(1293, 648);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(45, 46);
@@ -95,7 +94,6 @@
             // pictureBox2
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox2.Image = global::derpwings____v1._0.Properties.Resources.Untitled73_20230516141419;
             this.pictureBox2.Location = new System.Drawing.Point(592, 414);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(130, 128);
@@ -108,7 +106,6 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Image = global::derpwings____v1._0.Properties.Resources.dpText;
             this.pictureBox1.Location = new System.Drawing.Point(177, 38);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1033, 328);
@@ -118,7 +115,6 @@
             // pictureBox4
             // 
             this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox4.Image = global::derpwings____v1._0.Properties.Resources.dpBG2;
             this.pictureBox4.Location = new System.Drawing.Point(0, 0);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(1350, 729);
