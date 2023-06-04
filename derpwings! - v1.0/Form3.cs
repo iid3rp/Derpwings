@@ -17,14 +17,15 @@ namespace derpwings____v1._0
 {
     public partial class Form3 : Form
     {
+
         private PictureBox pbCtrl;//canvas and the brushp
         private Point lastPoint; //pen used to paint on the canvas
         private Color bColores = (Color.FromArgb(255, 0, 0));
         private float brushSize = 10f;
         private SolidBrush sBrush; //the solid brush used to draw
-        private List<PointF> points = new List<PointF>();//point list
-        private GraphicsPath path = new GraphicsPath(); //the path
         private Bitmap bmpImage; // the bitmap used to paint
+        private bool isDrawing = false;
+        private int scrollX = 0; // Initialize scroll position to 0
         public Form3(int hs1, int hs2)
         {
             InitializeComponent();
@@ -34,9 +35,6 @@ namespace derpwings____v1._0
             canvasPanel.Controls.Add(pbCtrl);
             this.Controls.Add(canvasPanel);
             bUpdate();
-        }
-        private void brushBoxPaint(object sender, PaintEventArgs e)
-        {
         }
         private PictureBox CreatePictureBox(int hs1, int hs2)
         {
@@ -49,6 +47,7 @@ namespace derpwings____v1._0
                 g.Clear(Color.White);
             }
             pbCtrl.Image = bmpImage;
+            pbCtrl.Paint += new PaintEventHandler(PictureBoxPaint);
             pbCtrl.MouseDown += new MouseEventHandler(PictureBoxMouseDown);
             pbCtrl.MouseMove += new MouseEventHandler(PictureBoxMouseMove);
             pbCtrl.MouseUp += new MouseEventHandler(PictureBoxMouseUp);
@@ -57,82 +56,50 @@ namespace derpwings____v1._0
         }
         private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
-            tSize.Text = hScrollBar1.Value.ToString() + " px.";
+            tSize.Text = "Size: " + hScrollBar1.Value.ToString() + " px.";
             brushSize = hScrollBar1.Value;
             bUpdate();
         }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            Panel colorSection = new Panel();
-            colorSection.Show();
-        }
-
-        private void hScrollBar3_Scroll(object sender, ScrollEventArgs e)
-        {
-            cUpdate(); bUpdate();
-            tRed.Text = hScrollBar3.Value.ToString();
-
-        }
-        private void hScrollBar4_Scroll(object sender, ScrollEventArgs e)
-        {
-            cUpdate(); bUpdate();
-            tGreen.Text = hScrollBar4.Value.ToString();
-        }
-        private void hScrollBar5_Scroll(object sender, ScrollEventArgs e)
-        {
-            cUpdate(); bUpdate();
-            tBlue.Text = hScrollBar5.Value.ToString();
-        }
-        private void hScrollBar6_Scroll(object sender, ScrollEventArgs e)
-        {
-            cUpdate(); bUpdate();
-            tAlpha.Text = hScrollBar6.Value.ToString() + '%';
-        }
-
-        private void cUpdate()
-        {
-            int cRed = hScrollBar3.Value;
-            int cGreen = hScrollBar4.Value;
-            int cBlue = hScrollBar5.Value;
-            int cAlpha = hScrollBar6.Value;
-            Color colores = (Color.FromArgb(cRed, cGreen, cBlue));
-            colorbase.BackColor = colores;
-        }
         private void bUpdate()
         {
-            int bRed = hScrollBar3.Value;
-            int bGreen = hScrollBar4.Value;
-            int bBlue = hScrollBar5.Value;
-            int bAlpha = hScrollBar6.Value;
-            Color bColores = (Color.FromArgb(bRed, bGreen, bBlue));
+            colorbase.BackColor = bColores;
             sBrush = new SolidBrush(color: bColores);
         }
-
+        private void PictureBoxPaint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.TranslateTransform(scrollX, 0);
+        }
         private void PictureBoxMouseDown(object sender, MouseEventArgs e)
         {
-            lastPoint = e.Location;
+            if (e.Button == MouseButtons.Left)
+            {
+                lastPoint = e.Location;
+                isDrawing = true;
+            }
         }
 
         private void PictureBoxMouseMove(object sender, MouseEventArgs e)
         {
-            if (e.Button != MouseButtons.Left) return;
-
-            using (Graphics g = Graphics.FromImage(bmpImage))
+            if (isDrawing)
             {
-                    float halfBrushSize = brushSize / 2f;
+                using (Graphics g = Graphics.FromImage(pbCtrl.Image))
+                {
                     g.SmoothingMode = SmoothingMode.AntiAlias;
-                    g.FillEllipse(sBrush, e.X - halfBrushSize, e.Y - halfBrushSize, brushSize, brushSize);
+                    g.FillEllipse(sBrush, e.X - brushSize / 2, e.Y - brushSize / 2, brushSize, brushSize);
                     g.DrawLine(new Pen(sBrush, brushSize), lastPoint, e.Location);
-                    lastPoint = e.Location;
+                }
 
-                pbCtrl.Invalidate(new Rectangle(e.X - (int)(brushSize * 2), e.Y - (int)(brushSize * 2), (int)(brushSize * 4), (int)(brushSize * 4)));
+                lastPoint = e.Location;
+                pbCtrl.Invalidate();
             }
         }
 
         private void PictureBoxMouseUp(object sender, MouseEventArgs e)
         {
-            pbCtrl.Invalidate(new Rectangle(e.X - (int)(brushSize * 2), e.Y - (int)(brushSize * 2), (int)(brushSize * 4), (int)(brushSize * 4)));
+            if (e.Button == MouseButtons.Left)
+            {
+                isDrawing = false;
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -160,6 +127,23 @@ namespace derpwings____v1._0
         {
             canvasPanel.SendToBack();
             pbCtrl.BringToFront(); //already set
+        }
+
+        private void colorbase_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog();
+            colorDialog.Color = Color.FromArgb(255, 0, 0); // Set the initial color to Red
+
+            if (colorDialog.ShowDialog() == DialogResult.OK)
+            {
+                bColores = colorDialog.Color;
+                bUpdate();
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            pbCtrl.Image = new Bitmap(pbCtrl.Width, pbCtrl.Height);
         }
     }
 
