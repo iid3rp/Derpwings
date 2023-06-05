@@ -36,8 +36,6 @@
             this.tSize = new System.Windows.Forms.Label();
             this.colorbase = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.colorbase)).BeginInit();
@@ -137,35 +135,13 @@
             this.label1.Text = "clear canvas >:(";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 280);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 23);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "br1";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 314);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 23);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "br2";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackgroundImage = global::derpwings____v1._0.Properties.Resources.bgdarkmode;
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tSize);
             this.Controls.Add(this.hScrollBar1);
@@ -198,7 +174,5 @@
         private System.Windows.Forms.PictureBox colorbase;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
     }
 }
