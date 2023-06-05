@@ -25,8 +25,14 @@ namespace derpwings____v1._0
         private SolidBrush sBrush; //the solid brush used to draw
         private Bitmap bmpImage; // the bitmap used to paint
         private bool isDrawing = false;
-        private int scrollX = 0; // Initialize scroll position to 0
-        public Form3(int hs1, int hs2)
+        private GraphicsPath brushPath = new GraphicsPath(); //path to change the shape of the brush
+
+        //brushes
+        private Brush brush1;
+        private Brush brush2;
+        private Brush currentBrush;
+
+        public Form3(int hs1, int hs2) //initialization for pbCtrl
         {
             InitializeComponent();
             pbCtrl = new PictureBox();
@@ -35,8 +41,12 @@ namespace derpwings____v1._0
             canvasPanel.Controls.Add(pbCtrl);
             this.Controls.Add(canvasPanel);
             bUpdate();
+
+            //brush
+            brush1 = new SolidBrush(color: bColores);
+            brush2 = new SolidBrush (color: bColores);
         }
-        private PictureBox CreatePictureBox(int hs1, int hs2)
+        private PictureBox CreatePictureBox(int hs1, int hs2) //creation of pbCtrl
         {
             bmpImage = new Bitmap(hs1, hs2);
             pbCtrl.MinimumSize = new Size(hs1, hs2);
@@ -47,29 +57,26 @@ namespace derpwings____v1._0
                 g.Clear(Color.White);
             }
             pbCtrl.Image = bmpImage;
-            pbCtrl.Paint += new PaintEventHandler(PictureBoxPaint);
             pbCtrl.MouseDown += new MouseEventHandler(PictureBoxMouseDown);
             pbCtrl.MouseMove += new MouseEventHandler(PictureBoxMouseMove);
             pbCtrl.MouseUp += new MouseEventHandler(PictureBoxMouseUp);
 
             return pbCtrl;
         }
-        private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        private void hScrollBar1_Scroll(object sender, ScrollEventArgs e) //brush size
         {
             tSize.Text = "Size: " + hScrollBar1.Value.ToString() + " px.";
             brushSize = hScrollBar1.Value;
             bUpdate();
         }
-        private void bUpdate()
+        private void bUpdate() //brush color
         {
             colorbase.BackColor = bColores;
-            sBrush = new SolidBrush(color: bColores);
+            currentBrush = new SolidBrush(color: bColores);
         }
-        private void PictureBoxPaint(object sender, PaintEventArgs e)
-        {
-            e.Graphics.TranslateTransform(scrollX, 0);
-        }
-        private void PictureBoxMouseDown(object sender, MouseEventArgs e)
+        
+        //CANVAS RELATED!!!!!
+        private void PictureBoxMouseDown(object sender, MouseEventArgs e) //when i hold the mouse
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -77,16 +84,15 @@ namespace derpwings____v1._0
                 isDrawing = true;
             }
         }
-
-        private void PictureBoxMouseMove(object sender, MouseEventArgs e)
+        private void PictureBoxMouseMove(object sender, MouseEventArgs e) //when i hold and move the mouse
         {
             if (isDrawing)
             {
                 using (Graphics g = Graphics.FromImage(pbCtrl.Image))
                 {
                     g.SmoothingMode = SmoothingMode.AntiAlias;
-                    g.FillEllipse(sBrush, e.X - brushSize / 2, e.Y - brushSize / 2, brushSize, brushSize);
-                    g.DrawLine(new Pen(sBrush, brushSize), lastPoint, e.Location);
+                    g.FillEllipse(currentBrush, e.X - brushSize / 2, e.Y - brushSize / 2, brushSize, brushSize);
+                    g.DrawLine(new Pen(currentBrush, brushSize), lastPoint, e.Location);
                 }
 
                 lastPoint = e.Location;
@@ -94,7 +100,7 @@ namespace derpwings____v1._0
             }
         }
 
-        private void PictureBoxMouseUp(object sender, MouseEventArgs e)
+        private void PictureBoxMouseUp(object sender, MouseEventArgs e) //wehn i release the mouse
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -102,7 +108,7 @@ namespace derpwings____v1._0
             }
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e) //saving the image
         {
             SaveFileDialog saveDialog = new SaveFileDialog();
             saveDialog.Filter = "PNG image files (*.png)|*.png";
@@ -129,7 +135,7 @@ namespace derpwings____v1._0
             pbCtrl.BringToFront(); //already set
         }
 
-        private void colorbase_Click(object sender, EventArgs e)
+        private void colorbase_Click(object sender, EventArgs e) //color for the brush
         {
             ColorDialog colorDialog = new ColorDialog();
             colorDialog.Color = Color.FromArgb(255, 0, 0); // Set the initial color to Red
@@ -137,13 +143,43 @@ namespace derpwings____v1._0
             if (colorDialog.ShowDialog() == DialogResult.OK)
             {
                 bColores = colorDialog.Color;
-                bUpdate();
+                bUpdate(); //back to update the brush color
             }
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
             pbCtrl.Image = new Bitmap(pbCtrl.Width, pbCtrl.Height);
+        }
+
+        //BRUSHES!!!!!
+        private void label3_Click(object sender, EventArgs e)
+        {
+            brushPath.Reset();
+            brushPath.AddEllipse(0, 0, 50, 50);
+            currentBrush = brush1;
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            brushPath.Reset();
+            PointF[] points = new PointF[]
+            {
+                new PointF(50, 0),
+                new PointF(60, 40),
+                new PointF(100, 40),
+                new PointF(70, 60),
+                new PointF(80, 100),
+                new PointF(50, 80),
+                new PointF(20, 100),
+                new PointF(30, 60),
+                new PointF(0, 40),
+                new PointF(40, 40)
+            };
+            GraphicsPath path = new GraphicsPath();
+            path.AddPolygon(points);
+            path.CloseFigure();
+            currentBrush = brush2;
         }
     }
 

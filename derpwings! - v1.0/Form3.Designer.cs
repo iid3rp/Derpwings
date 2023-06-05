@@ -36,6 +36,8 @@
             this.tSize = new System.Windows.Forms.Label();
             this.colorbase = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.colorbase)).BeginInit();
@@ -45,7 +47,7 @@
             // 
             this.hScrollBar1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.hScrollBar1.LargeChange = 1;
-            this.hScrollBar1.Location = new System.Drawing.Point(48, 703);
+            this.hScrollBar1.Location = new System.Drawing.Point(57, 655);
             this.hScrollBar1.Maximum = 1000;
             this.hScrollBar1.Minimum = 1;
             this.hScrollBar1.Name = "hScrollBar1";
@@ -62,14 +64,14 @@
             this.canvasPanel.ForeColor = System.Drawing.Color.Transparent;
             this.canvasPanel.Location = new System.Drawing.Point(48, 0);
             this.canvasPanel.Name = "canvasPanel";
-            this.canvasPanel.Size = new System.Drawing.Size(1302, 680);
+            this.canvasPanel.Size = new System.Drawing.Size(1221, 624);
             this.canvasPanel.TabIndex = 4;
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::derpwings____v1._0.Properties.Resources.erasersetting;
-            this.pictureBox2.Location = new System.Drawing.Point(2, 133);
+            this.pictureBox2.Location = new System.Drawing.Point(2, 206);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(40, 40);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -80,7 +82,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::derpwings____v1._0.Properties.Resources.pencilsettings;
-            this.pictureBox1.Location = new System.Drawing.Point(2, 101);
+            this.pictureBox1.Location = new System.Drawing.Point(2, 87);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(40, 40);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -93,7 +95,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label2.Location = new System.Drawing.Point(1275, 695);
+            this.label2.Location = new System.Drawing.Point(1030, 647);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 25);
             this.label2.TabIndex = 0;
@@ -105,20 +107,19 @@
             this.tSize.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tSize.AutoSize = true;
             this.tSize.BackColor = System.Drawing.Color.Transparent;
-            this.tSize.Font = new System.Drawing.Font("Comic Sans MS", 9F);
+            this.tSize.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tSize.ForeColor = System.Drawing.Color.LightGray;
-            this.tSize.Location = new System.Drawing.Point(45, 683);
+            this.tSize.Location = new System.Drawing.Point(68, 629);
             this.tSize.Name = "tSize";
-            this.tSize.Size = new System.Drawing.Size(72, 17);
+            this.tSize.Size = new System.Drawing.Size(97, 23);
             this.tSize.TabIndex = 5;
             this.tSize.Text = "Size: 10 px.";
             // 
             // colorbase
             // 
-            this.colorbase.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.colorbase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.colorbase.Image = global::derpwings____v1._0.Properties.Resources.transparent1;
-            this.colorbase.Location = new System.Drawing.Point(4, 170);
+            this.colorbase.Location = new System.Drawing.Point(4, 147);
             this.colorbase.Name = "colorbase";
             this.colorbase.Size = new System.Drawing.Size(38, 38);
             this.colorbase.TabIndex = 13;
@@ -129,20 +130,42 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Location = new System.Drawing.Point(1145, 696);
+            this.label1.Location = new System.Drawing.Point(888, 647);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 25);
             this.label1.TabIndex = 14;
             this.label1.Text = "clear canvas >:(";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(7, 280);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 23);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "br1";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(7, 314);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(38, 23);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "br2";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
             // Form3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackgroundImage = global::derpwings____v1._0.Properties.Resources.bgdarkmode;
-            this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tSize);
             this.Controls.Add(this.hScrollBar1);
@@ -154,6 +177,7 @@
             this.ForeColor = System.Drawing.Color.Black;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Form3";
+            this.ShowInTaskbar = false;
             this.Text = "Derpwing Process!";
             this.Load += new System.EventHandler(this.Form3_Load);
             this.Resize += new System.EventHandler(this.Form3_Resize);
@@ -174,5 +198,7 @@
         private System.Windows.Forms.PictureBox colorbase;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
