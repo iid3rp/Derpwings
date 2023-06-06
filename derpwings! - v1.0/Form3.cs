@@ -46,7 +46,7 @@ namespace derpwings____v1._0
             pbCtrl.BackColor = Color.White;
             using (Graphics g = Graphics.FromImage(bmpImage))
             {
-                g.Clear(Color.Transparent);
+                g.Clear(Color.White);
             }
             pbCtrl.Image = bmpImage;
             pbCtrl.MouseDown += new MouseEventHandler(PictureBoxMouseDown);
