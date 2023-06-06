@@ -22,11 +22,12 @@ namespace derpwings____v1._0
         private Point lastPoint; //pen used to paint on the canvas
         private Color bColores = (Color.FromArgb(255, 0, 0));
         private float brushSize = 10f;
-        private SolidBrush sBrush; //the solid brush used to draw
+        
         private Bitmap bmpImage; // the bitmap used to paint
         private bool isDrawing = false;
-        private GraphicsPath brushPath = new GraphicsPath(); //path to change the shape of the brush
 
+        //brushes!!!
+        private SolidBrush sBrush; //the solid brush used to draw
         public Form3(int hs1, int hs2) //initialization for pbCtrl
         {
             InitializeComponent();
@@ -45,7 +46,7 @@ namespace derpwings____v1._0
             pbCtrl.BackColor = Color.White;
             using (Graphics g = Graphics.FromImage(bmpImage))
             {
-                g.Clear(Color.White);
+                g.Clear(Color.Transparent);
             }
             pbCtrl.Image = bmpImage;
             pbCtrl.MouseDown += new MouseEventHandler(PictureBoxMouseDown);
