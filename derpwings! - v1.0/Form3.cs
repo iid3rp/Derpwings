@@ -194,6 +194,18 @@ namespace derpwings____v1._0
             sBrush = new SolidBrush(color: trans);
             isEraser = true;
         }
+
+        private void bColoresH_Click(object sender, EventArgs e)
+        {
+            Form4 Form4 = new Form4();
+            DialogResult r = Form4.ShowDialog();
+
+            if (r == DialogResult.OK) 
+            {
+                //bColores = Form4.bColores();
+            }
+        }
+
         private void savingDialog()
         {
             SaveFileDialog saveDialog = new SaveFileDialog();

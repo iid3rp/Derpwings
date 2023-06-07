@@ -37,9 +37,11 @@
             this.colorbase = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.bColoresH = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.colorbase)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bColoresH)).BeginInit();
             this.SuspendLayout();
             // 
             // hScrollBar1
@@ -151,12 +153,22 @@
             this.label3.Text = "save white";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
+            // bColoresH
+            // 
+            this.bColoresH.Location = new System.Drawing.Point(4, 223);
+            this.bColoresH.Name = "bColoresH";
+            this.bColoresH.Size = new System.Drawing.Size(38, 33);
+            this.bColoresH.TabIndex = 16;
+            this.bColoresH.TabStop = false;
+            this.bColoresH.Click += new System.EventHandler(this.bColoresH_Click);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackgroundImage = global::derpwings____v1._0.Properties.Resources.bgdarkmode;
             this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.bColoresH);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
@@ -177,6 +189,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.colorbase)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bColoresH)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,5 +205,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox bColoresH;
     }
 }
