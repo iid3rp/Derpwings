@@ -21,10 +21,14 @@ namespace derpwings____v1._0
         private PictureBox pbCtrl;//canvas and the brushp
         private Point lastPoint; //pen used to paint on the canvas
         private Color bColores = (Color.FromArgb(255, 0, 0));
+        private Color trans = (Color.FromArgb(0,0,0));  
         private float brushSize = 10f;
         
+        //bitmaps
         private Bitmap bmpImage; // the bitmap used to paint
-        private bool isDrawing = false;
+        private Bitmap white; //white bg bitmap
+        private bool isDrawing = false, isEraser = false;
+
 
         //brushes!!!
         private SolidBrush sBrush; //the solid brush used to draw
@@ -33,20 +37,21 @@ namespace derpwings____v1._0
             InitializeComponent();
             pbCtrl = new PictureBox();
             pbCtrl = CreatePictureBox(hs1, hs2);
-            pbCtrl.Location = new Point((this.ClientSize.Width - pbCtrl.Width) / 5, 0);
+            pbCtrl.Location = new Point(0, 0);
             canvasPanel.Controls.Add(pbCtrl);
             this.Controls.Add(canvasPanel);
             bUpdate();
         }
         private PictureBox CreatePictureBox(int hs1, int hs2) //creation of pbCtrl
-        {
-            bmpImage = new Bitmap(hs1, hs2);
+        { 
+            //this is for the canvas
+            bmpImage = new Bitmap(hs1, hs2, PixelFormat.Format32bppArgb);
             pbCtrl.MinimumSize = new Size(hs1, hs2);
             pbCtrl.MaximumSize = pbCtrl.MinimumSize;
             pbCtrl.BackColor = Color.White;
             using (Graphics g = Graphics.FromImage(bmpImage))
             {
-                g.Clear(Color.White);
+                g.Clear(Color.Transparent);
             }
             pbCtrl.Image = bmpImage;
             pbCtrl.MouseDown += new MouseEventHandler(PictureBoxMouseDown);
@@ -73,22 +78,49 @@ namespace derpwings____v1._0
             if (e.Button == MouseButtons.Left)
             {
                 lastPoint = e.Location;
-                isDrawing = true;
+                   isDrawing = true;
+
             }
         }
-        private void PictureBoxMouseMove(object sender, MouseEventArgs e) //when i hold and move the mouse
+        //when i hold and move the mouse
+        private void PictureBoxMouseMove(object sender, MouseEventArgs e) 
         {
             if (isDrawing)
             {
-                using (Graphics g = Graphics.FromImage(pbCtrl.Image))
+                if (isEraser)
                 {
-                    g.SmoothingMode = SmoothingMode.AntiAlias;
-                    g.FillEllipse(sBrush, e.X - brushSize / 2, e.Y - brushSize / 2, brushSize, brushSize);
-                    g.DrawLine(new Pen(sBrush, brushSize), lastPoint, e.Location);
+                    using (Graphics g = Graphics.FromImage(bmpImage))
+                    {
+                        int halfSize = (int)(brushSize / 2);
+                        for (int x = e.X - halfSize; x <= e.X + halfSize; x++)
+                        {
+                            for (int y = e.Y - halfSize; y <= e.Y + halfSize; y++)
+                            {
+                                // Calculate the distance from the current pixel to the center of the eraser brush size
+                                double distance = Math.Sqrt(Math.Pow(x - e.X, 2) + Math.Pow(y - e.Y, 2));
+
+                                // Only set the pixel to transparent if its distance to the center is less than or equal to the eraser radius
+                                if (distance <= halfSize || distance >= halfSize)
+                                {
+                                    bmpImage.SetPixel(x, y, Color.Transparent);
+                                }
+                            }
+                        }
+                    }
+
+                }
+                else
+                {
+                    using (Graphics g = Graphics.FromImage(pbCtrl.Image))
+                    {
+                        g.SmoothingMode = SmoothingMode.AntiAlias;
+                        g.FillEllipse(sBrush, e.X - brushSize / 2, e.Y - brushSize / 2, brushSize, brushSize);
+                        g.DrawLine(new Pen(sBrush, brushSize), lastPoint, e.Location);
+                    }
                 }
 
                 lastPoint = e.Location;
-                pbCtrl.Invalidate();
+                pbCtrl.Invalidate(); //pbReview.Invalidate();
             }
         }
 
@@ -98,23 +130,21 @@ namespace derpwings____v1._0
             {
                 isDrawing = false;
             }
+
         }
 
         private void label2_Click(object sender, EventArgs e) //saving the image
         {
-            SaveFileDialog saveDialog = new SaveFileDialog();
-            saveDialog.Filter = "PNG image files (*.png)|*.png";
-            saveDialog.FileName = "painted_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".png";
-            saveDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
-
-            if (saveDialog.ShowDialog() == DialogResult.OK)
+            white = new Bitmap(pbCtrl.Width, pbCtrl.Height, PixelFormat.Format32bppRgb);
+            using(Graphics g = Graphics.FromImage(white))
             {
-                bmpImage.Save(saveDialog.FileName, ImageFormat.Png);
-                MessageBox.Show("Image saved as " + saveDialog.FileName);
+                g.DrawImage(bmpImage, 0, 0);
             }
+            savingDialog();
         }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            isEraser = false; bUpdate();
         }
         private void Form3_Load(object sender, EventArgs e)
         {
@@ -125,6 +155,7 @@ namespace derpwings____v1._0
         {
             canvasPanel.SendToBack();
             pbCtrl.BringToFront(); //already set
+
         }
 
         private void colorbase_Click(object sender, EventArgs e) //color for the brush
@@ -142,6 +173,39 @@ namespace derpwings____v1._0
         private void label1_Click(object sender, EventArgs e)
         {
             pbCtrl.Image = new Bitmap(pbCtrl.Width, pbCtrl.Height);
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            white = new Bitmap(pbCtrl.Width, pbCtrl.Height, PixelFormat.Format32bppRgb);
+            using (Graphics g = Graphics.FromImage(white))
+            {
+                g.Clear(Color.White);
+            }
+            using (Graphics g = Graphics.FromImage(white))
+            {
+                g.DrawImage(bmpImage, 0, 0);
+            }
+           
+            savingDialog();
+        }
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            sBrush = new SolidBrush(color: trans);
+            isEraser = true;
+        }
+        private void savingDialog()
+        {
+            SaveFileDialog saveDialog = new SaveFileDialog();
+            saveDialog.Filter = "PNG image files (*.png)|*.png";
+            saveDialog.FileName = "painted_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".png";
+            saveDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+
+            if (saveDialog.ShowDialog() == DialogResult.OK)
+            {
+                white.Save(saveDialog.FileName, ImageFormat.Png);
+                MessageBox.Show("Image saved as " + saveDialog.FileName);
+            }
         }
     }
 

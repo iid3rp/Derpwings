@@ -36,6 +36,7 @@
             this.tSize = new System.Windows.Forms.Label();
             this.colorbase = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.colorbase)).BeginInit();
@@ -56,9 +57,13 @@
             // 
             // canvasPanel
             // 
+            this.canvasPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.canvasPanel.AutoScroll = true;
+            this.canvasPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.canvasPanel.BackColor = System.Drawing.Color.DarkGray;
             this.canvasPanel.BackgroundImage = global::derpwings____v1._0.Properties.Resources.bgdarkmode;
+            this.canvasPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.canvasPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.canvasPanel.ForeColor = System.Drawing.Color.Transparent;
             this.canvasPanel.Location = new System.Drawing.Point(48, 12);
             this.canvasPanel.Name = "canvasPanel";
@@ -69,12 +74,13 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::derpwings____v1._0.Properties.Resources.erasersetting;
-            this.pictureBox2.Location = new System.Drawing.Point(2, 206);
+            this.pictureBox2.Location = new System.Drawing.Point(2, 133);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(40, 40);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox1
             // 
@@ -93,7 +99,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label2.Location = new System.Drawing.Point(1295, 715);
+            this.label2.Location = new System.Drawing.Point(1131, 672);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 25);
             this.label2.TabIndex = 0;
@@ -117,7 +123,7 @@
             // 
             this.colorbase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.colorbase.Image = global::derpwings____v1._0.Properties.Resources.transparent1;
-            this.colorbase.Location = new System.Drawing.Point(4, 147);
+            this.colorbase.Location = new System.Drawing.Point(4, 283);
             this.colorbase.Name = "colorbase";
             this.colorbase.Size = new System.Drawing.Size(38, 38);
             this.colorbase.TabIndex = 13;
@@ -128,12 +134,22 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Location = new System.Drawing.Point(1165, 715);
+            this.label1.Location = new System.Drawing.Point(908, 672);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 25);
             this.label1.TabIndex = 14;
             this.label1.Text = "clear canvas >:(";
             this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(1273, 674);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(85, 23);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "save white";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // Form3
             // 
@@ -141,6 +157,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackgroundImage = global::derpwings____v1._0.Properties.Resources.bgdarkmode;
             this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tSize);
@@ -174,5 +191,6 @@
         private System.Windows.Forms.PictureBox colorbase;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
     }
 }
