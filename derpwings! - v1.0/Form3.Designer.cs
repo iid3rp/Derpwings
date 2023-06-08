@@ -34,13 +34,12 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tSize = new System.Windows.Forms.Label();
-            this.colorbase = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.bColoresH = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.colorbase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bColoresH)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,8 +61,7 @@
             this.canvasPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.canvasPanel.AutoScroll = true;
             this.canvasPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.canvasPanel.BackColor = System.Drawing.Color.DarkGray;
-            this.canvasPanel.BackgroundImage = global::derpwings____v1._0.Properties.Resources.bgdarkmode;
+            this.canvasPanel.BackColor = System.Drawing.Color.Gray;
             this.canvasPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.canvasPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.canvasPanel.ForeColor = System.Drawing.Color.Transparent;
@@ -121,17 +119,6 @@
             this.tSize.TabIndex = 5;
             this.tSize.Text = "Size: 10 px.";
             // 
-            // colorbase
-            // 
-            this.colorbase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.colorbase.Image = global::derpwings____v1._0.Properties.Resources.transparent1;
-            this.colorbase.Location = new System.Drawing.Point(4, 283);
-            this.colorbase.Name = "colorbase";
-            this.colorbase.Size = new System.Drawing.Size(38, 38);
-            this.colorbase.TabIndex = 13;
-            this.colorbase.TabStop = false;
-            this.colorbase.Click += new System.EventHandler(this.colorbase_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -155,12 +142,24 @@
             // 
             // bColoresH
             // 
-            this.bColoresH.Location = new System.Drawing.Point(4, 223);
+            this.bColoresH.BackColor = System.Drawing.Color.Red;
+            this.bColoresH.Location = new System.Drawing.Point(2, 179);
             this.bColoresH.Name = "bColoresH";
-            this.bColoresH.Size = new System.Drawing.Size(38, 33);
+            this.bColoresH.Size = new System.Drawing.Size(40, 40);
             this.bColoresH.TabIndex = 16;
             this.bColoresH.TabStop = false;
             this.bColoresH.Click += new System.EventHandler(this.bColoresH_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(6, 340);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(36, 54);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "eye\r\ndrop\r\nper\r\n";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // Form3
             // 
@@ -168,13 +167,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackgroundImage = global::derpwings____v1._0.Properties.Resources.bgdarkmode;
             this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.bColoresH);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tSize);
             this.Controls.Add(this.hScrollBar1);
-            this.Controls.Add(this.colorbase);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.canvasPanel);
@@ -188,7 +187,6 @@
             this.Resize += new System.EventHandler(this.Form3_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.colorbase)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bColoresH)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -201,10 +199,10 @@
         private System.Windows.Forms.Label tSize;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox colorbase;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox bColoresH;
+        private System.Windows.Forms.Label label4;
     }
 }
