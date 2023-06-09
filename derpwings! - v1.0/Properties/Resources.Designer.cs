@@ -389,5 +389,15 @@ namespace derpwings____v1._0.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vector_transparent_checkerboard_transparent_pattern_background_546559_434 {
+            get {
+                object obj = ResourceManager.GetObject("vector-transparent-checkerboard-transparent-pattern-background_546559-434", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

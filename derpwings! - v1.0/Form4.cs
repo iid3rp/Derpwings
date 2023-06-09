@@ -14,10 +14,15 @@ namespace derpwings____v1._0
     {
         private Color bColores;
         private int bAlpha, bRed, bGreen, bBlue;
-        public Form4()
+        public Form4(Color Form4bColores)
         {
             InitializeComponent();
+            bColores = Form4bColores;
             bColoresPrev.BackColor = bColores;
+            alpha.Value = bColores.A; bAlpha = bColores.A;
+            red.Value = bColores.R; bRed = bColores.R;
+            green.Value = bColores.G; bGreen = bColores.G;
+            blue.Value = bColores.B; bBlue = bColores.B;
         }
 
         private void Form4_Load(object sender, EventArgs e)
@@ -453,35 +458,32 @@ namespace derpwings____v1._0
         private void label3_Click(object sender, EventArgs e)
         {
 
-            bColores = (Color.FromArgb(255, 0, 0)); exit();
+            bColores = bColoresPrev.BackColor; exit();
         }
 
         private void red_Scroll(object sender, ScrollEventArgs e)
         {
-            int bRed = red.Value;
-            Color cUpdate = Color.FromArgb(bAlpha, bRed, bGreen, bBlue);
-            bColores = cUpdate; bColoresPrev.BackColor = cUpdate;
+            bRed = red.Value; cUpdate();
         }
 
         private void green_Scroll(object sender, ScrollEventArgs e)
         {
-            int bGreen = green.Value;
-            Color cUpdate = Color.FromArgb(bAlpha, bRed, bGreen, bBlue);
-            bColores = cUpdate; bColoresPrev.BackColor = cUpdate;
+            bGreen = green.Value; cUpdate();
         }
 
         private void blue_Scroll(object sender, ScrollEventArgs e)
         {
-            int bBlue = blue.Value;
-            Color cUpdate = Color.FromArgb(bAlpha, bRed, bGreen, bBlue);
-            bColores = cUpdate; bColoresPrev.BackColor = cUpdate;
+            bBlue = blue.Value; cUpdate();
         }
 
         private void alpha_Scroll(object sender, ScrollEventArgs e)
         {
-            int bAlpha = alpha.Value;
-            Color cUpdate = Color.FromArgb(bAlpha, bRed, bGreen, bBlue);
-            bColores = cUpdate; bColoresPrev.BackColor = cUpdate;
+            bAlpha = alpha.Value; cUpdate();
+        }
+        private void cUpdate()
+        {
+            bColores = (Color.FromArgb(bAlpha, bRed, bGreen, bBlue));
+            bColoresPrev.BackColor = bColores;
         }
 
             

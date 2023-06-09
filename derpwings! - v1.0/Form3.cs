@@ -26,7 +26,6 @@ namespace derpwings____v1._0
 
         //bitmaps
         private Bitmap bmpImage; // the eraser of the canvas
-        private Bitmap white; //white bg bitmap
 
         private bool isDrawing = false, isEraser = false, isEyedropper = false;
 
@@ -55,6 +54,7 @@ namespace derpwings____v1._0
             pbCtrl.MaximumSize = pbCtrl.MinimumSize;
             pbCtrl.BackColor = Color.Transparent;
             pbCtrl.Image = bmpImage;
+            pbCtrl.MouseClick += new MouseEventHandler(PictureBoxClick);
             pbCtrl.MouseDown += new MouseEventHandler(PictureBoxMouseDown);
             pbCtrl.MouseMove += new MouseEventHandler(PictureBoxMouseMove);
             pbCtrl.MouseUp += new MouseEventHandler(PictureBoxMouseUp);
@@ -74,6 +74,22 @@ namespace derpwings____v1._0
         }
         
         //CANVAS RELATED!!!!!
+        private void PictureBoxClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                using (Graphics g = Graphics.FromImage(pbCtrl.Image))
+                {
+                    g.SmoothingMode = SmoothingMode.AntiAlias;
+                    g.FillEllipse(sBrush, e.X - brushSize / 2, e.Y - brushSize / 2, brushSize, brushSize);
+                }
+                pbCtrl.Invalidate();
+            }
+            if (e.Button == MouseButtons.Right)
+            {
+                bColores = bmpImage.GetPixel(e.X, e.Y); bUpdate();
+            }
+        }
         private void PictureBoxMouseDown(object sender, MouseEventArgs e) //when i hold the mouse
         {
             if (e.Button == MouseButtons.Left || e.Button == MouseButtons.Right)
@@ -83,6 +99,7 @@ namespace derpwings____v1._0
             }
             if (e.Button == MouseButtons.Right)
             {
+                bColores = bmpImage.GetPixel(e.X, e.Y); bUpdate();
                 isEraser = true;
             }
         }
@@ -96,6 +113,7 @@ namespace derpwings____v1._0
                     {
                         g.SmoothingMode = SmoothingMode.AntiAlias;
                         g.FillEllipse(sBrush, e.X - brushSize / 2, e.Y - brushSize / 2, brushSize, brushSize);
+                        //g.FillRectangle(sBrush, e.X - brushSize / 2, e.Y - brushSize / 2, brushSize, brushSize);
                         g.DrawLine(new Pen(sBrush, brushSize), lastPoint, e.Location);
                     }
                 lastPoint = e.Location;
@@ -139,9 +157,7 @@ namespace derpwings____v1._0
                     }
                 }
             }
-            
         }
-
         private void PictureBoxMouseUp(object sender, MouseEventArgs e) //wehn i release the mouse
         {
             if (e.Button == MouseButtons.Left || e.Button == MouseButtons.Right)
@@ -155,12 +171,9 @@ namespace derpwings____v1._0
 
         private void label2_Click(object sender, EventArgs e) //saving the image
         {
-            white = new Bitmap(pbCtrl.Width, pbCtrl.Height, PixelFormat.Format32bppRgb);
-            using(Graphics g = Graphics.FromImage(white))
-            {
-                g.DrawImage(bmpImage, 0, 0);
-            }
-            savingDialog();
+            Bitmap savingImage = bmpImage;
+            Form save = new save(savingImage);
+            save.ShowDialog();
         }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -181,21 +194,6 @@ namespace derpwings____v1._0
         {
             pbCtrl.Image = new Bitmap(pbCtrl.Width, pbCtrl.Height);
         }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-            white = new Bitmap(pbCtrl.Width, pbCtrl.Height, PixelFormat.Format32bppRgb);
-            using (Graphics g = Graphics.FromImage(white))
-            {
-                g.Clear(Color.White);
-            }
-            using (Graphics g = Graphics.FromImage(white))
-            {
-                g.DrawImage(bmpImage, 0, 0);
-            }
-           
-            savingDialog();
-        }
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             sBrush = new SolidBrush(Color.Transparent);
@@ -204,32 +202,14 @@ namespace derpwings____v1._0
 
         private void bColoresH_Click(object sender, EventArgs e)
         {
-            Form4 Form4 = new Form4();
+            Color Form4bColores = bColores;
+            Form4 Form4 = new Form4(Form4bColores);
             DialogResult r = Form4.ShowDialog();
 
             if (r == DialogResult.OK) 
             {
                 bColores = Form4.bColoresPicker();
                 bUpdate();
-            }
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-            isEyedropper = true;
-        }
-
-        private void savingDialog()
-        {
-            SaveFileDialog saveDialog = new SaveFileDialog();
-            saveDialog.Filter = "PNG image files (*.png)|*.png";
-            saveDialog.FileName = "painted_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".png";
-            saveDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
-
-            if (saveDialog.ShowDialog() == DialogResult.OK)
-            {
-                white.Save(saveDialog.FileName, ImageFormat.Png);
-                MessageBox.Show("Image saved as " + saveDialog.FileName);
             }
         }
     }
