@@ -445,6 +445,70 @@ namespace derpwings____v1._0
         {
             bColores = pictureBox13o8.BackColor; exit();
         }
+        private void pictureBox14o1_Click(object sender, EventArgs e)
+        {
+            bColores = pictureBox14o1.BackColor; exit();
+        }
+        private void pictureBox14o2_Click(object sender, EventArgs e)
+        {
+            bColores = pictureBox14o2.BackColor; exit();
+        }
+        private void pictureBox14o3_Click(object sender, EventArgs e)
+        {
+            bColores = pictureBox14o3.BackColor; exit();
+        }
+        private void pictureBox14o4_Click(object sender, EventArgs e)
+        {
+            bColores = pictureBox14o4.BackColor; exit();
+        }
+        private void pictureBox14o5_Click(object sender, EventArgs e)
+        {
+            bColores = pictureBox14o5.BackColor; exit();
+        }
+        private void pictureBox14o6_Click(object sender, EventArgs e)
+        {
+            bColores = pictureBox14o6.BackColor; exit();
+        }
+        private void pictureBox14o7_Click(object sender, EventArgs e)
+        {
+            bColores = pictureBox14o7.BackColor; exit();
+        }
+        private void pictureBox14o8_Click(object sender, EventArgs e)
+        {
+            bColores = pictureBox14o8.BackColor; exit();
+        }
+        private void pictureBox15o1_Click(object sender, EventArgs e)
+        {
+            bColores = pictureBox15o1.BackColor; exit();
+        }
+        private void pictureBox15o2_Click(object sender, EventArgs e)
+        {
+            bColores = pictureBox15o2.BackColor; exit();
+        }
+        private void pictureBox15o3_Click(object sender, EventArgs e)
+        {
+            bColores = pictureBox15o3.BackColor; exit();
+        }
+        private void pictureBox15o4_Click(object sender, EventArgs e)
+        {
+            bColores = pictureBox15o4.BackColor; exit();
+        }
+        private void pictureBox15o5_Click(object sender, EventArgs e)
+        {
+            bColores = pictureBox15o5.BackColor; exit();
+        }
+        private void pictureBox15o6_Click(object sender, EventArgs e)
+        {
+            bColores = pictureBox15o6.BackColor; exit();
+        }
+        private void pictureBox15o7_Click(object sender, EventArgs e)
+        {
+            bColores = pictureBox15o7.BackColor; exit();
+        }
+        private void pictureBox15o8_Click(object sender, EventArgs e)
+        {
+            bColores = pictureBox15o8.BackColor; exit();
+        }
         public void exit() //VERY IMPORTANT!!
         {
             this.DialogResult = DialogResult.OK;
