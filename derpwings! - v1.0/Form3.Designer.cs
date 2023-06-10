@@ -36,6 +36,7 @@
             this.tSize = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.bColoresH = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bColoresH)).BeginInit();
@@ -62,6 +63,7 @@
             this.canvasPanel.BackColor = System.Drawing.Color.White;
             this.canvasPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.canvasPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.canvasPanel.Cursor = System.Windows.Forms.Cursors.Cross;
             this.canvasPanel.ForeColor = System.Drawing.Color.Transparent;
             this.canvasPanel.Location = new System.Drawing.Point(48, 12);
             this.canvasPanel.Name = "canvasPanel";
@@ -91,6 +93,7 @@
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.brushDClick);
             // 
             // label2
             // 
@@ -141,12 +144,24 @@
             this.bColoresH.TabStop = false;
             this.bColoresH.Click += new System.EventHandler(this.bColoresH_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(7, 356);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 54);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "pre\r\nview\r\nbox\r\n";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackgroundImage = global::derpwings____v1._0.Properties.Resources.bgdarkmode;
             this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bColoresH);
@@ -180,5 +195,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox bColoresH;
+        private System.Windows.Forms.Label label3;
     }
 }
