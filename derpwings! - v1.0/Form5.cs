@@ -25,32 +25,36 @@ namespace derpwings____v1._0
             smoothing = bSmoothing; dLine = bDline; particle = bParticle; pps = bPps;
             triangle = bTriangle; ellipse = bEllipse;  rectangle = bRectangle;
             brushsize = bBrushSize; stability = bStability;
+            hScrollBar3.Value = (int)brushsize;
+            if (ellipse)  
+                isEllipse();
+            if (rectangle)
+                isRectangle();
+            if (smoothing)
+                checkBox1.Checked = true;
+            else
+                checkBox1.Checked = false;
+            if (dLine)
+                checkBox2.Checked = true;
+            else
+                checkBox2.Checked = false;
+            if (particle)
+                checkBox3.Checked = true;
+            else
+                checkBox3.Checked = false;
+            hScrollBar1.Value = (int)pps;
+            textBox1.Text = hScrollBar1.Value.ToString();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            pictureBox1.BorderStyle = BorderStyle.Fixed3D;
-            pictureBox2.BorderStyle = BorderStyle.None;
-            pictureBox3.BorderStyle = BorderStyle.None;
-            ellipse = true; rectangle = false; triangle = false;
+            isEllipse();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            pictureBox2.BorderStyle = BorderStyle.Fixed3D;
-            pictureBox3.BorderStyle = BorderStyle.None;
-            pictureBox1.BorderStyle = BorderStyle.None;
-            rectangle = true; ellipse = false; triangle = false;
+            isRectangle();
         }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            pictureBox3.BorderStyle = BorderStyle.Fixed3D;
-            pictureBox2.BorderStyle = BorderStyle.None;
-            pictureBox1.BorderStyle = BorderStyle.None;
-            triangle = true; ellipse = false; rectangle = false;
-        }
-
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox1.Checked)
@@ -69,9 +73,15 @@ namespace derpwings____v1._0
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox3.Checked)
+            {
                 particle = true;
+                particleMode.Enabled = true;
+            }
             if (!checkBox3.Checked)
+            {
                 particle = false;
+                particleMode.Enabled = false;
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -105,6 +115,18 @@ namespace derpwings____v1._0
         private void hScrollBar3_Scroll(object sender, ScrollEventArgs e)
         {
             brushsize = hScrollBar3.Value;
+        }
+        private void isEllipse()
+        {
+            pictureBox1.BorderStyle = BorderStyle.Fixed3D;
+            pictureBox2.BorderStyle = BorderStyle.None;
+            ellipse = true; rectangle = false;
+        }
+        private void isRectangle()
+        {
+            pictureBox2.BorderStyle = BorderStyle.Fixed3D;
+            pictureBox1.BorderStyle = BorderStyle.None;
+            ellipse = false; rectangle = true;
         }
         //RETURNING
         public bool bSmoothing()

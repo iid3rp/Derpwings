@@ -48,7 +48,7 @@ namespace derpwings____v1._0
             pbCtrl.Location = new Point(0, 0);
             canvasPanel.Controls.Add(pbCtrl);
             this.Controls.Add(canvasPanel);
-            drawTimer.Interval = 1;
+            drawTimer.Interval = (int)1000/Pps;
             drawTimer.Tick += new EventHandler(Timer_Tick);
 
             bUpdate();
@@ -122,20 +122,16 @@ namespace derpwings____v1._0
                 if (e.Button == MouseButtons.Left)
                     using (Graphics g = Graphics.FromImage(pbCtrl.Image))
                     {
+                        if (Particle)
+                            drawTimer.Start();
                         if (Smoothing)
                             g.SmoothingMode = SmoothingMode.AntiAlias;
                         if (Ellipse)
                             g.FillEllipse(sBrush, e.X - brushSize / 2, e.Y - brushSize / 2, brushSize, brushSize);
-                        if (Triangle)
-                        {
-                            Point[] points = new Point[] { new Point(50, 50), new Point(100, 100), new Point(0, 100) };
-                            SolidBrush brush = new SolidBrush(Color.Blue);
-                            g.FillPolygon(brush, points);
-                        }
                         if (Rectangle)
                             g.FillRectangle(sBrush, e.X - brushSize / 2, e.Y - brushSize / 2, brushSize, brushSize);
                         if (Dline)
-                            g.DrawLine(new Pen(sBrush, brushSize), lastPoint, e.Location);
+                            g.DrawLine(new Pen(sBrush, brushSize), lastPoint, e.Location);                   
                     }
                 lastPoint = e.Location;
                 pbCtrl.Invalidate();
@@ -192,7 +188,7 @@ namespace derpwings____v1._0
         {
             Bitmap savingImage = bmpImage;
             Form save = new save(savingImage);
-            save.ShowDialog();
+            DialogResult sv = save.ShowDialog();
         }
         private void pictureBox1_Click(object sender, EventArgs e)
         {

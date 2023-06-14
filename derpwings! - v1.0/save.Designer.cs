@@ -134,6 +134,7 @@
             this.canvasPanel.Name = "canvasPanel";
             this.canvasPanel.Size = new System.Drawing.Size(256, 158);
             this.canvasPanel.TabIndex = 6;
+            this.canvasPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.canvasPanel_Paint);
             // 
             // save
             // 

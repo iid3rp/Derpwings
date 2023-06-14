@@ -37,6 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.bColoresH = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.canvasPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bColoresH)).BeginInit();
@@ -46,11 +47,11 @@
             // 
             this.hScrollBar1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.hScrollBar1.LargeChange = 1;
-            this.hScrollBar1.Location = new System.Drawing.Point(48, 697);
+            this.hScrollBar1.Location = new System.Drawing.Point(16, 637);
             this.hScrollBar1.Maximum = 1000;
             this.hScrollBar1.Minimum = 1;
             this.hScrollBar1.Name = "hScrollBar1";
-            this.hScrollBar1.Size = new System.Drawing.Size(810, 17);
+            this.hScrollBar1.Size = new System.Drawing.Size(362, 17);
             this.hScrollBar1.TabIndex = 1;
             this.hScrollBar1.Value = 20;
             this.hScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hScrollBar1_Scroll);
@@ -63,11 +64,13 @@
             this.canvasPanel.BackColor = System.Drawing.Color.White;
             this.canvasPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.canvasPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.canvasPanel.Controls.Add(this.hScrollBar1);
+            this.canvasPanel.Controls.Add(this.tSize);
             this.canvasPanel.Cursor = System.Windows.Forms.Cursors.Cross;
             this.canvasPanel.ForeColor = System.Drawing.Color.Transparent;
             this.canvasPanel.Location = new System.Drawing.Point(48, 12);
             this.canvasPanel.Name = "canvasPanel";
-            this.canvasPanel.Size = new System.Drawing.Size(1310, 659);
+            this.canvasPanel.Size = new System.Drawing.Size(1310, 709);
             this.canvasPanel.TabIndex = 4;
             // 
             // pictureBox2
@@ -86,7 +89,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::derpwings____v1._0.Properties.Resources.pencilsettings;
-            this.pictureBox1.Location = new System.Drawing.Point(2, 87);
+            this.pictureBox1.Location = new System.Drawing.Point(2, 70);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(40, 40);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -114,8 +117,8 @@
             this.tSize.AutoSize = true;
             this.tSize.BackColor = System.Drawing.Color.Transparent;
             this.tSize.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tSize.ForeColor = System.Drawing.Color.LightGray;
-            this.tSize.Location = new System.Drawing.Point(44, 674);
+            this.tSize.ForeColor = System.Drawing.Color.Gray;
+            this.tSize.Location = new System.Drawing.Point(28, 614);
             this.tSize.Name = "tSize";
             this.tSize.Size = new System.Drawing.Size(97, 23);
             this.tSize.TabIndex = 5;
@@ -123,6 +126,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -146,6 +150,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(7, 356);
@@ -165,8 +170,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bColoresH);
-            this.Controls.Add(this.tSize);
-            this.Controls.Add(this.hScrollBar1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.canvasPanel);
@@ -178,6 +181,8 @@
             this.Text = "Derpwing Process!";
             this.Load += new System.EventHandler(this.Form3_Load);
             this.Resize += new System.EventHandler(this.Form3_Resize);
+            this.canvasPanel.ResumeLayout(false);
+            this.canvasPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bColoresH)).EndInit();

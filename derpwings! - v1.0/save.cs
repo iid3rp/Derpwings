@@ -138,6 +138,12 @@ namespace derpwings____v1._0
                 printDocument.Print();
             }
         }
+
+        private void canvasPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void printDocument_PrintPage(object sender, PrintPageEventArgs e)
         {
             Bitmap bmp = (Bitmap)savingAs;
