@@ -14,15 +14,15 @@ namespace derpwings____v1._0
     public partial class Form5 : Form
     {
         private bool smoothing, dLine, particle, triangle, ellipse, rectangle;
-        private int pps, stability;
+        private int stability;
         private float brushsize;
         public Form5(bool bSmoothing,bool bDline,
-            bool bParticle,int bPps,int bStability,
+            bool bParticle,int bStability,
             float bBrushSize, bool bTriangle,
             bool bEllipse, bool bRectangle)
         {
             InitializeComponent();
-            smoothing = bSmoothing; dLine = bDline; particle = bParticle; pps = bPps;
+            smoothing = bSmoothing; dLine = bDline; particle = bParticle;
             triangle = bTriangle; ellipse = bEllipse;  rectangle = bRectangle;
             brushsize = bBrushSize; stability = bStability;
             hScrollBar3.Value = (int)brushsize;
@@ -38,12 +38,6 @@ namespace derpwings____v1._0
                 checkBox2.Checked = true;
             else
                 checkBox2.Checked = false;
-            if (particle)
-                checkBox3.Checked = true;
-            else
-                checkBox3.Checked = false;
-            hScrollBar1.Value = (int)pps;
-            textBox1.Text = hScrollBar1.Value.ToString();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -69,42 +63,6 @@ namespace derpwings____v1._0
                 dLine = true;
             if (!checkBox2.Checked)
                 dLine = false;
-        }
-        private void checkBox3_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox3.Checked)
-            {
-                particle = true;
-                particleMode.Enabled = true;
-            }
-            if (!checkBox3.Checked)
-            {
-                particle = false;
-                particleMode.Enabled = false;
-            }
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-                if (int.TryParse(textBox1.Text, out pps)) // parse the text to an integer
-                {
-                    if (pps > 1000)
-                    {
-                        textBox1.Text = "10000";
-                        pps = hScrollBar1.Maximum;
-                    }
-                    else
-                        hScrollBar1.Value = pps; // update the scrollbar value
-                }
-                else
-                {
-                    textBox1.Text = hScrollBar1.Value.ToString();
-                }
-        }
-
-        private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
-        {
-            textBox1.Text = hScrollBar1.Value.ToString();
         }
 
         private void hScrollBar2_Scroll(object sender, ScrollEventArgs e)
@@ -163,10 +121,6 @@ namespace derpwings____v1._0
         public int bStability()
         {
             return stability;
-        }
-        public int bPPS()
-        {
-            return pps;
         }
         public float bBrushSize()
         {

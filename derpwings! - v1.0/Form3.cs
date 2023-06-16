@@ -18,17 +18,17 @@ namespace derpwings____v1._0
 {
     public partial class Form3 : Form
     {
-        private Timer drawTimer = new Timer();
 
         private PictureBox pbCtrl;//canvas and the brushp
 
+        private Point location;
         private Point lastPoint; //pen used to paint on the canvas
         private Color bColores = (Color.FromArgb(255, 255, 0, 0));
-
+        private bool isFill = false;
         //bitmaps
         private Bitmap bmpImage; // the eraser of the canvas
 
-        private bool isDrawing = false, isEraser = false, isEyedropper = false;
+        private bool isDrawing = false, isEraser = false;
 
 
         //brushes!!!
@@ -39,7 +39,7 @@ namespace derpwings____v1._0
             Ellipse = true, Rectangle = false;
 
         private float brushSize = 10f;
-        private int stability = 0, Pps = 250;
+        private int stability = 0;
         public Form3(int hs1, int hs2) //initialization for pbCtrl
         {
             InitializeComponent();
@@ -48,8 +48,6 @@ namespace derpwings____v1._0
             pbCtrl.Location = new Point(0, 0);
             canvasPanel.Controls.Add(pbCtrl);
             this.Controls.Add(canvasPanel);
-            drawTimer.Interval = (int)1000/Pps;
-            drawTimer.Tick += new EventHandler(Timer_Tick);
 
             bUpdate();
         }
@@ -89,12 +87,23 @@ namespace derpwings____v1._0
         {
             if (e.Button == MouseButtons.Left)
             {
-                using (Graphics g = Graphics.FromImage(pbCtrl.Image))
+                if (isFill)
                 {
-                    g.SmoothingMode = SmoothingMode.AntiAlias;
-                    g.FillEllipse(sBrush, e.X - brushSize / 2, e.Y - brushSize / 2, brushSize, brushSize);
+                    location = e.Location;
+                    Color targetColor = ((Bitmap)pbCtrl.Image).GetPixel(location.X, location.Y);
+                    Color replacementColor = bColores;
+                    FillBucket(location, targetColor, replacementColor);
+                    isFill = false;
                 }
-                pbCtrl.Invalidate();
+                else
+                {
+                    using (Graphics g = Graphics.FromImage(pbCtrl.Image))
+                    {
+                        g.SmoothingMode = SmoothingMode.AntiAlias;
+                        g.FillEllipse(sBrush, e.X - brushSize / 2, e.Y - brushSize / 2, brushSize, brushSize);
+                    }
+                    pbCtrl.Invalidate();
+                }
             }
             if (e.Button == MouseButtons.Right)
             {
@@ -122,8 +131,6 @@ namespace derpwings____v1._0
                 if (e.Button == MouseButtons.Left)
                     using (Graphics g = Graphics.FromImage(pbCtrl.Image))
                     {
-                        if (Particle)
-                            drawTimer.Start();
                         if (Smoothing)
                             g.SmoothingMode = SmoothingMode.AntiAlias;
                         if (Ellipse)
@@ -197,14 +204,17 @@ namespace derpwings____v1._0
         private void Form3_Load(object sender, EventArgs e)
         {
             
-            pbCtrl.BringToFront(); //already set
         }
         private void Form3_Resize(object sender, EventArgs e)
         {
-            
-            pbCtrl.BringToFront(); //already set
 
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            isFill = true;
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
             pbCtrl.Image = new Bitmap(pbCtrl.Width, pbCtrl.Height);
@@ -221,10 +231,10 @@ namespace derpwings____v1._0
             bSmoothing = Smoothing, bDline = Dline,
             bParticle = Particle, bTriangle = Triangle,
             bEllipse = Ellipse, bRectangle = Rectangle;
-            int bStability = stability, bPps = Pps;
+            int bStability = stability;
             float bBrushSize = brushSize;
-            Form5 Form5 = new Form5(bSmoothing, bDline, bParticle, 
-                 bPps, bStability, bBrushSize, bTriangle, 
+            Form5 Form5 = new Form5(bSmoothing, bDline, bParticle,
+                bStability, bBrushSize, bTriangle, 
                  bEllipse, bRectangle);
 
              DialogResult b = Form5.ShowDialog();
@@ -237,7 +247,6 @@ namespace derpwings____v1._0
                 Rectangle = Form5.bRectangle();
                 Triangle = Form5.bTriangle();
                 stability = Form5.bStability();
-                Pps = Form5.bPPS();
                 brushSize = Form5.bBrushSize();
             }
         }
@@ -260,12 +269,62 @@ namespace derpwings____v1._0
                 bUpdate();
             }
         }
-        private void Timer_Tick(object sender, EventArgs e)
+        private void FillBucket(Point location, Color targetColor, Color replacementColor)
         {
-            using (Graphics g = Graphics.FromImage(bmpImage))
+            // Create a Bitmap object from the bmpImage
+            Bitmap bmp = new Bitmap(bmpImage);
+
+            // Determine the number of parts to split the image into
+            int numPartsX = (int)Math.Ceiling((double)bmp.Width / pbCtrl.Width);
+            int numPartsY = (int)Math.Ceiling((double)bmp.Height / pbCtrl.Height);
+
+            // Loop through each part of the image and fill it
+            for (int i = 0; i < numPartsX; i++)
             {
-                int size = 10;
-                g.FillEllipse(sBrush, Cursor.Position.X - size / 2, Cursor.Position.Y - size / 2, size, size);
+                for (int j = 0; j < numPartsY; j++)
+                {
+                    // Define the bounds of the current part in the image
+                    int startX = i * pbCtrl.Width;
+                    int startY = j * pbCtrl.Height;
+                    int width = Math.Min(pbCtrl.Width, bmp.Width - startX);
+                    int height = Math.Min(pbCtrl.Height, bmp.Height - startY);
+                    Rectangle partRect = new Rectangle(startX, startY, width, height);
+
+                    // Clone the current part of the image
+                    Bitmap part = bmp.Clone(partRect, bmp.PixelFormat);
+
+                    // Fill the current part of the image
+                    FillPixel(part, location, targetColor, replacementColor);
+
+                    // Draw the modified part back into the overall image
+                    using (Graphics g = Graphics.FromImage(bmp))
+                    {
+                        g.DrawImage(part, new Point(startX, startY));
+                    }
+                }
+            }
+
+            // Update the pbCtrl Image with the modified Bitmap
+            pbCtrl.Image = new Bitmap(bmp);
+            bmp.Dispose();
+        }
+
+        private void FillPixel(Bitmap bmp, Point location, Color targetColor, Color replacementColor)
+        {
+            // Get the color of the pixel at the specified location
+            Color pixelColor = bmp.GetPixel(location.X, location.Y);
+
+            // Check if the pixel color matches the target color
+            if (pixelColor.ToArgb() == targetColor.ToArgb())
+            {
+                // Set the pixel color to the replacement color
+                bmp.SetPixel(location.X, location.Y, replacementColor);
+
+                // Check neighboring pixels for the same color
+                if (location.X > 0) FillPixel(bmp, new Point(location.X - 1, location.Y), targetColor, replacementColor); // Check left neighbor
+                if (location.X < bmp.Width - 1) FillPixel(bmp, new Point(location.X + 1, location.Y), targetColor, replacementColor); // Check right neighbor
+                if (location.Y > 0) FillPixel(bmp, new Point(location.X, location.Y - 1), targetColor, replacementColor); // Check top neighbor
+                if (location.Y < bmp.Height - 1) FillPixel(bmp, new Point(location.X, location.Y + 1), targetColor, replacementColor); // Check bottom neighbor
             }
         }
     }
