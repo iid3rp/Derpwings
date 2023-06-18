@@ -29,7 +29,7 @@ namespace derpwings____v1._0
         private Bitmap bmpImage; // the eraser of the canvas
 
         private bool isDrawing = false, isEraser = false;
-
+        private int sensitivity;
 
         //brushes!!!
         private SolidBrush sBrush; //the solid brush used to draw
@@ -89,10 +89,11 @@ namespace derpwings____v1._0
             {
                 if (isFill)
                 {
-                    location = e.Location;
-                    Color targetColor = ((Bitmap)pbCtrl.Image).GetPixel(location.X, location.Y);
+                    Point location = e.Location;
+                    Color targetColor = bmpImage.GetPixel(location.X, location.Y);
                     Color replacementColor = bColores;
-                    FillBucket(location, targetColor, replacementColor);
+                    FillPixel(bmpImage, location, targetColor, replacementColor);
+                    pbCtrl.Refresh();
                     isFill = false;
                 }
                 else
@@ -269,64 +270,42 @@ namespace derpwings____v1._0
                 bUpdate();
             }
         }
-        private void FillBucket(Point location, Color targetColor, Color replacementColor)
-        {
-            // Create a Bitmap object from the bmpImage
-            Bitmap bmp = new Bitmap(bmpImage);
-
-            // Determine the number of parts to split the image into
-            int numPartsX = (int)Math.Ceiling((double)bmp.Width / pbCtrl.Width);
-            int numPartsY = (int)Math.Ceiling((double)bmp.Height / pbCtrl.Height);
-
-            // Loop through each part of the image and fill it
-            for (int i = 0; i < numPartsX; i++)
-            {
-                for (int j = 0; j < numPartsY; j++)
-                {
-                    // Define the bounds of the current part in the image
-                    int startX = i * pbCtrl.Width;
-                    int startY = j * pbCtrl.Height;
-                    int width = Math.Min(pbCtrl.Width, bmp.Width - startX);
-                    int height = Math.Min(pbCtrl.Height, bmp.Height - startY);
-                    Rectangle partRect = new Rectangle(startX, startY, width, height);
-
-                    // Clone the current part of the image
-                    Bitmap part = bmp.Clone(partRect, bmp.PixelFormat);
-
-                    // Fill the current part of the image
-                    FillPixel(part, location, targetColor, replacementColor);
-
-                    // Draw the modified part back into the overall image
-                    using (Graphics g = Graphics.FromImage(bmp))
-                    {
-                        g.DrawImage(part, new Point(startX, startY));
-                    }
-                }
-            }
-
-            // Update the pbCtrl Image with the modified Bitmap
-            pbCtrl.Image = new Bitmap(bmp);
-            bmp.Dispose();
-        }
 
         private void FillPixel(Bitmap bmp, Point location, Color targetColor, Color replacementColor)
         {
-            // Get the color of the pixel at the specified location
-            Color pixelColor = bmp.GetPixel(location.X, location.Y);
-
-            // Check if the pixel color matches the target color
-            if (pixelColor.ToArgb() == targetColor.ToArgb())
+            List<Point> pixelsToFill = new List<Point>();
+            pixelsToFill.Add(location);
+            while (pixelsToFill.Count > 0)
             {
-                // Set the pixel color to the replacement color
-                bmp.SetPixel(location.X, location.Y, replacementColor);
-
-                // Check neighboring pixels for the same color
-                if (location.X > 0) FillPixel(bmp, new Point(location.X - 1, location.Y), targetColor, replacementColor); // Check left neighbor
-                if (location.X < bmp.Width - 1) FillPixel(bmp, new Point(location.X + 1, location.Y), targetColor, replacementColor); // Check right neighbor
-                if (location.Y > 0) FillPixel(bmp, new Point(location.X, location.Y - 1), targetColor, replacementColor); // Check top neighbor
-                if (location.Y < bmp.Height - 1) FillPixel(bmp, new Point(location.X, location.Y + 1), targetColor, replacementColor); // Check bottom neighbor
+                Point currentPixel = pixelsToFill[pixelsToFill.Count - 1];
+                pixelsToFill.RemoveAt(pixelsToFill.Count - 1);
+                Color currentColor = bmp.GetPixel(currentPixel.X, currentPixel.Y);
+                if (Math.Abs(currentColor.R - targetColor.R) <= sensitivity &&
+            Math.Abs(currentColor.G - targetColor.G) <= sensitivity &&
+            Math.Abs(currentColor.B - targetColor.B) <= sensitivity)
+                {
+                    bmp.SetPixel(currentPixel.X, currentPixel.Y, Color.FromArgb(255, 255, 0));
+                }
+                if (currentColor.ToArgb() == targetColor.ToArgb())
+                {
+                    bmp.SetPixel(currentPixel.X, currentPixel.Y, replacementColor);
+                    if (currentPixel.X > 0)
+                        pixelsToFill.Add(new Point(currentPixel.X - 1, currentPixel.Y));
+                    
+                    if (currentPixel.X < bmp.Width - 1)
+                        pixelsToFill.Add(new Point(currentPixel.X + 1, currentPixel.Y));
+                    
+                    if (currentPixel.Y > 0)
+                        pixelsToFill.Add(new Point(currentPixel.X, currentPixel.Y - 1));
+                    
+                    if (currentPixel.Y < bmp.Height - 1)
+                        pixelsToFill.Add(new Point(currentPixel.X, currentPixel.Y + 1));
+                    
+                }
             }
         }
+
+
     }
 
 }
