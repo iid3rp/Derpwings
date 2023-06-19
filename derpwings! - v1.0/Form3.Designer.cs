@@ -61,14 +61,13 @@
             this.canvasPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.canvasPanel.AutoScroll = true;
             this.canvasPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.canvasPanel.BackColor = System.Drawing.Color.White;
+            this.canvasPanel.BackColor = System.Drawing.Color.DarkGray;
             this.canvasPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.canvasPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.canvasPanel.Cursor = System.Windows.Forms.Cursors.NoMove2D;
             this.canvasPanel.ForeColor = System.Drawing.Color.Transparent;
-            this.canvasPanel.Location = new System.Drawing.Point(48, -44);
+            this.canvasPanel.Location = new System.Drawing.Point(48, 3);
             this.canvasPanel.Name = "canvasPanel";
-            this.canvasPanel.Size = new System.Drawing.Size(1322, 645);
+            this.canvasPanel.Size = new System.Drawing.Size(1320, 598);
             this.canvasPanel.TabIndex = 4;
             // 
             // tSize
@@ -100,7 +99,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::derpwings____v1._0.Properties.Resources.pencilsettings;
-            this.pictureBox1.Location = new System.Drawing.Point(2, 52);
+            this.pictureBox1.Location = new System.Drawing.Point(5, 87);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(40, 40);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

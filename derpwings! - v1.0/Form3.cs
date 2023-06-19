@@ -21,16 +21,14 @@ namespace derpwings____v1._0
 
         private PictureBox pbCtrl;//canvas and the brushp
 
-        private Point location;
         private Point lastPoint; //pen used to paint on the canvas
         private Color bColores = (Color.FromArgb(255, 255, 0, 0));
         private bool isFill = false;
         //bitmaps
         private Bitmap bmpImage; // the eraser of the canvas
-
+        
         private bool isDrawing = false, isEraser = false;
         private int sensitivity;
-
         //brushes!!!
         private SolidBrush sBrush; //the solid brush used to draw
         private bool
@@ -59,8 +57,9 @@ namespace derpwings____v1._0
             {
                 g.Clear(Color.Transparent);
             }
-            pbCtrl.MinimumSize = new Size(hs1, hs2);
-            pbCtrl.MaximumSize = pbCtrl.MinimumSize;
+            pbCtrl.Size = new Size(hs1, hs2);
+            pbCtrl.MinimumSize = new Size(100, 100);
+            pbCtrl.MaximumSize = new Size(20000, 20000);
             pbCtrl.BackColor = Color.Transparent;
             pbCtrl.Image = bmpImage;
             pbCtrl.MouseClick += new MouseEventHandler(PictureBoxClick);
@@ -98,7 +97,7 @@ namespace derpwings____v1._0
                 }
                 else
                 {
-                    using (Graphics g = Graphics.FromImage(pbCtrl.Image))
+                    using (Graphics g = Graphics.FromImage(bmpImage))
                     {
                         g.SmoothingMode = SmoothingMode.AntiAlias;
                         g.FillEllipse(sBrush, e.X - brushSize / 2, e.Y - brushSize / 2, brushSize, brushSize);
@@ -130,7 +129,7 @@ namespace derpwings____v1._0
             if (isDrawing)
             {
                 if (e.Button == MouseButtons.Left)
-                    using (Graphics g = Graphics.FromImage(pbCtrl.Image))
+                    using (Graphics g = Graphics.FromImage(bmpImage))
                     {
                         if (Smoothing)
                             g.SmoothingMode = SmoothingMode.AntiAlias;
@@ -219,6 +218,8 @@ namespace derpwings____v1._0
         private void label1_Click(object sender, EventArgs e)
         {
             pbCtrl.Image = new Bitmap(pbCtrl.Width, pbCtrl.Height);
+            bmpImage = new Bitmap(pbCtrl.Image);
+            pbCtrl.Image = bmpImage;
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -304,7 +305,6 @@ namespace derpwings____v1._0
                 }
             }
         }
-
 
     }
 

@@ -73,7 +73,7 @@ namespace derpwings____v1._0
         {
             int hs1 = hScrollBar1.Value, hs2 = hScrollBar2.Value;
             Form form3 = new Form3(hs1, hs2); // create an instance of Form3
-            form3.ShowDialog(); // show Form3;
+            form3.Show(); // show Form3;
             this.Close();   
         } 
     }  

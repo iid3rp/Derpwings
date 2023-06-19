@@ -32,20 +32,27 @@
             this.pictureBox13o6 = new System.Windows.Forms.PictureBox();
             this.pictureBox2o3 = new System.Windows.Forms.PictureBox();
             this.pictureBox13o8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1o1 = new System.Windows.Forms.PictureBox();
             this.pictureBox13o7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1o4 = new System.Windows.Forms.PictureBox();
             this.pictureBox15o6 = new System.Windows.Forms.PictureBox();
             this.pictureBox12o6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1o5 = new System.Windows.Forms.PictureBox();
             this.pictureBox15o8 = new System.Windows.Forms.PictureBox();
             this.pictureBox12o8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1o2 = new System.Windows.Forms.PictureBox();
             this.pictureBox15o7 = new System.Windows.Forms.PictureBox();
             this.pictureBox12o7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1o3 = new System.Windows.Forms.PictureBox();
             this.pictureBox14o6 = new System.Windows.Forms.PictureBox();
             this.pictureBox11o6 = new System.Windows.Forms.PictureBox();
             this.pictureBox2o1 = new System.Windows.Forms.PictureBox();
             this.pictureBox14o8 = new System.Windows.Forms.PictureBox();
             this.pictureBox11o8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2o4 = new System.Windows.Forms.PictureBox();
             this.pictureBox14o7 = new System.Windows.Forms.PictureBox();
             this.pictureBox11o7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2o5 = new System.Windows.Forms.PictureBox();
             this.pictureBox10o6 = new System.Windows.Forms.PictureBox();
             this.pictureBox2o2 = new System.Windows.Forms.PictureBox();
             this.pictureBox10o8 = new System.Windows.Forms.PictureBox();
@@ -155,46 +162,52 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.pictureBox2o5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2o4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1o3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1o2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1o5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1o4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1o1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxb3 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxa1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxa4 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxa5 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxa2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxa3 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxb1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxb4 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxb5 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxb2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxc1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxc4 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxc5 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxc2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxc3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.pictureBox15 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxa6 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxb6 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxc6 = new System.Windows.Forms.PictureBox();
             this.colorpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13o6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2o3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13o8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1o1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13o7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1o4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15o6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12o6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1o5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15o8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12o8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1o2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15o7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12o7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1o3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14o6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11o6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2o1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14o8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11o8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2o4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14o7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11o7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2o5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10o6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2o2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10o8)).BeginInit();
@@ -292,28 +305,27 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11o5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11o4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bColoresPrev)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2o5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2o4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1o3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1o2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1o5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1o4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1o1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxb3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxa1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxa4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxa5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxa2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxa3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxb1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxb4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxb5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxb2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxc1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxc4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxc5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxc2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxc3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxa6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxb6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxc6)).BeginInit();
             this.SuspendLayout();
             // 
             // colorpanel
@@ -481,6 +493,18 @@
             this.pictureBox13o8.TabStop = false;
             this.pictureBox13o8.Click += new System.EventHandler(this.pictureBox13o8_Click);
             // 
+            // pictureBox1o1
+            // 
+            this.pictureBox1o1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pictureBox1o1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1o1.Location = new System.Drawing.Point(7, 5);
+            this.pictureBox1o1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBox1o1.Name = "pictureBox1o1";
+            this.pictureBox1o1.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox1o1.TabIndex = 0;
+            this.pictureBox1o1.TabStop = false;
+            this.pictureBox1o1.Click += new System.EventHandler(this.pictureBox1o1_Click);
+            // 
             // pictureBox13o7
             // 
             this.pictureBox13o7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -492,6 +516,18 @@
             this.pictureBox13o7.TabIndex = 206;
             this.pictureBox13o7.TabStop = false;
             this.pictureBox13o7.Click += new System.EventHandler(this.pictureBox13o7_Click);
+            // 
+            // pictureBox1o4
+            // 
+            this.pictureBox1o4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pictureBox1o4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1o4.Location = new System.Drawing.Point(64, 5);
+            this.pictureBox1o4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBox1o4.Name = "pictureBox1o4";
+            this.pictureBox1o4.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox1o4.TabIndex = 14;
+            this.pictureBox1o4.TabStop = false;
+            this.pictureBox1o4.Click += new System.EventHandler(this.pictureBox1o4_Click);
             // 
             // pictureBox15o6
             // 
@@ -517,6 +553,18 @@
             this.pictureBox12o6.TabStop = false;
             this.pictureBox12o6.Click += new System.EventHandler(this.pictureBox12o6_Click);
             // 
+            // pictureBox1o5
+            // 
+            this.pictureBox1o5.BackColor = System.Drawing.Color.Red;
+            this.pictureBox1o5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1o5.Location = new System.Drawing.Point(83, 5);
+            this.pictureBox1o5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBox1o5.Name = "pictureBox1o5";
+            this.pictureBox1o5.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox1o5.TabIndex = 15;
+            this.pictureBox1o5.TabStop = false;
+            this.pictureBox1o5.Click += new System.EventHandler(this.pictureBox1o5_Click);
+            // 
             // pictureBox15o8
             // 
             this.pictureBox15o8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
@@ -541,6 +589,18 @@
             this.pictureBox12o8.TabStop = false;
             this.pictureBox12o8.Click += new System.EventHandler(this.pictureBox12o8_Click);
             // 
+            // pictureBox1o2
+            // 
+            this.pictureBox1o2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pictureBox1o2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1o2.Location = new System.Drawing.Point(25, 5);
+            this.pictureBox1o2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBox1o2.Name = "pictureBox1o2";
+            this.pictureBox1o2.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox1o2.TabIndex = 16;
+            this.pictureBox1o2.TabStop = false;
+            this.pictureBox1o2.Click += new System.EventHandler(this.pictureBox1o2_Click);
+            // 
             // pictureBox15o7
             // 
             this.pictureBox15o7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(50)))), ((int)(((byte)(22)))));
@@ -564,6 +624,18 @@
             this.pictureBox12o7.TabIndex = 203;
             this.pictureBox12o7.TabStop = false;
             this.pictureBox12o7.Click += new System.EventHandler(this.pictureBox12o7_Click);
+            // 
+            // pictureBox1o3
+            // 
+            this.pictureBox1o3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pictureBox1o3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1o3.Location = new System.Drawing.Point(44, 5);
+            this.pictureBox1o3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBox1o3.Name = "pictureBox1o3";
+            this.pictureBox1o3.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox1o3.TabIndex = 17;
+            this.pictureBox1o3.TabStop = false;
+            this.pictureBox1o3.Click += new System.EventHandler(this.pictureBox1o3_Click);
             // 
             // pictureBox14o6
             // 
@@ -625,6 +697,18 @@
             this.pictureBox11o8.TabStop = false;
             this.pictureBox11o8.Click += new System.EventHandler(this.pictureBox11o8_Click);
             // 
+            // pictureBox2o4
+            // 
+            this.pictureBox2o4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.pictureBox2o4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox2o4.Location = new System.Drawing.Point(64, 24);
+            this.pictureBox2o4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBox2o4.Name = "pictureBox2o4";
+            this.pictureBox2o4.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox2o4.TabIndex = 24;
+            this.pictureBox2o4.TabStop = false;
+            this.pictureBox2o4.Click += new System.EventHandler(this.pictureBox2o4_Click);
+            // 
             // pictureBox14o7
             // 
             this.pictureBox14o7.BackColor = System.Drawing.Color.PapayaWhip;
@@ -648,6 +732,18 @@
             this.pictureBox11o7.TabIndex = 200;
             this.pictureBox11o7.TabStop = false;
             this.pictureBox11o7.Click += new System.EventHandler(this.pictureBox11o7_Click);
+            // 
+            // pictureBox2o5
+            // 
+            this.pictureBox2o5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(130)))), ((int)(((byte)(0)))));
+            this.pictureBox2o5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox2o5.Location = new System.Drawing.Point(83, 24);
+            this.pictureBox2o5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBox2o5.Name = "pictureBox2o5";
+            this.pictureBox2o5.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox2o5.TabIndex = 25;
+            this.pictureBox2o5.TabStop = false;
+            this.pictureBox2o5.Click += new System.EventHandler(this.pictureBox2o5_Click);
             // 
             // pictureBox10o6
             // 
@@ -1840,7 +1936,7 @@
             // red
             // 
             this.red.LargeChange = 1;
-            this.red.Location = new System.Drawing.Point(222, 205);
+            this.red.Location = new System.Drawing.Point(235, 204);
             this.red.Maximum = 255;
             this.red.Name = "red";
             this.red.Size = new System.Drawing.Size(174, 17);
@@ -1850,7 +1946,7 @@
             // blue
             // 
             this.blue.LargeChange = 1;
-            this.blue.Location = new System.Drawing.Point(222, 282);
+            this.blue.Location = new System.Drawing.Point(235, 279);
             this.blue.Maximum = 255;
             this.blue.Name = "blue";
             this.blue.Size = new System.Drawing.Size(174, 17);
@@ -1860,7 +1956,7 @@
             // green
             // 
             this.green.LargeChange = 1;
-            this.green.Location = new System.Drawing.Point(222, 245);
+            this.green.Location = new System.Drawing.Point(235, 242);
             this.green.Maximum = 255;
             this.green.Name = "green";
             this.green.Size = new System.Drawing.Size(174, 17);
@@ -1905,7 +2001,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(236, 264);
+            this.label5.Location = new System.Drawing.Point(247, 262);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(34, 18);
@@ -1916,7 +2012,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(236, 222);
+            this.label6.Location = new System.Drawing.Point(247, 221);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(48, 18);
@@ -1927,7 +2023,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(236, 186);
+            this.label7.Location = new System.Drawing.Point(247, 186);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(31, 18);
@@ -1944,254 +2040,254 @@
             this.label8.TabIndex = 215;
             this.label8.Text = "Opacity: 100%";
             // 
-            // pictureBox2o5
+            // pictureBoxb3
             // 
-            this.pictureBox2o5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(130)))), ((int)(((byte)(0)))));
-            this.pictureBox2o5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox2o5.Location = new System.Drawing.Point(83, 24);
-            this.pictureBox2o5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pictureBox2o5.Name = "pictureBox2o5";
-            this.pictureBox2o5.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox2o5.TabIndex = 25;
-            this.pictureBox2o5.TabStop = false;
-            this.pictureBox2o5.Click += new System.EventHandler(this.pictureBox2o5_Click);
+            this.pictureBoxb3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(78)))), ((int)(((byte)(0)))));
+            this.pictureBoxb3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBoxb3.Location = new System.Drawing.Point(277, 127);
+            this.pictureBoxb3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBoxb3.Name = "pictureBoxb3";
+            this.pictureBoxb3.Size = new System.Drawing.Size(28, 25);
+            this.pictureBoxb3.TabIndex = 239;
+            this.pictureBoxb3.TabStop = false;
+            this.pictureBoxb3.Click += new System.EventHandler(this.pictureBoxb3_Click);
             // 
-            // pictureBox2o4
+            // pictureBoxa1
             // 
-            this.pictureBox2o4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.pictureBox2o4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox2o4.Location = new System.Drawing.Point(64, 24);
-            this.pictureBox2o4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pictureBox2o4.Name = "pictureBox2o4";
-            this.pictureBox2o4.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox2o4.TabIndex = 24;
-            this.pictureBox2o4.TabStop = false;
-            this.pictureBox2o4.Click += new System.EventHandler(this.pictureBox2o4_Click);
+            this.pictureBoxa1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pictureBoxa1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBoxa1.Location = new System.Drawing.Point(224, 104);
+            this.pictureBoxa1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBoxa1.Name = "pictureBoxa1";
+            this.pictureBoxa1.Size = new System.Drawing.Size(28, 25);
+            this.pictureBoxa1.TabIndex = 230;
+            this.pictureBoxa1.TabStop = false;
+            this.pictureBoxa1.Click += new System.EventHandler(this.pictureBoxa1_Click);
             // 
-            // pictureBox1o3
+            // pictureBoxa4
             // 
-            this.pictureBox1o3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pictureBox1o3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1o3.Location = new System.Drawing.Point(44, 5);
-            this.pictureBox1o3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pictureBox1o3.Name = "pictureBox1o3";
-            this.pictureBox1o3.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox1o3.TabIndex = 17;
-            this.pictureBox1o3.TabStop = false;
-            this.pictureBox1o3.Click += new System.EventHandler(this.pictureBox1o3_Click);
+            this.pictureBoxa4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pictureBoxa4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBoxa4.Location = new System.Drawing.Point(305, 104);
+            this.pictureBoxa4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBoxa4.Name = "pictureBoxa4";
+            this.pictureBoxa4.Size = new System.Drawing.Size(28, 25);
+            this.pictureBoxa4.TabIndex = 231;
+            this.pictureBoxa4.TabStop = false;
+            this.pictureBoxa4.Click += new System.EventHandler(this.pictureBoxa4_Click);
             // 
-            // pictureBox1o2
+            // pictureBoxa5
             // 
-            this.pictureBox1o2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pictureBox1o2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1o2.Location = new System.Drawing.Point(25, 5);
-            this.pictureBox1o2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pictureBox1o2.Name = "pictureBox1o2";
-            this.pictureBox1o2.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox1o2.TabIndex = 16;
-            this.pictureBox1o2.TabStop = false;
-            this.pictureBox1o2.Click += new System.EventHandler(this.pictureBox1o2_Click);
+            this.pictureBoxa5.BackColor = System.Drawing.Color.White;
+            this.pictureBoxa5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBoxa5.Location = new System.Drawing.Point(332, 104);
+            this.pictureBoxa5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBoxa5.Name = "pictureBoxa5";
+            this.pictureBoxa5.Size = new System.Drawing.Size(28, 25);
+            this.pictureBoxa5.TabIndex = 232;
+            this.pictureBoxa5.TabStop = false;
+            this.pictureBoxa5.Click += new System.EventHandler(this.pictureBoxa5_Click);
             // 
-            // pictureBox1o5
+            // pictureBoxa2
             // 
-            this.pictureBox1o5.BackColor = System.Drawing.Color.Red;
-            this.pictureBox1o5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1o5.Location = new System.Drawing.Point(83, 5);
-            this.pictureBox1o5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pictureBox1o5.Name = "pictureBox1o5";
-            this.pictureBox1o5.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox1o5.TabIndex = 15;
-            this.pictureBox1o5.TabStop = false;
-            this.pictureBox1o5.Click += new System.EventHandler(this.pictureBox1o5_Click);
+            this.pictureBoxa2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pictureBoxa2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBoxa2.Location = new System.Drawing.Point(250, 104);
+            this.pictureBoxa2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBoxa2.Name = "pictureBoxa2";
+            this.pictureBoxa2.Size = new System.Drawing.Size(28, 25);
+            this.pictureBoxa2.TabIndex = 233;
+            this.pictureBoxa2.TabStop = false;
+            this.pictureBoxa2.Click += new System.EventHandler(this.pictureBoxa2_Click);
             // 
-            // pictureBox1o4
+            // pictureBoxa3
             // 
-            this.pictureBox1o4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pictureBox1o4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1o4.Location = new System.Drawing.Point(64, 5);
-            this.pictureBox1o4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pictureBox1o4.Name = "pictureBox1o4";
-            this.pictureBox1o4.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox1o4.TabIndex = 14;
-            this.pictureBox1o4.TabStop = false;
-            this.pictureBox1o4.Click += new System.EventHandler(this.pictureBox1o4_Click);
+            this.pictureBoxa3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pictureBoxa3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBoxa3.Location = new System.Drawing.Point(277, 104);
+            this.pictureBoxa3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBoxa3.Name = "pictureBoxa3";
+            this.pictureBoxa3.Size = new System.Drawing.Size(28, 25);
+            this.pictureBoxa3.TabIndex = 234;
+            this.pictureBoxa3.TabStop = false;
+            this.pictureBoxa3.Click += new System.EventHandler(this.pictureBoxa3_Click);
             // 
-            // pictureBox1o1
+            // pictureBoxb1
             // 
-            this.pictureBox1o1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pictureBox1o1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1o1.Location = new System.Drawing.Point(7, 5);
-            this.pictureBox1o1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pictureBox1o1.Name = "pictureBox1o1";
-            this.pictureBox1o1.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox1o1.TabIndex = 0;
-            this.pictureBox1o1.TabStop = false;
-            this.pictureBox1o1.Click += new System.EventHandler(this.pictureBox1o1_Click);
+            this.pictureBoxb1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(26)))), ((int)(((byte)(0)))));
+            this.pictureBoxb1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBoxb1.Location = new System.Drawing.Point(224, 127);
+            this.pictureBoxb1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBoxb1.Name = "pictureBoxb1";
+            this.pictureBoxb1.Size = new System.Drawing.Size(28, 25);
+            this.pictureBoxb1.TabIndex = 235;
+            this.pictureBoxb1.TabStop = false;
+            this.pictureBoxb1.Click += new System.EventHandler(this.pictureBoxb1_Click);
+            // 
+            // pictureBoxb4
+            // 
+            this.pictureBoxb4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.pictureBoxb4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBoxb4.Location = new System.Drawing.Point(305, 127);
+            this.pictureBoxb4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBoxb4.Name = "pictureBoxb4";
+            this.pictureBoxb4.Size = new System.Drawing.Size(28, 25);
+            this.pictureBoxb4.TabIndex = 236;
+            this.pictureBoxb4.TabStop = false;
+            this.pictureBoxb4.Click += new System.EventHandler(this.pictureBoxb4_Click);
+            // 
+            // pictureBoxb5
+            // 
+            this.pictureBoxb5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.pictureBoxb5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBoxb5.Location = new System.Drawing.Point(332, 127);
+            this.pictureBoxb5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBoxb5.Name = "pictureBoxb5";
+            this.pictureBoxb5.Size = new System.Drawing.Size(28, 25);
+            this.pictureBoxb5.TabIndex = 237;
+            this.pictureBoxb5.TabStop = false;
+            this.pictureBoxb5.Click += new System.EventHandler(this.pictureBoxb5_Click);
+            // 
+            // pictureBoxb2
+            // 
+            this.pictureBoxb2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(52)))), ((int)(((byte)(0)))));
+            this.pictureBoxb2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBoxb2.Location = new System.Drawing.Point(250, 127);
+            this.pictureBoxb2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBoxb2.Name = "pictureBoxb2";
+            this.pictureBoxb2.Size = new System.Drawing.Size(28, 25);
+            this.pictureBoxb2.TabIndex = 238;
+            this.pictureBoxb2.TabStop = false;
+            this.pictureBoxb2.Click += new System.EventHandler(this.pictureBoxb2_Click);
+            // 
+            // pictureBoxc1
+            // 
+            this.pictureBoxc1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(0)))));
+            this.pictureBoxc1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBoxc1.Location = new System.Drawing.Point(224, 151);
+            this.pictureBoxc1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBoxc1.Name = "pictureBoxc1";
+            this.pictureBoxc1.Size = new System.Drawing.Size(28, 25);
+            this.pictureBoxc1.TabIndex = 240;
+            this.pictureBoxc1.TabStop = false;
+            this.pictureBoxc1.Click += new System.EventHandler(this.pictureBoxc1_Click);
+            // 
+            // pictureBoxc4
+            // 
+            this.pictureBoxc4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(0)))));
+            this.pictureBoxc4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBoxc4.Location = new System.Drawing.Point(305, 151);
+            this.pictureBoxc4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBoxc4.Name = "pictureBoxc4";
+            this.pictureBoxc4.Size = new System.Drawing.Size(28, 25);
+            this.pictureBoxc4.TabIndex = 241;
+            this.pictureBoxc4.TabStop = false;
+            this.pictureBoxc4.Click += new System.EventHandler(this.pictureBoxc4_Click);
+            // 
+            // pictureBoxc5
+            // 
+            this.pictureBoxc5.BackColor = System.Drawing.Color.Black;
+            this.pictureBoxc5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBoxc5.Location = new System.Drawing.Point(332, 151);
+            this.pictureBoxc5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBoxc5.Name = "pictureBoxc5";
+            this.pictureBoxc5.Size = new System.Drawing.Size(28, 25);
+            this.pictureBoxc5.TabIndex = 242;
+            this.pictureBoxc5.TabStop = false;
+            this.pictureBoxc5.Click += new System.EventHandler(this.pictureBoxc5_Click);
+            // 
+            // pictureBoxc2
+            // 
+            this.pictureBoxc2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(0)))));
+            this.pictureBoxc2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBoxc2.Location = new System.Drawing.Point(250, 151);
+            this.pictureBoxc2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBoxc2.Name = "pictureBoxc2";
+            this.pictureBoxc2.Size = new System.Drawing.Size(28, 25);
+            this.pictureBoxc2.TabIndex = 243;
+            this.pictureBoxc2.TabStop = false;
+            this.pictureBoxc2.Click += new System.EventHandler(this.pictureBoxc2_Click);
+            // 
+            // pictureBoxc3
+            // 
+            this.pictureBoxc3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(0)))));
+            this.pictureBoxc3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBoxc3.Location = new System.Drawing.Point(277, 151);
+            this.pictureBoxc3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBoxc3.Name = "pictureBoxc3";
+            this.pictureBoxc3.Size = new System.Drawing.Size(28, 25);
+            this.pictureBoxc3.TabIndex = 244;
+            this.pictureBoxc3.TabStop = false;
+            this.pictureBoxc3.Click += new System.EventHandler(this.pictureBoxc3_Click);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(78)))), ((int)(((byte)(0)))));
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Location = new System.Drawing.Point(301, 123);
+            this.pictureBox1.Location = new System.Drawing.Point(398, 104);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(28, 25);
-            this.pictureBox1.TabIndex = 239;
+            this.pictureBox1.TabIndex = 245;
             this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox2.Location = new System.Drawing.Point(248, 100);
+            this.pictureBox2.Location = new System.Drawing.Point(398, 127);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(28, 25);
-            this.pictureBox2.TabIndex = 230;
+            this.pictureBox2.TabIndex = 246;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox3
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pictureBox3.BackColor = System.Drawing.Color.Black;
             this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox3.Location = new System.Drawing.Point(329, 100);
+            this.pictureBox3.Location = new System.Drawing.Point(398, 151);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(28, 25);
-            this.pictureBox3.TabIndex = 231;
+            this.pictureBox3.TabIndex = 247;
             this.pictureBox3.TabStop = false;
             // 
-            // pictureBox4
+            // pictureBoxa6
             // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Red;
-            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox4.Location = new System.Drawing.Point(356, 100);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(28, 25);
-            this.pictureBox4.TabIndex = 232;
-            this.pictureBox4.TabStop = false;
+            this.pictureBoxa6.BackColor = System.Drawing.Color.White;
+            this.pictureBoxa6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBoxa6.Location = new System.Drawing.Point(359, 104);
+            this.pictureBoxa6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBoxa6.Name = "pictureBoxa6";
+            this.pictureBoxa6.Size = new System.Drawing.Size(28, 25);
+            this.pictureBoxa6.TabIndex = 248;
+            this.pictureBoxa6.TabStop = false;
+            this.pictureBoxa6.Click += new System.EventHandler(this.pictureBoxa6_Click);
             // 
-            // pictureBox5
+            // pictureBoxb6
             // 
-            this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox5.Location = new System.Drawing.Point(274, 100);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(28, 25);
-            this.pictureBox5.TabIndex = 233;
-            this.pictureBox5.TabStop = false;
+            this.pictureBoxb6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.pictureBoxb6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBoxb6.Location = new System.Drawing.Point(359, 127);
+            this.pictureBoxb6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBoxb6.Name = "pictureBoxb6";
+            this.pictureBoxb6.Size = new System.Drawing.Size(28, 25);
+            this.pictureBoxb6.TabIndex = 249;
+            this.pictureBoxb6.TabStop = false;
+            this.pictureBoxb6.Click += new System.EventHandler(this.pictureBoxb6_Click);
             // 
-            // pictureBox6
+            // pictureBoxc6
             // 
-            this.pictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox6.Location = new System.Drawing.Point(301, 100);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(28, 25);
-            this.pictureBox6.TabIndex = 234;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(26)))), ((int)(((byte)(0)))));
-            this.pictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox7.Location = new System.Drawing.Point(248, 123);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(28, 25);
-            this.pictureBox7.TabIndex = 235;
-            this.pictureBox7.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.pictureBox8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox8.Location = new System.Drawing.Point(329, 123);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(28, 25);
-            this.pictureBox8.TabIndex = 236;
-            this.pictureBox8.TabStop = false;
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(130)))), ((int)(((byte)(0)))));
-            this.pictureBox9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox9.Location = new System.Drawing.Point(356, 123);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(28, 25);
-            this.pictureBox9.TabIndex = 237;
-            this.pictureBox9.TabStop = false;
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(52)))), ((int)(((byte)(0)))));
-            this.pictureBox10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox10.Location = new System.Drawing.Point(274, 123);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(28, 25);
-            this.pictureBox10.TabIndex = 238;
-            this.pictureBox10.TabStop = false;
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(0)))));
-            this.pictureBox11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox11.Location = new System.Drawing.Point(248, 147);
-            this.pictureBox11.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(28, 25);
-            this.pictureBox11.TabIndex = 240;
-            this.pictureBox11.TabStop = false;
-            // 
-            // pictureBox12
-            // 
-            this.pictureBox12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(0)))));
-            this.pictureBox12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox12.Location = new System.Drawing.Point(329, 147);
-            this.pictureBox12.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(28, 25);
-            this.pictureBox12.TabIndex = 241;
-            this.pictureBox12.TabStop = false;
-            // 
-            // pictureBox13
-            // 
-            this.pictureBox13.BackColor = System.Drawing.Color.Yellow;
-            this.pictureBox13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox13.Location = new System.Drawing.Point(356, 147);
-            this.pictureBox13.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(28, 25);
-            this.pictureBox13.TabIndex = 242;
-            this.pictureBox13.TabStop = false;
-            // 
-            // pictureBox14
-            // 
-            this.pictureBox14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(0)))));
-            this.pictureBox14.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox14.Location = new System.Drawing.Point(274, 147);
-            this.pictureBox14.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(28, 25);
-            this.pictureBox14.TabIndex = 243;
-            this.pictureBox14.TabStop = false;
-            // 
-            // pictureBox15
-            // 
-            this.pictureBox15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(0)))));
-            this.pictureBox15.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox15.Location = new System.Drawing.Point(301, 147);
-            this.pictureBox15.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(28, 25);
-            this.pictureBox15.TabIndex = 244;
-            this.pictureBox15.TabStop = false;
+            this.pictureBoxc6.BackColor = System.Drawing.Color.Black;
+            this.pictureBoxc6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBoxc6.Location = new System.Drawing.Point(359, 151);
+            this.pictureBoxc6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBoxc6.Name = "pictureBoxc6";
+            this.pictureBoxc6.Size = new System.Drawing.Size(28, 25);
+            this.pictureBoxc6.TabIndex = 250;
+            this.pictureBoxc6.TabStop = false;
+            this.pictureBoxc6.Click += new System.EventHandler(this.pictureBoxc6_Click);
             // 
             // Form4
             // 
@@ -2199,34 +2295,40 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::derpwings____v1._0.Properties.Resources.bg;
             this.ClientSize = new System.Drawing.Size(457, 358);
+            this.Controls.Add(this.pictureBoxa6);
+            this.Controls.Add(this.pictureBoxb6);
+            this.Controls.Add(this.pictureBoxc6);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBoxb3);
+            this.Controls.Add(this.pictureBoxa1);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.pictureBoxa4);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBoxa5);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.pictureBoxa2);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.pictureBoxa3);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.pictureBox7);
+            this.Controls.Add(this.pictureBoxb1);
             this.Controls.Add(this.alpha);
-            this.Controls.Add(this.pictureBox8);
+            this.Controls.Add(this.pictureBoxb4);
             this.Controls.Add(this.bColoresPrev);
-            this.Controls.Add(this.pictureBox9);
+            this.Controls.Add(this.pictureBoxb5);
             this.Controls.Add(this.green);
-            this.Controls.Add(this.pictureBox10);
+            this.Controls.Add(this.pictureBoxb2);
             this.Controls.Add(this.blue);
-            this.Controls.Add(this.pictureBox11);
+            this.Controls.Add(this.pictureBoxc1);
             this.Controls.Add(this.red);
-            this.Controls.Add(this.pictureBox12);
+            this.Controls.Add(this.pictureBoxc4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.pictureBox13);
+            this.Controls.Add(this.pictureBoxc5);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.pictureBox14);
+            this.Controls.Add(this.pictureBoxc2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox15);
+            this.Controls.Add(this.pictureBoxc3);
             this.Controls.Add(this.colorpanel);
             this.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -2237,20 +2339,27 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13o6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2o3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13o8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1o1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13o7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1o4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15o6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12o6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1o5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15o8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12o8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1o2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15o7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12o7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1o3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14o6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11o6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2o1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14o8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11o8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2o4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14o7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11o7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2o5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10o6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2o2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10o8)).EndInit();
@@ -2348,28 +2457,27 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11o5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11o4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bColoresPrev)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2o5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2o4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1o3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1o2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1o5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1o4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1o1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxb3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxa1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxa4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxa5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxa2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxa3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxb1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxb4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxb5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxb2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxc1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxc4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxc5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxc2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxc3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxa6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxb6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxc6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2510,20 +2618,26 @@
         private System.Windows.Forms.PictureBox pictureBox1o3;
         private System.Windows.Forms.PictureBox pictureBox2o4;
         private System.Windows.Forms.PictureBox pictureBox2o5;
+        private System.Windows.Forms.PictureBox pictureBoxb3;
+        private System.Windows.Forms.PictureBox pictureBoxa1;
+        private System.Windows.Forms.PictureBox pictureBoxa4;
+        private System.Windows.Forms.PictureBox pictureBoxa5;
+        private System.Windows.Forms.PictureBox pictureBoxa2;
+        private System.Windows.Forms.PictureBox pictureBoxa3;
+        private System.Windows.Forms.PictureBox pictureBoxb1;
+        private System.Windows.Forms.PictureBox pictureBoxb4;
+        private System.Windows.Forms.PictureBox pictureBoxb5;
+        private System.Windows.Forms.PictureBox pictureBoxb2;
+        private System.Windows.Forms.PictureBox pictureBoxc1;
+        private System.Windows.Forms.PictureBox pictureBoxc4;
+        private System.Windows.Forms.PictureBox pictureBoxc5;
+        private System.Windows.Forms.PictureBox pictureBoxc2;
+        private System.Windows.Forms.PictureBox pictureBoxc3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.PictureBox pictureBox13;
-        private System.Windows.Forms.PictureBox pictureBox14;
-        private System.Windows.Forms.PictureBox pictureBox15;
+        private System.Windows.Forms.PictureBox pictureBoxa6;
+        private System.Windows.Forms.PictureBox pictureBoxb6;
+        private System.Windows.Forms.PictureBox pictureBoxc6;
     }
 }
