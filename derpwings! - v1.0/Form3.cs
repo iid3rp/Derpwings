@@ -147,21 +147,16 @@ namespace derpwings____v1._0
             {
                 if (e.Button == MouseButtons.Left || e.Button == MouseButtons.Right)
                 {
-                    // Only draw when the left mouse button is down
                     using (Graphics g = Graphics.FromImage(bmpImage))
                     {
                         int halfSize = (int)brushSize / 2;
-                        // Define a rectangle that represents the bounds of the bitmap
                         Rectangle bitmapBounds = new Rectangle(0, 0, bmpImage.Width, bmpImage.Height);
-
-                        // Calculate the rectangle of pixels to erase based on the eraser brush position and size
                         Rectangle eraseBounds = new Rectangle(
                             Math.Max(0, e.X - halfSize),
                             Math.Max(0, e.Y - halfSize),
                             Math.Min(halfSize * 2, bmpImage.Width - e.X + halfSize),
                             Math.Min(halfSize * 2, bmpImage.Height - e.Y + halfSize)
                         );
-                        // Only set the pixels to transparent if the eraser brush is not completely outside the bounds of the bitmap
                         if (bitmapBounds.IntersectsWith(eraseBounds))
                         {
                             for (int x = eraseBounds.Left; x <= eraseBounds.Right; x++)

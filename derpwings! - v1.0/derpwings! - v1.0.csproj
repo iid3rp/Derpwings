@@ -194,5 +194,11 @@
   <ItemGroup>
     <None Include="Resources\vector-transparent-checkerboard-transparent-pattern-background_546559-434.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ellipse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rectangle.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -14,9 +14,6 @@ namespace derpwings____v1._0
     {
         private Color bColores;
         private int bAlpha, bRed, bGreen, bBlue;
-        private int wR, wG, wB,
-                    gR, gG, gB,
-                    bR, bG, bB;
         private float c1 = .25f, c2 = .375f, c3 = .5f, 
                       c4 = .625f, c5 = .75f, c6 = .875f,
                     ggR1, ggG1, ggB1,
@@ -34,72 +31,7 @@ namespace derpwings____v1._0
             red.Value = bColores.R; bRed = bColores.R;
             green.Value = bColores.G; bGreen = bColores.G;
             blue.Value = bColores.B; bBlue = bColores.B;
-            wR = 255 - bColores.R;
-            wG = 255 - bColores.G;
-            wB = 255 - bColores.B;
-            if (bColores.R > 127)
-            {
-                gR = bColores.R - 127;
-                ggR1 = bColores.R - gR * .25f;
-                ggR2 = bColores.R - gR * .375f;
-                ggR3 = bColores.R - gR * .5f;
-                ggR4 = bColores.R - gR * .625f;
-                ggR5 = bColores.R - gR * .75f;
-                ggR6 = bColores.R - gR * .875f;
-            }
-            else
-            { 
-                gR = 127 - bColores.B;
-                ggR1 = bColores.R + gR * .25f;
-                ggR2 = bColores.R + gR * .375f;
-                ggR3 = bColores.R + gR * .5f;
-                ggR4 = bColores.R + gR * .625f;
-                ggR5 = bColores.R + gR * .75f;
-                ggR6 = bColores.R + gR * .875f;
-            }
-            if (bColores.G > 127)
-            {
-                gG = bColores.G - 127;
-                ggG1 = bColores.G - gR * .25f;
-                ggG2 = bColores.G - gR * .375f;
-                ggG3 = bColores.G - gR * .5f;
-                ggG4 = bColores.G - gR * .625f;
-                ggG5 = bColores.G - gR * .75f;
-                ggG6 = bColores.G - gR * .875f;
-            }
-            else
-            {
-                gG = 127 - bColores.B;
-                ggG1 = bColores.G + gR * .25f;
-                ggG2 = bColores.G + gR * .375f;
-                ggG3 = bColores.G + gR * .5f;
-                ggG4 = bColores.G + gR * .625f;
-                ggG5 = bColores.G + gR * .75f;
-                ggG6 = bColores.G + gR * .875f;
-            }
-            if (bColores.R > 127)
-            {
-                gB = bColores.B - 127;
-                ggB1 = bColores.G - gB * .25f;
-                ggB2 = bColores.G - gB * .375f;
-                ggB3 = bColores.G - gB * .5f;
-                ggB4 = bColores.G - gB * .625f;
-                ggB5 = bColores.G - gB * .75f;
-                ggB6 = bColores.G - gR * .875f;
-            }
-            else
-            {
-                gB = 127 - bColores.B;
-                ggB1 = bColores.G + gB * .25f;
-                ggB2 = bColores.G + gB * .375f;
-                ggB3 = bColores.G + gB * .5f;
-                ggB4 = bColores.G + gB * .625f;
-                ggB5 = bColores.G + gB * .75f;
-                ggB6 = bColores.G + gR * .875f;
-            }
-            bR = bColores.R;
-            bG = bColores.G;
-            bB = bColores.B;
+            cUpdate();
         }
 
         private void Form4_Load(object sender, EventArgs e)
@@ -530,6 +462,22 @@ namespace derpwings____v1._0
         {
             bColores = pictureBox14o2.BackColor; exit();
         }
+
+        private void hScrollBarhue_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void hScrollBarsat_Scroll(object sender, ScrollEventArgs e)
+        {
+            hScrollBarhue_Scroll(sender, e);
+        }
+
+        private void hScrollBarbright_Scroll(object sender, ScrollEventArgs e)
+        {
+            hScrollBarhue_Scroll(sender, e);
+        }
+
         private void pictureBox14o3_Click(object sender, EventArgs e)
         {
             bColores = pictureBox14o3.BackColor; exit();
@@ -554,6 +502,7 @@ namespace derpwings____v1._0
         {
             bColores = pictureBox14o8.BackColor; exit();
         }
+
         private void pictureBox15o1_Click(object sender, EventArgs e)
         {
             bColores = pictureBox15o1.BackColor; exit();
@@ -597,31 +546,6 @@ namespace derpwings____v1._0
             bColores = pictureBoxa5.BackColor; exit();
         }
 
-        private void pictureBoxb1_Click(object sender, EventArgs e)
-        {
-            bColores = pictureBoxb1.BackColor; exit();
-        }
-
-        private void pictureBoxb2_Click(object sender, EventArgs e)
-        {
-            bColores = pictureBoxb2.BackColor; exit();
-        }
-
-        private void pictureBoxb3_Click(object sender, EventArgs e)
-        {
-            bColores = pictureBoxb3.BackColor; exit();
-        }
-
-        private void pictureBoxb4_Click(object sender, EventArgs e)
-        {
-            bColores = pictureBoxb4.BackColor; exit();
-        }
-
-        private void pictureBoxb5_Click(object sender, EventArgs e)
-        {
-            bColores = pictureBoxb5.BackColor; exit();
-        }
-
         private void pictureBoxc1_Click(object sender, EventArgs e)
         {
             bColores = pictureBoxc1.BackColor; exit();
@@ -650,11 +574,6 @@ namespace derpwings____v1._0
         private void pictureBoxa6_Click(object sender, EventArgs e)
         {
             bColores = pictureBoxa6.BackColor; exit();
-        }
-
-        private void pictureBoxb6_Click(object sender, EventArgs e)
-        {
-            bColores = pictureBoxb6.BackColor; exit();
         }
 
         private void pictureBoxc6_Click(object sender, EventArgs e)
@@ -709,30 +628,28 @@ namespace derpwings____v1._0
         private void alpha_Scroll(object sender, ScrollEventArgs e)
         {
             bAlpha = alpha.Value; cUpdate();
+            label8.Text = (String)("Opacity:" + bAlpha.ToString() + '%');
         }
         private void cUpdate()
         {
             bColores = (Color.FromArgb(bAlpha, bRed, bGreen, bBlue));
             bColoresPrev.BackColor = bColores;
+            
 
-            pictureBoxa1.BackColor = Color.FromArgb((int)(bColores.R + wR * c1), (int)(bColores.G + wG * c1), (int)(bColores.B + wB * c1));
-            pictureBoxa2.BackColor = Color.FromArgb((int)(bColores.R + wR * c2), (int)(bColores.G + wG * c2), (int)(bColores.B + wB * c2));
-            pictureBoxa3.BackColor = Color.FromArgb((int)(bColores.R + wR * c3), (int)(bColores.G + wG * c3), (int)(bColores.B + wB * c3));
-            pictureBoxa4.BackColor = Color.FromArgb((int)(bColores.R + wR * c4), (int)(bColores.G + wG * c4), (int)(bColores.B + wB * c4));
-            pictureBoxa5.BackColor = Color.FromArgb((int)(bColores.R + wR * c5), (int)(bColores.G + wG * c5), (int)(bColores.B + wB * c5));
-            pictureBoxa6.BackColor = Color.FromArgb((int)(bColores.R + wR * c6), (int)(bColores.G + wG * c6), (int)(bColores.B + wB * c6));
-            pictureBoxc1.BackColor = Color.FromArgb((int)(bColores.R - bR * c1), (int)(bColores.G - bG * c1), (int)(bColores.B - bB * c1));
-            pictureBoxc2.BackColor = Color.FromArgb((int)(bColores.R - bR * c2), (int)(bColores.G - bG * c2), (int)(bColores.B - bB * c2));
-            pictureBoxc3.BackColor = Color.FromArgb((int)(bColores.R - bR * c3), (int)(bColores.G - bG * c3), (int)(bColores.B - bB * c3));
-            pictureBoxc4.BackColor = Color.FromArgb((int)(bColores.R - bR * c4), (int)(bColores.G - bG * c4), (int)(bColores.B - bB * c4));
-            pictureBoxc5.BackColor = Color.FromArgb((int)(bColores.R - bR * c5), (int)(bColores.G - bG * c5), (int)(bColores.B - bB * c5));
-            pictureBoxc6.BackColor = Color.FromArgb((int)(bColores.R - bR * c6), (int)(bColores.G - bG * c6), (int)(bColores.B - bB * c6));
-            pictureBoxb1.BackColor = Color.FromArgb((int)ggR1, (int)ggG1, (int)ggB1);
-            pictureBoxb2.BackColor = Color.FromArgb((int)ggR2, (int)ggG2, (int)ggB2);
-            pictureBoxb3.BackColor = Color.FromArgb((int)ggR3, (int)ggG3, (int)ggB3);
-            pictureBoxb4.BackColor = Color.FromArgb((int)ggR4, (int)ggG4, (int)ggB4);
-            pictureBoxb5.BackColor = Color.FromArgb((int)ggR5, (int)ggG5, (int)ggB5);
-            pictureBoxb6.BackColor = Color.FromArgb((int)ggR6, (int)ggG6, (int)ggB6);
+            pictureBoxa1.BackColor = Color.FromArgb((int)(bColores.R + (255 - bColores.R) * c1), (int)(bColores.G + (255 - bColores.G) * c1), (int)(bColores.B + (255 - bColores.B) * c1));
+            pictureBoxa2.BackColor = Color.FromArgb((int)(bColores.R + (255 - bColores.R) * c2), (int)(bColores.G + (255 - bColores.G) * c2), (int)(bColores.B + (255 - bColores.B) * c2));
+            pictureBoxa3.BackColor = Color.FromArgb((int)(bColores.R + (255 - bColores.R) * c3), (int)(bColores.G + (255 - bColores.G) * c3), (int)(bColores.B + (255 - bColores.B) * c3));
+            pictureBoxa4.BackColor = Color.FromArgb((int)(bColores.R + (255 - bColores.R) * c4), (int)(bColores.G + (255 - bColores.G) * c4), (int)(bColores.B + (255 - bColores.B) * c4));
+            pictureBoxa5.BackColor = Color.FromArgb((int)(bColores.R + (255 - bColores.R) * c5), (int)(bColores.G + (255 - bColores.G) * c5), (int)(bColores.B + (255 - bColores.B) * c5));
+            pictureBoxa6.BackColor = Color.FromArgb((int)(bColores.R + (255 - bColores.R) * c6), (int)(bColores.G + (255 - bColores.G) * c6), (int)(bColores.B + (255 - bColores.B) * c6));
+
+            pictureBoxc1.BackColor = Color.FromArgb((int)(bColores.R - bColores.R * c1), (int)(bColores.G - bColores.G * c1), (int)(bColores.B - bColores.B * c1));
+            pictureBoxc2.BackColor = Color.FromArgb((int)(bColores.R - bColores.R * c2), (int)(bColores.G - bColores.G * c2), (int)(bColores.B - bColores.B * c2));
+            pictureBoxc3.BackColor = Color.FromArgb((int)(bColores.R - bColores.R * c3), (int)(bColores.G - bColores.G * c3), (int)(bColores.B - bColores.B * c3));
+            pictureBoxc4.BackColor = Color.FromArgb((int)(bColores.R - bColores.R * c4), (int)(bColores.G - bColores.G * c4), (int)(bColores.B - bColores.B * c4));
+            pictureBoxc5.BackColor = Color.FromArgb((int)(bColores.R - bColores.R * c5), (int)(bColores.G - bColores.G * c5), (int)(bColores.B - bColores.B * c5));
+            pictureBoxc6.BackColor = Color.FromArgb((int)(bColores.R - bColores.R * c6), (int)(bColores.G - bColores.G * c6), (int)(bColores.B - bColores.B * c6));
+
 
         }
 

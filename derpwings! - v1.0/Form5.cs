@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.LinkLabel;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace derpwings____v1._0
 {
@@ -38,6 +39,7 @@ namespace derpwings____v1._0
                 checkBox2.Checked = true;
             else
                 checkBox2.Checked = false;
+            textBox1.Text = brushsize.ToString();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -63,11 +65,6 @@ namespace derpwings____v1._0
                 dLine = true;
             if (!checkBox2.Checked)
                 dLine = false;
-        }
-
-        private void hScrollBar2_Scroll(object sender, ScrollEventArgs e)
-        {
-            stability = hScrollBar2.Value;
         }
 
         private void hScrollBar3_Scroll(object sender, ScrollEventArgs e)
@@ -104,6 +101,25 @@ namespace derpwings____v1._0
         {
             this.DialogResult = DialogResult.OK;
             this.Close();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            int hValue;
+            if (int.TryParse(textBox1.Text, out hValue)) // parse the text to an integer
+            {
+                if (hValue > 1000)
+                {
+                    textBox1.Text = "1000";
+                    hValue = hScrollBar3.Maximum;
+                }
+                else
+                    hScrollBar3.Value = hValue; // update the scrollbar value
+            }
+            else
+            {
+                textBox1.Text = hScrollBar3.Value.ToString();
+            }
         }
 
         public bool bEllipse()
