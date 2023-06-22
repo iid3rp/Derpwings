@@ -104,6 +104,15 @@ namespace derpwings____v1._0
             this.Close();
         }
 
+        private void BrushSection_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+        }
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             int hValue;

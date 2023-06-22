@@ -2156,6 +2156,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(28, 25);
             this.pictureBox1.TabIndex = 245;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox3
             // 
@@ -2167,6 +2168,7 @@
             this.pictureBox3.Size = new System.Drawing.Size(28, 25);
             this.pictureBox3.TabIndex = 247;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // pictureBoxa6
             // 
@@ -2231,6 +2233,7 @@
             this.Name = "ColorSelection";
             this.Text = "Form4";
             this.Load += new System.EventHandler(this.Form4_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ColorSelection_KeyPress);
             this.colorpanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13o6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2o3)).EndInit();

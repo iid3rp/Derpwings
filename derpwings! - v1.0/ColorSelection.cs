@@ -589,6 +589,25 @@ namespace derpwings____v1._0
             bColores = pictureBox15o8.BackColor; exit();
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            bColores = pictureBox1.BackColor; exit();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            bColores = pictureBox3.BackColor; exit();
+        }
+
+        private void ColorSelection_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                // Call the method to close the form
+                exit();
+            }
+        }
+
         public void exit() //VERY IMPORTANT!!
         {
             this.DialogResult = DialogResult.OK;

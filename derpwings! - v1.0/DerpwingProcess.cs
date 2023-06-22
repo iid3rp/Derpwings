@@ -190,13 +190,31 @@ namespace derpwings____v1._0
 
         private void label2_Click(object sender, EventArgs e) //saving the image
         {
-            Bitmap savingImage = bmpImage;
-            Form save = new save(savingImage);
-            DialogResult sv = save.ShowDialog();
+            savingDialog();
         }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             isEraser = false; bUpdate();
+        }
+
+        private void DerpwingProcess_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.C)
+            {
+                Clipboard.SetImage(bmpImage);
+            }
+            if (e.Control && e.KeyCode == Keys.S)
+            {
+                savingDialog();
+            }
+            if (e.Control && e.KeyCode == Keys.B)
+            {
+                isDrawing = true;
+            }
+            if (e.Control && e.KeyCode == Keys.E)
+            {
+                isEraser = true;
+            }
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -290,6 +308,12 @@ namespace derpwings____v1._0
                     
                 }
             }
+        }
+        private void savingDialog()
+        {
+            Bitmap savingImage = bmpImage;
+            Form save = new save(savingImage);
+            DialogResult sv = save.ShowDialog();
         }
 
     }

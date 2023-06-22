@@ -239,7 +239,7 @@
             this.label2.TabIndex = 19;
             this.label2.Text = "px.";
             // 
-            // Form5
+            // BrushSection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -253,8 +253,9 @@
             this.Controls.Add(this.label9);
             this.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Form5";
+            this.Name = "BrushSection";
             this.Text = "brush";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BrushSection_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);

@@ -46,7 +46,7 @@
             // 
             this.hScrollBar1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.hScrollBar1.LargeChange = 1;
-            this.hScrollBar1.Location = new System.Drawing.Point(48, 645);
+            this.hScrollBar1.Location = new System.Drawing.Point(55, 686);
             this.hScrollBar1.Maximum = 1000;
             this.hScrollBar1.Minimum = 1;
             this.hScrollBar1.Name = "hScrollBar1";
@@ -64,9 +64,9 @@
             this.canvasPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.canvasPanel.Cursor = System.Windows.Forms.Cursors.NoMove2D;
             this.canvasPanel.ForeColor = System.Drawing.Color.Transparent;
-            this.canvasPanel.Location = new System.Drawing.Point(48, 12);
+            this.canvasPanel.Location = new System.Drawing.Point(51, 4);
             this.canvasPanel.Name = "canvasPanel";
-            this.canvasPanel.Size = new System.Drawing.Size(1320, 598);
+            this.canvasPanel.Size = new System.Drawing.Size(1317, 656);
             this.canvasPanel.TabIndex = 4;
             // 
             // tSize
@@ -76,7 +76,7 @@
             this.tSize.BackColor = System.Drawing.Color.Transparent;
             this.tSize.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tSize.ForeColor = System.Drawing.Color.Gray;
-            this.tSize.Location = new System.Drawing.Point(64, 622);
+            this.tSize.Location = new System.Drawing.Point(71, 663);
             this.tSize.Name = "tSize";
             this.tSize.Size = new System.Drawing.Size(97, 23);
             this.tSize.TabIndex = 5;
@@ -113,7 +113,7 @@
             this.label2.AutoSize = true;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(7, 369);
+            this.label2.Location = new System.Drawing.Point(7, 383);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 32);
             this.label2.TabIndex = 0;
@@ -126,7 +126,7 @@
             this.label1.AutoSize = true;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(10, 287);
+            this.label1.Location = new System.Drawing.Point(10, 301);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 62);
             this.label1.TabIndex = 14;
@@ -154,12 +154,12 @@
             this.label4.Text = "fill";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // Form3
+            // DerpwingProcess
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackgroundImage = global::derpwings____v1._0.Properties.Resources.bgdarkmode;
-            this.ClientSize = new System.Drawing.Size(1370, 681);
+            this.ClientSize = new System.Drawing.Size(1370, 708);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tSize);
             this.Controls.Add(this.hScrollBar1);
@@ -172,9 +172,10 @@
             this.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
             this.Margin = new System.Windows.Forms.Padding(5);
-            this.Name = "Form3";
+            this.Name = "DerpwingProcess";
             this.ShowInTaskbar = false;
             this.Text = "Derpwing Process!";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DerpwingProcess_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bColoresH)).EndInit();
