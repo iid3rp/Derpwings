@@ -1,6 +1,6 @@
 ﻿namespace derpwings____v1._0
 {
-    partial class Form4
+    partial class ColorSelection
     {
         /// <summary>
         /// Required designer variable.
@@ -2192,7 +2192,7 @@
             this.pictureBoxc6.TabStop = false;
             this.pictureBoxc6.Click += new System.EventHandler(this.pictureBoxc6_Click);
             // 
-            // Form4
+            // ColorSelection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -2228,7 +2228,7 @@
             this.Controls.Add(this.colorpanel);
             this.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "Form4";
+            this.Name = "ColorSelection";
             this.Text = "Form4";
             this.Load += new System.EventHandler(this.Form4_Load);
             this.colorpanel.ResumeLayout(false);

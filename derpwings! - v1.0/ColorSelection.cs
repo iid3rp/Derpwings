@@ -10,19 +10,13 @@ using System.Windows.Forms;
 
 namespace derpwings____v1._0
 {
-    public partial class Form4 : Form
+    public partial class ColorSelection : Form
     {
         private Color bColores;
         private int bAlpha, bRed, bGreen, bBlue;
-        private float c1 = .25f, c2 = .375f, c3 = .5f, 
-                      c4 = .625f, c5 = .75f, c6 = .875f,
-                    ggR1, ggG1, ggB1,
-                    ggR2, ggG2, ggB2,
-                    ggR3, ggG3, ggB3,
-                    ggR4, ggG4, ggB4,
-                    ggR5, ggG5, ggB5,
-                    ggR6, ggG6, ggB6;
-        public Form4(Color Form4bColores)
+        private float c1 = .25f, c2 = .375f, c3 = .5f,
+                      c4 = .625f, c5 = .75f, c6 = .875f;
+        public ColorSelection(Color Form4bColores)
         {
             InitializeComponent();
             bColores = Form4bColores;
@@ -594,6 +588,7 @@ namespace derpwings____v1._0
         {
             bColores = pictureBox15o8.BackColor; exit();
         }
+
         public void exit() //VERY IMPORTANT!!
         {
             this.DialogResult = DialogResult.OK;
@@ -628,13 +623,14 @@ namespace derpwings____v1._0
         private void alpha_Scroll(object sender, ScrollEventArgs e)
         {
             bAlpha = alpha.Value; cUpdate();
-            label8.Text = (String)("Opacity:" + bAlpha.ToString() + '%');
+            label8.Text = (String)("Opacity:" + ((int)(bAlpha / 2.55)).ToString() + '%');
         }
         private void cUpdate()
         {
             bColores = (Color.FromArgb(bAlpha, bRed, bGreen, bBlue));
             bColoresPrev.BackColor = bColores;
-            
+            label8.Text = (String)("Opacity:" + ((int)(bAlpha / 2.55)).ToString() + '%');
+
 
             pictureBoxa1.BackColor = Color.FromArgb((int)(bColores.R + (255 - bColores.R) * c1), (int)(bColores.G + (255 - bColores.G) * c1), (int)(bColores.B + (255 - bColores.B) * c1));
             pictureBoxa2.BackColor = Color.FromArgb((int)(bColores.R + (255 - bColores.R) * c2), (int)(bColores.G + (255 - bColores.G) * c2), (int)(bColores.B + (255 - bColores.B) * c2));

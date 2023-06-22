@@ -1,6 +1,6 @@
 ﻿namespace derpwings____v1._0
 {
-    partial class Form5
+    partial class BrushSection
     {
         /// <summary>
         /// Required designer variable.

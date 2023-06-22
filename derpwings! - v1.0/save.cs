@@ -88,7 +88,7 @@ namespace derpwings____v1._0
 
         private void label2_Click(object sender, EventArgs e)
         {
-            string filePath = @"C:\Users\12 - Terabyte Prog\Pictures\Saved Pictures\myimage.png";
+            string filePath = @"C:\Users\" + Environment.UserName + @"\Pictures\Saved Pictures\myimage.png";
             if (checkBox1.Checked)
                 savingWhite.Save(filePath);
             if (checkBox2.Checked)

@@ -1,6 +1,6 @@
 ﻿namespace derpwings____v1._0
 {
-    partial class Form2
+    partial class CreateCanvas
     {
         /// <summary>
         /// Required designer variable.

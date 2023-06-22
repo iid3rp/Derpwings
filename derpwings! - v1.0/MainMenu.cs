@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace derpwings____v1._0
 {
-    public partial class Form1 : Form
+    public partial class MainMenu : Form
     {
-        public Form1()
+        public MainMenu()
         {
             InitializeComponent(); 
             
@@ -29,8 +29,8 @@ namespace derpwings____v1._0
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
-            form2.Show();
+            CreateCanvas createCanvas = new CreateCanvas();
+            createCanvas.Show();
         }
     }
 }

@@ -15,10 +15,10 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace derpwings____v1._0
 {
-    public partial class Form2 : Form
+    public partial class CreateCanvas : Form
     {
 
-        public Form2()
+        public CreateCanvas()
         {
             InitializeComponent();
             int cWidth = hScrollBar1.Value, cHeight = hScrollBar2.Value;
@@ -72,8 +72,8 @@ namespace derpwings____v1._0
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             int hs1 = hScrollBar1.Value, hs2 = hScrollBar2.Value;
-            Form form3 = new Form3(hs1, hs2); // create an instance of Form3
-            form3.Show(); // show Form3;
+            DerpwingProcess derpwingProcess = new DerpwingProcess(hs1, hs2); // create an instance of Form3
+            derpwingProcess.Show(); // show Form3;
             this.Close();   
         } 
     }  

@@ -1,6 +1,6 @@
 ﻿namespace derpwings____v1._0
 {
-    partial class Form1
+    partial class MainMenu
     {
         /// <summary>
         /// Required designer variable.

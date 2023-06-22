@@ -12,12 +12,12 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace derpwings____v1._0
 {
-    public partial class Form5 : Form
+    public partial class BrushSection : Form
     {
         private bool smoothing, dLine, particle, triangle, ellipse, rectangle;
         private int stability;
         private float brushsize;
-        public Form5(bool bSmoothing,bool bDline,
+        public BrushSection(bool bSmoothing,bool bDline,
             bool bParticle,int bStability,
             float bBrushSize, bool bTriangle,
             bool bEllipse, bool bRectangle)
@@ -70,6 +70,7 @@ namespace derpwings____v1._0
         private void hScrollBar3_Scroll(object sender, ScrollEventArgs e)
         {
             brushsize = hScrollBar3.Value;
+            textBox1.Text = hScrollBar3.Value.ToString();
         }
         private void isEllipse()
         {
@@ -129,10 +130,6 @@ namespace derpwings____v1._0
         public bool bRectangle()
         {
             return rectangle;
-        }
-        public bool bTriangle()
-        {
-            return triangle;
         }
         public int bStability()
         {

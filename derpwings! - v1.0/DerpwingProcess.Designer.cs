@@ -1,6 +1,6 @@
 ﻿namespace derpwings____v1._0
 {
-    partial class Form3
+    partial class DerpwingProcess
     {
         /// <summary>
         /// Required designer variable.
@@ -175,8 +175,6 @@
             this.Name = "Form3";
             this.ShowInTaskbar = false;
             this.Text = "Derpwing Process!";
-            this.Load += new System.EventHandler(this.Form3_Load);
-            this.Resize += new System.EventHandler(this.Form3_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bColoresH)).EndInit();
