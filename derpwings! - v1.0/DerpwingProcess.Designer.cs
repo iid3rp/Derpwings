@@ -175,6 +175,7 @@
             this.Name = "DerpwingProcess";
             this.ShowInTaskbar = false;
             this.Text = "Derpwing Process!";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DerpwingProcess_FormClosed);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DerpwingProcess_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

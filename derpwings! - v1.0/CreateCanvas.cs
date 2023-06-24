@@ -75,6 +75,17 @@ namespace derpwings____v1._0
             DerpwingProcess derpwingProcess = new DerpwingProcess(hs1, hs2); // create an instance of Form3
             derpwingProcess.Show(); // show Form3;
             this.Close();   
-        } 
-    }  
+        }
+
+        private void CreateCanvas_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
+
+        private void CreateCanvas_Leave(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+    }
+    
 }

@@ -60,7 +60,7 @@ namespace derpwings____v1._0
             pbCtrl.Size = new Size(hs1, hs2);
             pbCtrl.MinimumSize = new Size(100, 100);
             pbCtrl.MaximumSize = new Size(20000, 20000);
-            pbCtrl.BackColor = Color.Transparent;
+            pbCtrl.BackColor = Color.White;
             pbCtrl.Image = bmpImage;
             pbCtrl.MouseClick += new MouseEventHandler(PictureBoxClick);
             pbCtrl.MouseDown += new MouseEventHandler(PictureBoxMouseDown);
@@ -223,6 +223,11 @@ namespace derpwings____v1._0
             pbCtrl.MouseDown -= new MouseEventHandler(PictureBoxMouseDown);
             pbCtrl.MouseMove -= new MouseEventHandler(PictureBoxMouseMove);
             pbCtrl.MouseUp -= new MouseEventHandler(PictureBoxMouseUp);
+        }
+
+        private void DerpwingProcess_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
 
         private void label1_Click(object sender, EventArgs e)

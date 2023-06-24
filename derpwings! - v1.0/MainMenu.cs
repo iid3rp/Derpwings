@@ -31,6 +31,12 @@ namespace derpwings____v1._0
         {
             CreateCanvas createCanvas = new CreateCanvas();
             createCanvas.Show();
+            this.Hide();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://docs.google.com/document/d/1EtJyX1VFsYoZWHtCzJ6nPjpidUnLVuDAhuEDeMUrgsM/edit?usp=sharing");
         }
     }
 }
