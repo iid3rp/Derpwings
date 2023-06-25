@@ -88,6 +88,10 @@ namespace derpwings____v1._0
             {
                 if (isFill)
                 {
+                    label1.Location = new Point(60, 343);
+                    label1.Text = "Filling Done";
+                    label1.Show();
+                    labelFade();
                     Point location = e.Location;
                     Color targetColor = bmpImage.GetPixel(location.X, location.Y);
                     FillPixel(bmpImage, location, targetColor, bColores);
@@ -216,21 +220,99 @@ namespace derpwings____v1._0
                 isEraser = true;
             }
         }
-
-        private void label4_Click(object sender, EventArgs e)
+        private void DerpwingProcess_FormClosed(object sender, FormClosedEventArgs e)
         {
+            Application.Exit();
+        }
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            label1.Location = new Point(60, 343);
+            label1.Text = "Filling In Progress";
+            label1.Show();
             isFill = true;
             pbCtrl.MouseDown -= new MouseEventHandler(PictureBoxMouseDown);
             pbCtrl.MouseMove -= new MouseEventHandler(PictureBoxMouseMove);
             pbCtrl.MouseUp -= new MouseEventHandler(PictureBoxMouseUp);
         }
 
-        private void DerpwingProcess_FormClosed(object sender, FormClosedEventArgs e)
+        private void pictureBox4_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            savingDialog();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void pictureBox1_MouseEnter(object sender, EventArgs e)
+        {
+            label1.Location = new Point(60, 205);
+            label1.Text = "Brush";
+            label1.Show();
+        }
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            label1.Hide();
+        }
+
+        private void pictureBox2_MouseEnter(object sender, EventArgs e)
+        {
+            label1.Location = new Point(60, 251);
+            label1.Text = "Eraser";
+            label1.Show();
+        }
+
+        private void pictureBox2_MouseLeave(object sender, EventArgs e)
+        {
+            label1.Hide();
+        }
+
+        private void bColoresH_MouseEnter(object sender, EventArgs e)
+        {
+            label1.Location = new Point(60, 297);
+            label1.Text = "Color";
+            label1.Show();
+        }
+
+        private void bColoresH_MouseLeave(object sender, EventArgs e)
+        {
+            label1.Hide();
+        }
+
+        private void pictureBox3_MouseEnter(object sender, EventArgs e)
+        {
+            label1.Location = new Point(60, 343);
+            label1.Text = "Fill Bucket";
+            label1.Show();
+        }
+
+        private void pictureBox3_MouseLeave(object sender, EventArgs e)
+        {
+            label1.Hide();
+        }
+
+        private void pictureBox5_MouseEnter(object sender, EventArgs e)
+        {
+            label1.Location = new Point(60, 600);
+            label1.Text = "Clear Canvas";
+            label1.Show();
+        }
+
+        private void pictureBox5_MouseLeave(object sender, EventArgs e)
+        {
+            label1.Hide();
+        }
+
+        private void pictureBox4_MouseEnter(object sender, EventArgs e)
+        {
+            label1.Location = new Point(60, 600);
+            label1.Text = "Save";
+            label1.Show();
+        }
+
+        private void pictureBox4_MouseLeave(object sender, EventArgs e)
+        {
+            label1.Hide();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
         {
             pbCtrl.Image = new Bitmap(pbCtrl.Width, pbCtrl.Height);
             bmpImage = new Bitmap(pbCtrl.Image);
@@ -320,7 +402,17 @@ namespace derpwings____v1._0
             Form save = new save(savingImage);
             DialogResult sv = save.ShowDialog();
         }
-
+        private void labelFade()
+        {
+            Timer timer = new Timer();
+            timer.Interval = 20;
+            timer.Tick += new EventHandler(timer_Tick);
+            timer.Start();
+        }
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            label1.ForeColor = Color.FromArgb(label1.ForeColor.A, 255, 255, 255);
+        }
     }
 
 }
