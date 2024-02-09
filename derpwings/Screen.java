@@ -5,47 +5,47 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.*;
 
+import java.util.*;
+
 public class Screen extends JPanel
 {
     public BufferedImage canvasImage;
     
-    public Screen(derpwings.Canvas e)
+    public Screen(derpwings.Canvas canvas)
     {
         setLayout(null);
         setBounds(0, 0, 1280, 720); // resolution will be modified in the future...
         setBackground(Color.GRAY);
-        
-        // gets the canvas to be put in the screen
-        
+        canvasImage = new BufferedImage(canvas.getWidth(), canvas.getHeight(), BufferedImage.TYPE_INT_ARGB);
         addMouseListener(new MouseAdapter()
         {
             @Override
             public void mouseClicked(MouseEvent e)
             {
-                Graphics2D paintGraphics = canvas.get(currentLayer).createGraphics();
-                AlphaComposite alphaComposite = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, (color.getAlpha() / 255f) / 10f); // ba
+                Graphics2D paintGraphics = canvas.get(canvas.currentLayer).createGraphics();
+                AlphaComposite alphaComposite = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, (canvas.getColor().getAlpha() / 255f) / 10f); // ba
                 paintGraphics.setComposite(alphaComposite);
-                paintGraphics.setColor(color);
-                paintGraphics.fillOval(e.getX(), e.getY(), width, height);
+                paintGraphics.setColor(canvas.getColor());
+                paintGraphics.fillOval(e.getX(), e.getY(), canvas.getBrushWidth(), canvas.getBrushHeight());
                 paintGraphics.dispose();
-                iterateLayers();
+                iterateLayers(canvas);
             }
             
             @Override
             public void mousePressed(MouseEvent e) 
             {
-                isDrawing = true;
-                startPoint = e.getPoint();
-                endPoint = e.getPoint();
+                canvas.isDrawing = true;
+                canvas.startPoint = e.getPoint();
+                canvas.endPoint = e.getPoint();
             }
         
             @Override
             public void mouseReleased(MouseEvent e) 
             {
-                isDrawing = false;
-                startPoint = null;
-                endPoint = null;
-                iterateLayers();
+                canvas.isDrawing = false;
+                canvas.startPoint = null;
+                canvas.endPoint = null;
+                iterateLayers(canvas);
             }
         });
 
@@ -55,31 +55,10 @@ public class Screen extends JPanel
             @Override
             public void mouseDragged(MouseEvent e) 
             {
-                if (isDrawing) 
+                if (canvas.isDrawing) 
                 {
-                    Graphics2D paintGraphics = canvas.get(currentLayer).createGraphics();
-                    
-                    endPoint = e.getPoint();
-                    int dx = endPoint.x - startPoint.x;
-                    int dy = endPoint.y - startPoint.y;
-                    int steps = Math.max(Math.abs(dx), Math.abs(dy));
-                    double xIncrement = (double) dx / steps;
-                    double yIncrement = (double) dy / steps;
-                    
-                    AlphaComposite alphaComposite = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, color.getAlpha() / 255f);
-                    paintGraphics.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC));
-                    paintGraphics.setColor(color);
-                    
-                    
-                    // brushing input fixed!!!
-                    for (int i = 0; i <= steps; i++) {
-                        int x = (int) (startPoint.x + i * xIncrement) == 0? startPoint.x : (int) (startPoint.x + i * xIncrement);
-                        int y = (int) (startPoint.y + i * yIncrement) == 0? startPoint.y : (int) (startPoint.y + i * yIncrement);
-                        paintGraphics.fillOval(x, y, width, height);
-                    }
-                    startPoint = e.getPoint();
-                    paintGraphics.dispose();
-                    iterateLayers();
+                    canvas.paintProcess(10, 10, e);
+                    iterateLayers(canvas);
                 }
             }
         });
@@ -91,7 +70,7 @@ public class Screen extends JPanel
         super.paintComponent(g);
         g.drawImage(canvasImage, 0, 0, this);
     }
-    public void iterateLayers()
+    public void iterateLayers(ArrayList<BufferedImage> canvas)
     {
         for(BufferedImage bf : canvas)
         {
@@ -105,18 +84,5 @@ public class Screen extends JPanel
     public static void main(String[]  args)
     {
         // @iid3rp derpwings package reserved
-        SwingUtilities.invokeLater(() -> {
-            frame = new JFrame("Canvas Example");
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setLayout(null);
-
-            Canvas ca = new Canvas();
-            ca.setBounds(0, 0, 1280, 720);
-            frame.add(ca);
-
-            frame.setSize(new Dimension(1280, 720));
-            frame.setLocationRelativeTo(null);
-            frame.setVisible(true);
-        });
     }
 }
