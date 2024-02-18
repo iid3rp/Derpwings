@@ -14,38 +14,36 @@ public class Screen extends JPanel
     public Screen(derpwings.Canvas canvas)
     {
         setLayout(null);
-        setBounds(0, 0, 1280, 720); // resolution will be modified in the future...
+        setBounds(0, 0, canvas.getWidth(), canvas.getHeight()); // resolution will be modified in the future...
         setBackground(Color.GRAY);
-        canvasImage = new BufferedImage(canvas.getWidth(), canvas.getHeight(), BufferedImage.TYPE_INT_ARGB);
+        canvasImage = new BufferedImage(derpwings.Canvas.getWidth(), derpwings.Canvas.getHeight(), BufferedImage.TYPE_INT_ARGB);
         addMouseListener(new MouseAdapter()
         {
             @Override
             public void mouseClicked(MouseEvent e)
             {
-                Graphics2D paintGraphics = canvas.get(canvas.currentLayer).createGraphics();
-                AlphaComposite alphaComposite = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, (canvas.getColor().getAlpha() / 255f) / 10f); // ba
+                Graphics2D paintGraphics = derpwings.Canvas.image.get(derpwings.Canvas.currentLayer).createGraphics();
+                AlphaComposite alphaComposite = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, (derpwings.Canvas.color.getAlpha() / 255f) / 10f); // ba
                 paintGraphics.setComposite(alphaComposite);
-                paintGraphics.setColor(canvas.getColor());
-                paintGraphics.fillOval(e.getX(), e.getY(), canvas.getBrushWidth(), canvas.getBrushHeight());
+                paintGraphics.setColor(derpwings.Canvas.color);
+                paintGraphics.fillOval(e.getX(), e.getY(), derpwings.Canvas.getBrushWidth(), derpwings.Canvas.getBrushHeight());
                 paintGraphics.dispose();
-                iterateLayers(canvas);
+                iterateLayers(derpwings.Canvas.image, derpwings.Canvas.appear, derpwings.Canvas.opacity);
             }
             
             @Override
             public void mousePressed(MouseEvent e) 
             {
-                canvas.isDrawing = true;
-                canvas.startPoint = e.getPoint();
-                canvas.endPoint = e.getPoint();
+                derpwings.Canvas.startPoint = e.getPoint();
+                derpwings.Canvas.endPoint = e.getPoint();
             }
         
             @Override
             public void mouseReleased(MouseEvent e) 
             {
-                canvas.isDrawing = false;
-                canvas.startPoint = null;
-                canvas.endPoint = null;
-                iterateLayers(canvas);
+                derpwings.Canvas.startPoint = null;
+                derpwings.Canvas.endPoint = null;
+                iterateLayers(derpwings.Canvas.image, derpwings.Canvas.appear, derpwings.Canvas.opacity);
             }
         });
 
@@ -55,11 +53,8 @@ public class Screen extends JPanel
             @Override
             public void mouseDragged(MouseEvent e) 
             {
-                if (canvas.isDrawing) 
-                {
-                    canvas.paintProcess(10, 10, e);
-                    iterateLayers(canvas);
-                }
+                derpwings.Canvas.paintProcess(10, 10, e);
+                iterateLayers(derpwings.Canvas.image, derpwings.Canvas.appear, derpwings.Canvas.opacity);
             }
         });
     }
@@ -70,13 +65,18 @@ public class Screen extends JPanel
         super.paintComponent(g);
         g.drawImage(canvasImage, 0, 0, this);
     }
-    public void iterateLayers(ArrayList<BufferedImage> canvas)
+    public void iterateLayers(ArrayList<BufferedImage> image, ArrayList<Boolean> appear, ArrayList<Float> opacity)
     {
-        for(BufferedImage bf : canvas)
+        int i = 0;
+        for(BufferedImage bf : image)
         {
-            Graphics2D g2d = canvasImage.createGraphics();
-            g2d.drawImage(bf, 0, 0, null);
-            g2d.dispose();
+            if(appear.get(i++))
+            {
+                Graphics2D g2d = canvasImage.createGraphics();
+                g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f));
+                g2d.drawImage(bf, 0, 0, null);
+                g2d.dispose();
+            }
         }
         repaint();
     }
