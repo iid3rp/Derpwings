@@ -15,7 +15,7 @@ public class SampleTest extends JFrame
         setBackground(Color.GRAY);
         setDefaultCloseOperation(3);
         setLocationRelativeTo(null);
-        screen = new derpwings.Screen(new derpwings.Canvas(1280, 720)); // initialization of the canvas based on the resolution of the parameter
+        screen = new derpwings.Screen(1280, 720); // initialization of the canvas based on the resolution of the parameter
         add(screen);
         
         addKeyListener(new KeyAdapter()
