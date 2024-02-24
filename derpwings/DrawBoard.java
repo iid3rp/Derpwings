@@ -38,7 +38,7 @@ public class DrawBoard
         Graphics2D g2d = canvas.createGraphics();
         g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f)); 
         Point p = e.getPoint();
-        g2d.drawImage(b.brushImage, p.x, p.y, null);
+        g2d.drawImage(b.getImage(), p.x - b.getImage().getWidth() / 2, p.y - b.getImage().getHeight() / 2, null);
         g2d.dispose();
     }
     
@@ -58,7 +58,7 @@ public class DrawBoard
         {
             int x = (int) (startPoint.x + i * xIncrement) == 0? startPoint.x : (int) (startPoint.x + i * xIncrement);
             int y = (int) (startPoint.y + i * yIncrement) == 0? startPoint.y : (int) (startPoint.y + i * yIncrement);
-            g2d.drawImage(b.brushImage, x, y, null);
+            g2d.drawImage(b.brushImage, x - b.getImage().getWidth() / 2, y - b.getImage().getHeight() / 2, null);
         }
         steps = 0;
         dx = 0;

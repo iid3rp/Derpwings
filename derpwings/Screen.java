@@ -10,11 +10,12 @@ import java.util.*;
 public class Screen extends JPanel
 {
     public LayerManager canvas;
+    public Brush brush = new Brush();
     
     public Screen(int width, int height)
     {
         setLayout(null);
-        setBounds(0, 0, width, height); // resolution will be modified in the future...
+        setBounds(0, 0, width, height);
         setBackground(Color.GRAY);
         canvas = new LayerManager(width, height);
         
@@ -23,7 +24,8 @@ public class Screen extends JPanel
             @Override
             public void mouseClicked(MouseEvent e)
             {
-                canvas.flickDraw(e, null);
+                canvas.flickDraw(e, canvas.brush);
+                repaint();
             }
             
             @Override
@@ -45,8 +47,8 @@ public class Screen extends JPanel
             @Override
             public void mouseDragged(MouseEvent e) 
             {
-                canvas.drawImage(null, null);
-                
+                canvas.drawImage(e, canvas.brush);
+                repaint();
             }
         });
     }
