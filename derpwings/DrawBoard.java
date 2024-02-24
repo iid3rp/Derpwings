@@ -9,6 +9,7 @@ import java.util.*;
 
 public class DrawBoard
 {
+    // hello World!
     public BufferedImage canvas;
     public Image referenceImage;
     public float opacity;
