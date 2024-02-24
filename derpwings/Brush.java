@@ -17,7 +17,6 @@ public class Brush
         try
         {
             // default brush thingy:
-<<<<<<< HEAD
             String path = getClass().getResource("Brushes/air.png").getPath();
             brushImage = ImageIO.read(new File(path));
             
@@ -29,8 +28,8 @@ public class Brush
             g2d.dispose();
             
             String xd = getClass().getResource("Brushes").getPath();
-        String filename = "coloredAir.png"; 
-        File outputFile = new File(xd + File.separator + filename);
+            String filename = "coloredAir.png"; 
+            File outputFile = new File(xd + File.separator + filename);
         
         try
         {
@@ -44,10 +43,6 @@ public class Brush
 
             
             // createCustomBrush();
-=======
-            String path = getClass().getResource("Brushes/rect.png").getPath();
-            brushImage = ImageIO.read(new File(path));
->>>>>>> 79e32fc36dfcac1b462c8a3ec33731f47645d7be
         }
         catch(IOException e)
         {
