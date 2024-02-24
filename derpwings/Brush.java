@@ -4,17 +4,26 @@ import java.awt.*;
 import java.awt.image.*;
 import java.util.*;
 import java.io.*;
-import javax.imageio.ImageIO;
+import javax.imageio.*;
+import java.net.*;
 
 public class Brush
 {
     public BufferedImage brushImage;
     public Image paintImage;
     
-    public Brush() throws IOException
+    public Brush()
     {
-        // default brush thingy:
-        brushImage = ImageIO.read(new File("Brushes/rect.png"));
+        try
+        {
+            // default brush thingy:
+            String path = getClass().getResource("Brushes/rect.png").getPath();
+            brushImage = ImageIO.read(new File(path));
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
     }
     
     public void createCustomBrush()
@@ -39,6 +48,11 @@ public class Brush
             e.printStackTrace();
         }
 
+    }
+    
+    public BufferedImage getImage()
+    {
+        return brushImage;
     }
     
     public static void main(String args[]) throws IOException

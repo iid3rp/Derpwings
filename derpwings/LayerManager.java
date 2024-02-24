@@ -13,6 +13,7 @@ public class LayerManager extends ArrayList<DrawBoard>
 {
     public int width, height, currentLayer = 0;
     boolean isDrawing = false, isEraser = false;
+    Brush brush = new Brush();
     public LayerManager(int w, int h)
     {
         super();
@@ -33,12 +34,12 @@ public class LayerManager extends ArrayList<DrawBoard>
     
     public void flickDraw(MouseEvent e, Brush b)
     {
-        get(currentLayer).flickDraw(null, null);
+        get(currentLayer).flickDraw(e, b);
     }
     
     public void drawImage(MouseEvent e, Brush b)
     {
-        get(currentLayer).drawImage(e, null);
+        get(currentLayer).drawImage(e, b);
     }
     
     public void setOpacity(float f)

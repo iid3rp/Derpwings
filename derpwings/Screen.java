@@ -10,6 +10,7 @@ import java.util.*;
 public class Screen extends JPanel
 {
     public LayerManager canvas;
+    public Brush brush = new Brush();
     
     public Screen(int width, int height)
     {
@@ -23,7 +24,7 @@ public class Screen extends JPanel
             @Override
             public void mouseClicked(MouseEvent e)
             {
-                canvas.flickDraw(e, null);
+                canvas.flickDraw(e, canvas.brush);
             }
             
             @Override
@@ -45,8 +46,8 @@ public class Screen extends JPanel
             @Override
             public void mouseDragged(MouseEvent e) 
             {
-                canvas.drawImage(null, null);
-                
+                canvas.drawImage(e, canvas.brush);
+                repaint();
             }
         });
     }
