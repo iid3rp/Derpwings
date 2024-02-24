@@ -39,12 +39,7 @@ public class DrawBoard
         Graphics2D g2d = canvas.createGraphics();
         g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f)); 
         Point p = e.getPoint();
-<<<<<<< HEAD
         g2d.drawImage(b.getImage(), p.x - b.getImage().getWidth() / 2, p.y - b.getImage().getHeight() / 2, null);
-        g2d.drawImage(b.getImage(), p.x, p.y, null);
-=======
->>>>>>> 79e32fc36dfcac1b462c8a3ec33731f47645d7be
-        g2d.drawImage(b.getImage(), p.x, p.y, null);
         g2d.dispose();
     }
     

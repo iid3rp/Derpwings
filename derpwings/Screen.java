@@ -24,11 +24,8 @@ public class Screen extends JPanel
             @Override
             public void mouseClicked(MouseEvent e)
             {
-                canvas.flickDraw(e, canvas.brush);
-<<<<<<< HEAD
+                canvas.flickDraw(e, canvas.brush);String path = getClass().getResource("Brushes").getPath();
                 repaint();
-=======
->>>>>>> 79e32fc36dfcac1b462c8a3ec33731f47645d7be
             }
             
             @Override
