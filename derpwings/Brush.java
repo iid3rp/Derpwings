@@ -16,31 +16,37 @@ public class Brush
     {
         try
         {
-            String path = getClass().getResource("Brushes/air.png").getPath();
-            brushImage = ImageIO.read(new File(path));
-
+            // setting the brush size;
+            this.setBrushSize(20);
+            
+            // setting the color of the brush;
+            this.setColor(Color.WHITE);
+            
+            // creating a custom brush: it will be deprecated in the future..
+            //createCustomBrush();
+            
             // testing the color technique
-            Graphics2D g2d = brushImage.createGraphics();
-            g2d.setColor(Color.RED);
-            g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_IN, 1f));
-            g2d.fillRect(0, 0, 1000, 1000);
-            g2d.dispose();
-
-            String xd = getClass().getResource("Brushes").getPath();
-            String filename = "coloredAir.png"; 
-            File outputFile = new File(xd + File.separator + filename);
-
-            try
-            {
-                ImageIO.write(brushImage, "png", outputFile);
-                System.out.println("Image saved to: " + outputFile.getAbsolutePath());
-            } 
-            catch (IOException e) 
-            {
-                e.printStackTrace();
-            }
+            // Graphics2D g2d = brushImage.createGraphics();
+//             g2d.setColor(Color.RED);
+//             g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_IN, 1f));
+//             g2d.fillRect(0, 0, 1000, 1000);
+//             g2d.dispose();
+// 
+//             String xd = getClass().getResource("Brushes").getPath();
+//             String filename = "coloredAir.png"; 
+//             File outputFile = new File(xd + File.separator + filename);
+// 
+//             try
+//             {
+//                 ImageIO.write(brushImage, "png", outputFile);
+//                 System.out.println("Image saved to: " + outputFile.getAbsolutePath());
+//             } 
+//             catch (IOException e) 
+//             {
+//                 e.printStackTrace();
+//             }
         }
-        catch(IOException e)
+        catch(Exception e)
         {
             e.printStackTrace();
         }
@@ -49,16 +55,17 @@ public class Brush
     public void createCustomBrush()
     {
         // default brush thingy:
-        brushImage = new BufferedImage(1000, 1000, BufferedImage.TYPE_INT_ARGB);
-        for(int i = 0; i <= 250; i++)
+        brushImage = new BufferedImage(1020, 1020, BufferedImage.TYPE_INT_ARGB);
+        for(int i = 0; i <= 127; i++)
         {
             Graphics2D g2d = brushImage.createGraphics();
-            g2d.setColor(new Color(0, 0, 0, 1));
-            g2d.fillOval(i * 2, i * 2, 1000 - i * 4, 1000 - i * 4);
+            g2d.setColor(new Color(0, 0, 200, 1));
+            g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, .5f));
+            g2d.fillOval(i * 4, i * 4, 1020 - i * 8, 1020 - i * 8);
             g2d.dispose();
         }
         String path = getClass().getResource("Brushes").getPath();
-        String filename = "air.png"; 
+        String filename = "GreenAir.png"; 
         File outputFile = new File(path + File.separator + filename);
         
         try
@@ -71,6 +78,33 @@ public class Brush
             e.printStackTrace();
         }
 
+    }
+    
+    public void setBrushSize(int size)
+    {
+        try
+        {
+            brushImage = new BufferedImage(size, size, BufferedImage.TYPE_INT_ARGB);
+            String path = getClass().getResource("Brushes/GreenAir.png").getPath();
+            Image image = ImageIO.read(new File(path));
+            image = image.getScaledInstance(size, size, Image.SCALE_SMOOTH);
+            Graphics2D g2d = brushImage.createGraphics();
+            g2d.drawImage(image, 0, 0, null);
+            g2d.dispose();
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
+    
+    public void setColor(Color color)
+    {
+        Graphics2D g2d = brushImage.createGraphics();
+        g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_IN, 1f));
+        g2d.setColor(color);
+        g2d.fillRect(0, 0, brushImage.getWidth(), brushImage.getHeight());
+        g2d.dispose();
     }
     
     public BufferedImage getImage()

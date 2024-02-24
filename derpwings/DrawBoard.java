@@ -53,7 +53,8 @@ public class DrawBoard
         double yIncrement = (double) dy / steps;
 
         Graphics2D g2d = canvas.createGraphics();
-        g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f));     
+        g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, .5f));  
+        g2d.setRenderingHints(new RenderingHints(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON));   
         // brushing input fixed!!!
         for (int i = 0; i <= steps; i++) 
         {
