@@ -16,7 +16,6 @@ public class Brush
     {
         try
         {
-            // default brush thingy:
             String path = getClass().getResource("Brushes/air.png").getPath();
             brushImage = ImageIO.read(new File(path));
             
@@ -43,6 +42,8 @@ public class Brush
 
             
             // createCustomBrush();
+            String path = getClass().getResource("Brushes/rect.png").getPath();
+            brushImage = ImageIO.read(new File(path));
         }
         catch(IOException e)
         {
