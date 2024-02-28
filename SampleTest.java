@@ -25,7 +25,8 @@ public class SampleTest extends JFrame
             {
                 if(e.getKeyCode() == KeyEvent.VK_ENTER)
                 {
-                    derpwings.Canvas.color = JColorChooser.showDialog(null, "Select a Color!", Color.BLACK);
+                    Color color = JColorChooser.showDialog(null, "Select a Color!", Color.BLACK);
+                    screen.setBrushColor(color);
                 }
                 if(e.getKeyCode() == KeyEvent.VK_A)
                 {

@@ -20,7 +20,7 @@ public class Brush
             this.setBrushSize(20);
             
             // setting the color of the brush;
-            this.setColor(Color.WHITE);
+            this.setColor(Color.BLACK);
             
             // creating a custom brush: it will be deprecated in the future..
             //createCustomBrush();

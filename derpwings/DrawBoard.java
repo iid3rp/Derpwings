@@ -13,7 +13,7 @@ public class DrawBoard
     public BufferedImage canvas;
     public Image referenceImage;
     public float opacity;
-    public boolean visibility;
+    public boolean visibility, clippable, alphaLock = false;;
     public Point startPoint, endPoint;
     
     public DrawBoard(int width, int height)
@@ -53,8 +53,9 @@ public class DrawBoard
         double yIncrement = (double) dy / steps;
 
         Graphics2D g2d = canvas.createGraphics();
-        g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, .5f));  
-        g2d.setRenderingHints(new RenderingHints(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON));   
+        if(alphaLock) g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_IN, 1f));
+        else g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f));  
+        g2d.setRenderingHints(new RenderingHints(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON)); // when it enables anti-alias when painting with a brush 
         // brushing input fixed!!!
         for (int i = 0; i <= steps; i++) 
         {

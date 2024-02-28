@@ -53,6 +53,11 @@ public class Screen extends JPanel
         });
     }
     
+    public void setBrushColor(Color c)
+    {
+        canvas.setBrushColor(c);
+    }
+    
     @Override
     protected void paintComponent(Graphics g)
     {

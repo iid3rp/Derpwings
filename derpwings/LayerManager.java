@@ -58,8 +58,15 @@ public class LayerManager extends ArrayList<DrawBoard>
         Graphics2D g2d = image.createGraphics();
         for(DrawBoard d : this) 
         {
+            if(d.alphaLock) g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_IN, 1f));
+            else g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f));
             g2d.drawImage(d.referenceImage, 0, 0, null);
         }
         return image;
+    }
+    
+    public void setBrushColor(Color c)
+    {
+        brush.setColor(c);
     }
 }
