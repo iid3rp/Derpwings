@@ -39,11 +39,11 @@ public class SampleTest extends JFrame
                 }
                 if(e.getKeyCode() == KeyEvent.VK_1)
                 {
-                    derpwings.Canvas.isDrawing = true;
+                    screen.canvas.get(screen.canvas.currentLayer).eraser = false;
                 }
                 if(e.getKeyCode() == KeyEvent.VK_2)
                 {
-                    derpwings.Canvas.isDrawing = false;
+                    screen.canvas.get(screen.canvas.currentLayer).eraser = true;
                 }
             }
         });
