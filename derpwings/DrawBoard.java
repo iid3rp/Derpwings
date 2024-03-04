@@ -79,8 +79,8 @@ public class DrawBoard
     {
         BufferedImage referenceImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
         Graphics2D g2d = referenceImage.createGraphics();
-        g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, opacity));
         g2d.drawImage(canvasBuffer, 0, 0, null);
+        g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, opacity));
         g2d.drawImage(brushBuffer, 0, 0, null);
         g2d.dispose();
         return referenceImage;
