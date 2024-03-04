@@ -11,7 +11,6 @@ public class DrawBoard
 {
     public BufferedImage brushBuffer;
     public BufferedImage canvasBuffer;
-    public BufferedImage referenceImage;
     public float opacity;
     public boolean visibility, eraser = false, clippable, alphaLock = false, antialias = true;
     public Point startPoint, endPoint;
@@ -22,7 +21,8 @@ public class DrawBoard
         width = w;
         height = h;
         brushBuffer = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
-        opacity = 1f;
+        canvasBuffer = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+        opacity = .5f;
         visibility = true;
     }
     
@@ -38,8 +38,9 @@ public class DrawBoard
     
     public void flickDraw(MouseEvent e, Brush b)
     {
+        // setting this aside tbh,.,.,..
         Graphics2D g2d = brushBuffer.createGraphics();
-        g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f)); 
+        g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, opacity)); 
         Point p = e.getPoint();
         g2d.drawImage(b.getImage(), p.x - b.getImage().getWidth() / 2, p.y - b.getImage().getHeight() / 2, null);
         g2d.dispose();
@@ -54,8 +55,10 @@ public class DrawBoard
         double xIncrement = (double) dx / steps;
         double yIncrement = (double) dy / steps;
 
-        Graphics2D g2d = brushBuffer.createGraphics(); 
+        // trenary value changing from brush to eraser ruleset :3
+        Graphics2D g2d = eraser == true? canvasBuffer.createGraphics() : brushBuffer.createGraphics(); 
         g2d.setRenderingHints(new RenderingHints(RenderingHints.KEY_ANTIALIASING, antialias == true? RenderingHints.VALUE_ANTIALIAS_ON : RenderingHints.VALUE_ANTIALIAS_OFF)); // when it enables/disables anti-alias when painting with a brush 
+        g2d.setComposite(AlphaComposite.getInstance(eraser == true? AlphaComposite.CLEAR : AlphaComposite.SRC_OVER, opacity));
         for (int i = 0; i <= steps; i++) 
         {
             int x = (int) (startPoint.x + i * xIncrement) == 0? startPoint.x : (int) (startPoint.x + i * xIncrement);
@@ -74,23 +77,28 @@ public class DrawBoard
     // merge the both draw and the canvas layer itself
     public Image getReferenceImage()
     {
+        BufferedImage referenceImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
         Graphics2D g2d = referenceImage.createGraphics();
-        g2d.setComposite(AlphaComposite.getInstance(eraser != true? AlphaComposite.SRC_OVER : AlphaComposite.CLEAR, opacity));
-        g2d.setRenderingHints(new RenderingHints(RenderingHints.KEY_ANTIALIASING, antialias == true? RenderingHints.VALUE_ANTIALIAS_ON : RenderingHints.VALUE_ANTIALIAS_OFF));
+        g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, opacity));
         g2d.drawImage(canvasBuffer, 0, 0, null);
         g2d.drawImage(brushBuffer, 0, 0, null);
+        g2d.dispose();
         return referenceImage;
     }
     
-    // refresh the whole canvas itself (when the layer has been painted...)/
-    public void zzz()
+    // stamp the whole brush trace to the canvas so that itll be iterate itself (when the layer has been painted...)
+    public void stampBrush()
     {
-        Graphics2D canvasGraphics = canvasBuffer.createGraphics();
-        Graphics2D brushGraphics = brushBuffer.createGraphics();
-        
-        canvasGraphics.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, opacity));
-        brushGraphics.drawImage(brushBuffer, 0, 0, null);
-        canvasGraphics.setComposite(AlphaComposite.getInstance(AlphaComposite.CLEAR, 1f));
-        canvasGraphics.fillRect(0, 0, width, height);
+        // stamping it first
+        Graphics2D g2d1 = canvasBuffer.createGraphics();
+        g2d1.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, opacity));
+        g2d1.drawImage(brushBuffer, 0, 0, null);
+        g2d1.dispose();
+
+        // and then the brushBuffer resets once again!!1
+        Graphics2D g2d2 = brushBuffer.createGraphics();
+        g2d2.setComposite(AlphaComposite.getInstance(AlphaComposite.CLEAR, 1f));
+        g2d2.fillRect(0, 0, width, height);
+        g2d2.dispose();
     }
 }

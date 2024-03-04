@@ -59,7 +59,7 @@ public class LayerManager extends ArrayList<DrawBoard>
         for(DrawBoard d : this) 
         {
             g2d.setComposite(AlphaComposite.getInstance(d.alphaLock == true? AlphaComposite.SRC_IN : AlphaComposite.SRC_OVER, 1f));
-            g2d.drawImage(d.referenceImage, 0, 0, null);
+            g2d.drawImage(d.getReferenceImage(), 0, 0, null);
         }
         return image;
     }

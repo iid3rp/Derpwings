@@ -9,7 +9,7 @@ import java.util.*;
 
 public class Screen extends JPanel
 {
-    public LayerManager canvas;
+    public LayerManager layerManager;
     public Brush brush = new Brush();
     
     public Screen(int width, int height)
@@ -17,27 +17,29 @@ public class Screen extends JPanel
         setLayout(null);
         setBounds(0, 0, width, height);
         setBackground(Color.GRAY);
-        canvas = new LayerManager(width, height);
+        layerManager = new LayerManager(width, height);
         
         addMouseListener(new MouseAdapter()
         {
             @Override
             public void mouseClicked(MouseEvent e)
             {
-                canvas.flickDraw(e, canvas.brush);String path = getClass().getResource("Brushes").getPath();
+                layerManager.flickDraw(e, layerManager.brush);String path = getClass().getResource("Brushes").getPath();
                 repaint();
             }
             
             @Override
             public void mousePressed(MouseEvent e) 
             {
-                canvas.setStartPoint(e.getPoint());
+                layerManager.setStartPoint(e.getPoint());
+                repaint();
             }
         
             @Override
             public void mouseReleased(MouseEvent e) 
             {
-                
+                layerManager.get(layerManager.currentLayer).stampBrush();
+                repaint();
             }
         });
 
@@ -47,7 +49,7 @@ public class Screen extends JPanel
             @Override
             public void mouseDragged(MouseEvent e) 
             {
-                canvas.drawImage(e, canvas.brush);
+                layerManager.drawImage(e, layerManager.brush);
                 repaint();
             }
         });
@@ -55,14 +57,14 @@ public class Screen extends JPanel
     
     public void setBrushColor(Color c)
     {
-        canvas.setBrushColor(c);
+        layerManager.setBrushColor(c);
     }
     
     @Override
     protected void paintComponent(Graphics g)
     {
         super.paintComponent(g);
-        g.drawImage(canvas.getCanvas(), 0, 0, this);
+        g.drawImage(layerManager.getCanvas(), 0, 0, this);
     }
     
     public static void main(String[]  args)
